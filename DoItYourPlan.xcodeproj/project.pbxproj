@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */; };
 		635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AC2BA1F47700747969 /* DayDetailsModal.swift */; };
+		635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */; };
 		639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6392479F2B9F090500A67779 /* DoItYourPlanApp.swift */; };
 		639247A22B9F090500A67779 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247A12B9F090500A67779 /* ContentView.swift */; };
 		639247A42B9F090700A67779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639247A32B9F090700A67779 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPlanningProjectProgress.swift; sourceTree = "<group>"; };
 		635C54AC2BA1F47700747969 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
+		635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
 		6392479C2B9F090500A67779 /* DoItYourPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoItYourPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6392479F2B9F090500A67779 /* DoItYourPlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoItYourPlanApp.swift; sourceTree = "<group>"; };
 		639247A12B9F090500A67779 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				639248242BA0965600A67779 /* FormattedDateView.swift */,
 				635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */,
 				635C54AC2BA1F47700747969 /* DayDetailsModal.swift */,
+				635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */,
 			);
 			path = ExtractedViews;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				639247B72B9F097900A67779 /* DataAmina.swift in Sources */,
 				639247BD2B9F099500A67779 /* DataMarion.swift in Sources */,
 				639247B52B9F097000A67779 /* DataJulien.swift in Sources */,
+				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,

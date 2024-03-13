@@ -18,7 +18,7 @@ struct CalendarView: View {
                 .padding()
         }
         .sheet(isPresented: $showModalDayCalendar) {
-                    DayDetailsModal(day: selectedDate)
+                    DayDetailsModal(day: $selectedDate)
                 }
         
     }
