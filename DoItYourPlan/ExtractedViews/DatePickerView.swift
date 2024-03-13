@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct DatePickerView: View {
+    @State var selectedDate: Date = Date()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack{
+            FormattedDateView(selectedDate: selectedDate, omitTime: true)
+            Divider().frame(height: 1)
+            DatePicker("Sélectionnez une date", selection: $selectedDate,displayedComponents: [.date])
+                .datePickerStyle(.graphical)
+                        .padding()
+                        .fontWeight(.semibold)
+        }
+            }
 }
 
 #Preview {

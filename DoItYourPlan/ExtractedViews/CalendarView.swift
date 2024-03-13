@@ -11,12 +11,9 @@ import FSCalendar
 struct CalendarView: View {
     @State var selectedDate: Date = Date()
     var body: some View {
-        VStack{
-            Text("mon planning")
-            FormattedDate(selectedDate: selectedDate, omitTime: true)
-            CalendarViewRepresentable(selectedDate: $selectedDate)
-                .frame(width: 275,height: 275)
-        }
+//        FormattedDate(selectedDate: selectedDate, omitTime: true)
+        CalendarViewRepresentable(selectedDate: $selectedDate)
+            .frame(width: 275,height: 275)
     }
 }
 

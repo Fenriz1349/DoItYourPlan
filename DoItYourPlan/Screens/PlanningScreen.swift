@@ -9,7 +9,13 @@ import SwiftUI
 
 struct PlanningScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Planning")
+                .frame(maxWidth: .infinity, alignment: .top)
+            Spacer()
+            Text("Projet 1 à terminer pour le \(formattedDate(ListDateEndProjects[0] ?? Date()))")
+            CalendarView()
+        }
     }
 }
 
