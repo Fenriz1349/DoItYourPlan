@@ -43,7 +43,7 @@ struct ProfilScreen: View {
                     .frame(width: 100, height: 100)
                     .padding()
                     Divider()
-                }.background(Color("yellowColor"))
+                }.background(Color("yellowCustom"))
              
                 
                 
@@ -172,7 +172,7 @@ struct ProfilScreen: View {
                                     Text("Volonté de fer")
                                         .font(.system(size: 24))
                                     RoundedRectangle(cornerRadius: 10)
-                                           .fill(Color("orangeColor"))                       .frame(width: 180, height: 50)
+                                           .fill(Color("orangeCustom"))                       .frame(width: 180, height: 50)
                                            .overlay(
                                                RoundedRectangle(cornerRadius: 10)
                                                    .stroke(Color.black, lineWidth: 1)
@@ -211,7 +211,7 @@ struct ProfilScreen: View {
                                     Text("Légende vivante")
                                         .font(.system(size: 24))
                                     RoundedRectangle(cornerRadius: 10)
-                                           .fill(Color("greenColor"))                       .frame(width: 180, height: 50)
+                                           .fill(Color("greenCustom"))                       .frame(width: 180, height: 50)
                                            .overlay(
                                                RoundedRectangle(cornerRadius: 10)
                                                    .stroke(Color.black, lineWidth: 1)
@@ -243,7 +243,7 @@ struct ProfilScreen: View {
                                     Text("Maître de l'art")
                                         .font(.system(size: 24))
                                     RoundedRectangle(cornerRadius: 10)
-                                           .fill(Color("purpleColor"))                       .frame(width: 180, height: 50)
+                                           .fill(Color("purpleCustom"))                       .frame(width: 180, height: 50)
                                            .overlay(
                                                RoundedRectangle(cornerRadius: 10)
                                                    .stroke(Color.black, lineWidth: 1)

@@ -10,26 +10,32 @@ import FSCalendar
 
 struct CalendarView: View {
     @State var selectedDate: Date = Date()
+    @State var showModalDayCalendar : Bool = false
     var body: some View {
-//        FormattedDate(selectedDate: selectedDate, omitTime: true)
-        CalendarViewRepresentable(selectedDate: $selectedDate)
-            .frame(width: 275,height: 275)
+        VStack{
+            CalendarViewRepresentable(selectedDate: $selectedDate,showModal: $showModalDayCalendar)
+                .frame(width: 275,height: 275)
+                .padding()
+        }
+        .sheet(isPresented: $showModalDayCalendar) {
+                    DayDetailsModal(day: selectedDate)
+                }
+        
     }
 }
 
 struct CalendarViewRepresentable: UIViewRepresentable {
     typealias UIViewType = FSCalendar
 
-    fileprivate var calendar = FSCalendar()
-    
+    fileprivate var calendar = FSCalendar()    
     @Binding var selectedDate: Date
+    @Binding var showModal : Bool
     
     func makeUIView(context: Context) -> FSCalendar {
-              // Setting delegate and dateSource of calendar to the
-              // values we get from Coordinator
-              calendar.delegate = context.coordinator
-              calendar.dataSource = context.coordinator
-              // returning the intialized calendar
+        calendar.firstWeekday = 2
+        calendar.delegate = context.coordinator
+        calendar.dataSource = context.coordinator
+        calendar.locale = Locale(identifier: "fr_FR")
               return calendar
       }
     
@@ -50,9 +56,13 @@ struct CalendarViewRepresentable: UIViewRepresentable {
                                 didSelect date: Date,
                                 at monthPosition: FSCalendarMonthPosition) {
                     parent.selectedDate = date
+            parent.showModal = true
                 }
     }
 }
-#Preview {
-    CalendarView()
+
+struct CalendarView_Previews: PreviewProvider {
+    static var previews: some View {
+        CalendarView()
+    }
 }

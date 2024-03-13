@@ -9,12 +9,21 @@ import SwiftUI
 
 struct PlanningScreen: View {
     var body: some View {
-        VStack{
+        NavigationStack{
             Text("Planning")
                 .frame(maxWidth: .infinity, alignment: .top)
-            Spacer()
-            Text("Projet 1 à terminer pour le \(formattedDate(ListDateEndProjects[0] ?? Date()))")
+                .font(.system(size: 24))
+                .padding(.bottom,20)
             CalendarView()
+                .padding(.bottom,20)
+            ScrollView{
+                ForEach (projectsProgressList) {projet in
+                    NavigationLink(destination : SelectedProjectScreen()) {
+                        ExtPlanningProjectProgress(project: projet)
+                    }
+                    .navigationBarBackButtonHidden(true)
+                }
+            }
         }
     }
 }
