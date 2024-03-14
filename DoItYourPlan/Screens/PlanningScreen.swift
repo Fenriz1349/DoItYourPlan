@@ -14,7 +14,7 @@ struct PlanningScreen: View {
                 .frame(maxWidth: .infinity, alignment: .top)
             Spacer()
             Text("Projet 1 à terminer pour le \(formattedDate(ListDateEndProjects[0] ?? Date()))")
-            CalendarView()
+           
         }
     }
 }
