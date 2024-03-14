@@ -10,6 +10,7 @@ import Charts
 
 struct ExtPlanningProjectProgress: View {
     var project : PlanningProjectProgress
+    
     var body: some View {
         ZStack{
             Rectangle()
@@ -18,10 +19,15 @@ struct ExtPlanningProjectProgress: View {
             HStack{
                 ExtPiePercentCompleted(percent: project.progressPercent)
                 VStack(alignment: .leading){
-                        Text("\(project.name) de \(project.category.rawValue)")
+                    Text("\(project.name) de \(project.category.rawValue)")
                         .bold()
                     if let date = project.dateEnd {
-                        Text("à terminer pour le \(formattedDatePlanning(date))")
+                        if differenceInDays(from: Date(), to: date) == 0 {
+                            Text("à finir aujourd'hui")
+                        }else if differenceInDays(from: Date(), to: date) > 0{
+                            Text("à terminer pour le \(formattedDatePlanning(date))")
+                            Text("dans \(differenceInDays(from: Date(), to: date)) jours")
+                        }
                     }else {
                         Text("à finir quand vous voulez")
                     }
