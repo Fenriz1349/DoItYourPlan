@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 enum NewProjectCategory: String, CaseIterable{
     case couture = "Couture"
     case dessin = "Dessin"
