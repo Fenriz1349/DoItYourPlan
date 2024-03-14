@@ -9,7 +9,15 @@ import SwiftUI
 
 struct MaterialScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Material screen!")
+//        Tableau ul avec petite coche  pour chaque matériel présent
+//        bouton pour add
+//        “on tap”
+//
+//
+//        sur la nav bar :
+//        titre de l’écran
+//        bouton retour
     }
 }
 

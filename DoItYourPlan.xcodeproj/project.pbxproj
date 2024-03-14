@@ -88,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				639247AD2B9F091C00A67779 /* ReadMe.swift */,
-				639247AF2B9F093D00A67779 /* ExtractedViews */,
 				639247B12B9F095500A67779 /* Data */,
 				639247BE2B9F09A300A67779 /* Screens */,
 				6392479F2B9F090500A67779 /* DoItYourPlanApp.swift */,
@@ -105,13 +104,6 @@
 				639247A62B9F090700A67779 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		639247AF2B9F093D00A67779 /* ExtractedViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ExtractedViews;
 			sourceTree = "<group>";
 		};
 		639247B12B9F095500A67779 /* Data */ = {
