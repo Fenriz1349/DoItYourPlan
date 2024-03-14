@@ -37,13 +37,22 @@ struct ProfilScreen: View {
                     }
                     
                     
-                    
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .padding()
-                    Divider()
-                }.background(Color("yellowCustom"))
+                    VStack(spacing: -3) {
+                        Image("headProfil")
+                        
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 10)
+                        
+                        Image("bustProfil")
+                        
+                            .resizable()
+                            .frame(width: 170, height: 100)
+                            .foregroundColor(.black)
+                        .padding(.trailing, 10)}
+                        Divider()
+                    }.background(Color("yellowCustom"))
                 
                 
                 
@@ -136,4 +145,3 @@ struct ProfilScreen: View {
 #Preview {
     ProfilScreen()
 }
-

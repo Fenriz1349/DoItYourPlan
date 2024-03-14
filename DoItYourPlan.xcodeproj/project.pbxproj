@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B12BA3106D003D7CF0 /* ProjectButton.swift */; };
+		631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */; };
+		635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */; };
+		635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AC2BA1F47700747969 /* DayDetailsModal.swift */; };
+		635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */; };
 		639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6392479F2B9F090500A67779 /* DoItYourPlanApp.swift */; };
 		639247A22B9F090500A67779 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247A12B9F090500A67779 /* ContentView.swift */; };
 		639247A42B9F090700A67779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639247A32B9F090700A67779 /* Assets.xcassets */; };
@@ -29,12 +34,16 @@
 		639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D12B9F0AB100A67779 /* LibraryScreen.swift */; };
 		639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D32B9F0ABC00A67779 /* PlanningScreen.swift */; };
 		639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D52B9F0AD600A67779 /* MaterialScreen.swift */; };
-		639248212BA091DC00A67779 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 639248202BA091DC00A67779 /* FSCalendar */; };
-		CF5194152BA1F62F0024960D /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5194142BA1F62F0024960D /* ProjectButton.swift */; };
-		CF5194172BA203DC0024960D /* ProjectSucces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5194162BA203DC0024960D /* ProjectSucces.swift */; };
+		639248232BA092DE00A67779 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639248222BA092DE00A67779 /* CalendarView.swift */; };
+		639248252BA0965600A67779 /* FormattedDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639248242BA0965600A67779 /* FormattedDateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		631C80B12BA3106D003D7CF0 /* ProjectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButton.swift; sourceTree = "<group>"; };
+		631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSuccess.swift; sourceTree = "<group>"; };
+		635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPlanningProjectProgress.swift; sourceTree = "<group>"; };
+		635C54AC2BA1F47700747969 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
+		635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
 		6392479C2B9F090500A67779 /* DoItYourPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoItYourPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6392479F2B9F090500A67779 /* DoItYourPlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoItYourPlanApp.swift; sourceTree = "<group>"; };
 		639247A12B9F090500A67779 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,8 +67,8 @@
 		639247D12B9F0AB100A67779 /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
 		639247D32B9F0ABC00A67779 /* PlanningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningScreen.swift; sourceTree = "<group>"; };
 		639247D52B9F0AD600A67779 /* MaterialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialScreen.swift; sourceTree = "<group>"; };
-		CF5194142BA1F62F0024960D /* ProjectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButton.swift; sourceTree = "<group>"; };
-		CF5194162BA203DC0024960D /* ProjectSucces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSucces.swift; sourceTree = "<group>"; };
+		639248222BA092DE00A67779 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		639248242BA0965600A67779 /* FormattedDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				639248212BA091DC00A67779 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +124,13 @@
 		639247AF2B9F093D00A67779 /* ExtractedViews */ = {
 			isa = PBXGroup;
 			children = (
-				CF5194142BA1F62F0024960D /* ProjectButton.swift */,
-				CF5194162BA203DC0024960D /* ProjectSucces.swift */,
+				639248222BA092DE00A67779 /* CalendarView.swift */,
+				639248242BA0965600A67779 /* FormattedDateView.swift */,
+				635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */,
+				635C54AC2BA1F47700747969 /* DayDetailsModal.swift */,
+				635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */,
+				631C80B12BA3106D003D7CF0 /* ProjectButton.swift */,
+				631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */,
 			);
 			path = ExtractedViews;
 			sourceTree = "<group>";
@@ -170,7 +183,6 @@
 			);
 			name = DoItYourPlan;
 			packageProductDependencies = (
-				639248202BA091DC00A67779 /* FSCalendar */,
 			);
 			productName = DoItYourPlan;
 			productReference = 6392479C2B9F090500A67779 /* DoItYourPlan.app */;
@@ -201,7 +213,6 @@
 			);
 			mainGroup = 639247932B9F090500A67779;
 			packageReferences = (
-				6392481F2BA091DC00A67779 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 6392479D2B9F090500A67779 /* Products */;
 			projectDirPath = "";
@@ -229,18 +240,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */,
 				639247D02B9F0A9300A67779 /* FinishedProjectScreen.swift in Sources */,
 				CF5194152BA1F62F0024960D /* ProjectButton.swift in Sources */,
 				639247CC2B9F0A5900A67779 /* ProjectsScreen.swift in Sources */,
 				639247C22B9F09D700A67779 /* LoadingScreen.swift in Sources */,
 				639247CE2B9F0A6500A67779 /* NewProjectScreen.swift in Sources */,
 				639247C42B9F0A2C00A67779 /* ProfilScreen.swift in Sources */,
+				635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */,
 				639247AE2B9F091C00A67779 /* ReadMe.swift in Sources */,
 				639247A22B9F090500A67779 /* ContentView.swift in Sources */,
 				639247B72B9F097900A67779 /* DataAmina.swift in Sources */,
-				CF5194172BA203DC0024960D /* ProjectSucces.swift in Sources */,
+				631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */,
 				639247BD2B9F099500A67779 /* DataMarion.swift in Sources */,
 				639247B52B9F097000A67779 /* DataJulien.swift in Sources */,
+				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
@@ -251,6 +265,7 @@
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
+				631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,25 +469,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6392481F2BA091DC00A67779 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		639248202BA091DC00A67779 /* FSCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6392481F2BA091DC00A67779 /* XCRemoteSwiftPackageReference "FSCalendar" */;
-			productName = FSCalendar;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 639247942B9F090500A67779 /* Project object */;
 }
