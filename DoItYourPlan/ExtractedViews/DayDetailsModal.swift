@@ -12,8 +12,18 @@ struct DayDetailsModal: View {
     @Binding var  day : Date
 
     var ListProjectOfSelectedDay : [PlanningProjectProgress] {
-        projectsProgressList.filter{$0.dateEnd == day}
-    }
+            guard let selectedDay = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: day) else {
+                return []
+            }
+            return projectsProgressList.filter { project in
+                if let projectDateEnd = project.dateEnd {
+                    let projectDay = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: projectDateEnd)
+                    return projectDay == selectedDay
+                } else {
+                    return false // Ignore les projets sans date de fin
+                }
+            }
+        }
     var body: some View {
         //        affichage si la date correspond à une date de fin de projet
         VStack{
