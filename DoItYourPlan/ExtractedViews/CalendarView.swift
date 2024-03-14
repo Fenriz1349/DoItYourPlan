@@ -9,6 +9,7 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarView: View {
+    
     @State var selectedDate: Date = Date()
     @State var showModalDayCalendar : Bool = false
     var body: some View {
