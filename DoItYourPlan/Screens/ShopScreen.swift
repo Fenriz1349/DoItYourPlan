@@ -1,16 +1,13 @@
-//
-//  ShopScreen.swift
-//  DoItYourPlan
-//
-//  Created by apprenant68 on 11/03/2024.
-//
-
 import SwiftUI
 
 struct ShopScreen: View {
     @State private var backgroundColor: Color = Color("yellowCustom")
     @State private var isHeadImageBackgroundBlack: Bool = true
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     var body: some View {
         VStack(spacing: -3) {
             Button(action: {
@@ -30,7 +27,11 @@ struct ShopScreen: View {
                         .foregroundColor(.black)
                         .background(backgroundColor) // Appliquer la couleur de fond dynamique
                         .padding(.trailing, 10)
+<<<<<<< Updated upstream
 
+=======
+                    
+>>>>>>> Stashed changes
                     Image("bustProfil")
                         .resizable()
                         .frame(width: 170, height: 100)

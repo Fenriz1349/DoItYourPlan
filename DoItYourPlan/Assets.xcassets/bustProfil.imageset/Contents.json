@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< Updated upstream
       "filename" : "bustProfil.png",
+=======
+      "filename" : "124721850-icoÌ_ne-de-ligne-utilisateur-signe-d-avatar-de-profil-symbole-de-silhouette-de-personne-formes-transformed-removebg-preview__2_-removebg-preview (1).png",
+>>>>>>> Stashed changes
       "idiom" : "universal",
       "scale" : "1x"
     },
