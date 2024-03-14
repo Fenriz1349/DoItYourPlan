@@ -1,15 +1,15 @@
 //
-//  SelectedProjectScreen.swift
 //  DoItYourPlan
 //
-//  Created by apprenant68 on 11/03/2024.
+//  Created by aurelien on 12/03/24.
 //
 
 import SwiftUI
 
 struct SelectedProjectScreen: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("In progress...\r\rComing soon")
     }
 }
 
