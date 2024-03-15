@@ -9,32 +9,47 @@ import SwiftUI
 
 struct NewProjectScreen: View {
     
+    @State var projectName = ""
     @State var selectedOption = NewProjectCategory.couture
+    @State var projectDescription = ""
     var body: some View {
+       
+        
         //        insert de la nav bar avec titre page "Nouveau projet" et bouton retour
         Text("Nouveau projet")
+        
         VStack {
-// Premiere zone cliquable contenant le nom du projet, sa catégorie et une petite déscription
-            Text("Choisis la catégorie de ton Projet DIY")
-            Picker("Choisis une catégorie", selection: $selectedOption) {
-                ForEach(NewProjectCategory.allCases, id: \.self){ category in
-                Text(category.rawValue)
+            ZStack {
+                    Form {
+                        Section(header: Text("Nom du projet")){
+                            TextField("Nom du projet", text: $projectName)
+                                }
+                        
+                        Section(header: Text("Choisis la catégorie de ton Projet DIY")) {
+                            Picker("Catégorie:", selection: $selectedOption) {
+                                ForEach(NewProjectCategory.allCases, id: \.self){ category in
+                                    Text(category.rawValue)
+                                    // Style du menu déroulant: ajouter couleur selon le choix de catégorie
+                                    }
+                                }
+                            }
+                        Section(header : Text("Détails")) {
+                            TextField("Description du projet", text: $projectDescription)
+                            }
+                        Section(header : Text("Date de fin")) {
+                            // Planning pour date de fin estimée (voir avec Julien)
+                            }
+                        }
+                    }
+                }
+           
+//        rounded ici pour figurer le bouton valider qui envoie directement à -> SelectedProjectScreen
+        RoundedRectangle(cornerRadius: 25.0)
+                .fill(Color.gray)
+                .frame(width: 50, height: 50)
+
             }
         }
-            .pickerStyle(MenuPickerStyle())
-            // Style du menu déroulant (faire une bordure et ajouter couleur selon le choix de catégorie
-            
-            // Insertion du formulaire pour nom du projet et détail comme indiqué sur figma
-            // Insertion du bouton valider
-            
-// Fin de la première zone cliquable / développable
-            // Planning pour date de fin estimée (voir avec Julien)
-           // Création liste des étapes et taches à faire ?? Rejoins l'écran selected screen ou insert écran tast and step??
-            // Matériel: C'est le matériel à acheter? Donc pas dans les taches? 
-                   } //fin de la Vstack
-                   .padding()
-               }
-           }
 
 #Preview {
     NewProjectScreen()
