@@ -25,7 +25,7 @@ struct ProjectSucces: View {
                     VStack (spacing: 8){
                         Image(systemName: imageName)
                             .font(.system(size: 40))
-                            .foregroundColor(Color("yellowCustom"))
+                            .foregroundColor(Color.black)
                         
                         Text(levelTitle)
                             .font(.system(size: 16))

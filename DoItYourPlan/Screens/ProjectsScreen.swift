@@ -11,7 +11,7 @@ struct ProjectsScreen: View {
     var body: some View {
         VStack{
             Text("Mes projets")
-                .padding(.horizontal, 150)
+                .padding(.horizontal, 152)
                 .padding(.vertical, 10)
                 .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
             
