@@ -34,7 +34,7 @@ struct SelectedProjectScreen: View {
                                         Circle()
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                             Circle()
-                                                .fill(step.stepColor.gradient)
+                                                .fill(step.stepColor)
                                         }
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                             Text("Etape \(step.orderNumber)")
@@ -75,7 +75,7 @@ struct SelectedProjectScreen: View {
                 })
                 .padding(15)
             }
-            .navigationTitle(myProject.projectName)
+            .navigationTitle("Projet couture")
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -89,6 +89,7 @@ struct SelectedProjectScreen: View {
                 }
             })
         }
+        
     }
 }
 
