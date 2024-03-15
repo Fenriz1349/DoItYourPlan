@@ -113,18 +113,20 @@ var projectsProgressList : [PlanningProjectProgress] = [
 // x : position de l'element sur l'abscise
 // y : position de l'element sur l'ordonné
 // rotation : angle de rotation de l'element
-class Inspiration : Identifiable {
+class Inspiration : Identifiable,ObservableObject {
     var id = UUID()
-    let name : String
-    var x : CGFloat
-    var y : CGFloat
-    var rotation : Double
+    @Published var name : String
+    @Published var x : CGFloat
+    @Published var y : CGFloat
+    @Published var rotation : Double
+    @Published var isShowed : Bool
     
-    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0) {
+    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0,isShowed : Bool = true) {
         self.name = name
         self.x = x
         self.y = y
         self.rotation = rotation
+        self.isShowed = isShowed
     }
 }
 
@@ -132,10 +134,10 @@ class Inspiration : Identifiable {
 // color : la couleur de fond du post It
 // content : le contenu du Post It
 class PostIt : Inspiration {
-    var color : CustomColor
-    var contents : [String]
+    @Published var color : CustomColor
+    @Published var contents : [String]
     
-    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0, color: CustomColor, contents: [String]) {
+    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0,isShowed : Bool = true,color: CustomColor, contents: [String]) {
             self.color = color
             self.contents = contents
             super.init(name: name, x: x, y: y, rotation: rotation)
@@ -146,10 +148,14 @@ class PostIt : Inspiration {
 // color : la couleur de fond du post It
 // content : le contenu du Post It
 class ImageInspiration : Inspiration {
-    var link : String
+    @Published var link : String
+    @Published var width : CGFloat
+    @Published var heigth : CGFloat
     
-    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0, link: String) {
+    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0,isShowed : Bool = true, link: String, width : CGFloat = 150, height : CGFloat = 150) {
             self.link = link
+            self.width = width
+            self.heigth = height
             super.init(name: name, x: x, y: y, rotation: rotation)
         }
 }

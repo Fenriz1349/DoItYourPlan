@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct InspirationView: View {
+    @State var showImage : Bool = false
     @State var postIts : [PostIt] = [
         PostIt(name: "Post It 1",x: 350,y: 100, rotation : -5,color: .yellowC, contents: ["test"])
+    ]
+    @State var imagesInspiration : [ImageInspiration] = [
+        ImageInspiration(name: "sample1",x:550,y: 150, link: "Sample1")
     ]
     var body: some View {
         VStack{
@@ -26,20 +30,23 @@ struct InspirationView: View {
                         .frame(width: 900, height: 400)
                         
                         .rotationEffect(Angle(degrees: 90))
-                    ForEach(postIts.indices, id: \.self) { index in
-                        ExtPostIt(postit: $postIts[index])
-                            .position(x: postIts[index].x, y: postIts[index].y)
-                            .rotationEffect(Angle(degrees: postIts[index].rotation))
+                    ForEach($postIts) { postit in
+                        ExtPostIt(postit: postit)
                     }
-                    
-                        
-                    
+                    ForEach(imagesInspiration.indices, id: \.self) { index in
+                        if imagesInspiration[index].isShowed {
+                            ExtImageInspiration(img: $imagesInspiration[index])
+                                .onTapGesture {
+                                    showImage.toggle()
+                                }
+                        }
+                    }
+                    if showImage {
+                        ExtZoomImage(img: $imagesInspiration[0], showImage: $showImage)
+                    }
                 }
             }
-            
-            
         }
-        
     }
 }
 

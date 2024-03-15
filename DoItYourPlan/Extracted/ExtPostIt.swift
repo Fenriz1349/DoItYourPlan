@@ -29,9 +29,8 @@ struct ExtPostIt: View {
             }
         }
         .frame(width: 150,height: 150)
-        .onTapGesture {
-            
-        }
+        .position(x: postit.x, y: postit.y)
+        .rotationEffect(Angle(degrees: postit.rotation))
         
     }
 }
