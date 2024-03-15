@@ -17,18 +17,16 @@ struct SelectedProjectScreen: View {
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
-                ForEach(pebbles, id: \.self) { pebble in
-                    Text(pebble)
-                }
                 LazyVGrid(columns: [GridItem()], content: {
                     ForEach(pebbles, id: \.self) { pebble in
                         
                         GeometryReader {
                             let size = $0.size
-                            NavigationLink(destination: TasksView()) {
+                            NavigationLink(destination: TasksView(pebble: pebble)) {
                                 HStack {
                                     if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                         Text(step.stepName)
+                                            .foregroundColor(.black)
                                     }
                                     ZStack {
                                         Circle()
@@ -68,8 +66,10 @@ struct SelectedProjectScreen: View {
                                     }
                                     
                                 }
-                                .position(x: size.width - 0.5 * size.width * Double.random(in: 0.4...1.0), y: size.height / 2)
-                            }}
+                                //stepPosition à intégrer ici
+                                .position(x: size.width - 0.5 * size.width * 1 , y: size.height / 2)
+                            }
+                        }
                         .frame(height: zoom ? 180 : 100)
                     }
                 })
