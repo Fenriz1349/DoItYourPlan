@@ -16,7 +16,6 @@ struct ExtZoomImage: View {
                 .resizable()
                 .frame(width: 350,height: 350)
                 .position(x: 175, y: 175)
-                .rotationEffect(Angle(degrees: img.rotation))
             VStack{
                 HStack{
                     Spacer()

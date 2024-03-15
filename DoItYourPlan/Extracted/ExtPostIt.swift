@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ExtPostIt: View {
+    var width : CGFloat = 150
     @Binding var postit : PostIt
     var body: some View {
         ZStack{
             Rectangle()
                 .fill(Color(postit.color.rawValue))
-                .frame(width: 150,height: 150)
+                .frame(width: width,height: width)
             VStack{
                 Text(postit.name)
                     .underline(true, color: .black)
@@ -28,8 +29,7 @@ struct ExtPostIt: View {
                 Spacer()
             }
         }
-        .frame(width: 150,height: 150)
-        .position(x: postit.x, y: postit.y)
+        .frame(width: width,height: width)
         .rotationEffect(Angle(degrees: postit.rotation))
         
     }
