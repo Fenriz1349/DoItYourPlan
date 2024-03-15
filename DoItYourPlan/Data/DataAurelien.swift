@@ -59,6 +59,16 @@ class Step: Identifiable, ObservableObject {
     func removeTask(at index: Int) {
         tasks.remove(at: index)
     }
+    
+    func toggleTaskStatus(taskID: UUID) {
+        if let index = tasks.firstIndex(where: { $0.id == taskID }) {
+            tasks[index].toggleStatus()
+            print("Task toggled: \(tasks[index])")
+                } else {
+                    print("Task with ID \(taskID) not found.")
+                
+        }
+    }
 }
 
 class Task: Identifiable, ObservableObject {
@@ -70,6 +80,10 @@ class Task: Identifiable, ObservableObject {
         self.id = id
         self.taskName = taskName
         self.isDone = isDone
+    }
+    
+    func toggleStatus() {
+        self.isDone.toggle()
     }
 }
 

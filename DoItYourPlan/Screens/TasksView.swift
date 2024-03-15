@@ -25,9 +25,17 @@ struct TasksView: View {
             .frame(height: 100)
             
             ScrollView(.vertical) {
-                ForEach (step.tasks) { task in
+                ForEach(step.tasks, id: \.id) { task in
                     HStack {
-                        Image(systemName: "poweroff")
+                        Button(action: {
+                            if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                step.toggleTaskStatus(taskID: task.id)
+                            }
+                        }, label: {
+                            Image(systemName: task.isDone ? "checkmark.circle" : "circle")
+                                .font(.system(size: 30))
+                                .foregroundColor(step.stepColor)
+                        })
                         Text(task.taskName)
                         Spacer()
                     }
@@ -36,7 +44,7 @@ struct TasksView: View {
             }
         }
     }
-    }
+}
 
 //#Preview {
 //    TasksView(pebble: )
