@@ -8,6 +8,12 @@
 import Foundation
 import SwiftUI
 
+var projectName = ""
+var selectedOption = NewProjectCategory.couture
+var projectDescription = ""
+var selectedDate: Date = Date()
+
+
 enum NewProjectCategory: String, CaseIterable{
     case couture = "Couture"
     case dessin = "Dessin"
@@ -19,10 +25,10 @@ enum NewProjectCategory: String, CaseIterable{
     case maison = "Maison"
     case bookCraft = "Book Craft"
     
-//    ajouter les couleurs de chaque catégorie comme sur le figma une foois les assets récupérés
-    func color() -> String{
+    //    ajout des couleurs
+    func Color() -> String{
         switch self {
-        case .couture: 
+        case .couture:
             return "purpleCustom"
         case .dessin:
             return "blueCustom"
@@ -41,7 +47,28 @@ enum NewProjectCategory: String, CaseIterable{
         case .bookCraft:
             return "orangeCustom"
         }
+        
+        
     }
     
 }
+
+struct Project {
+    // Propriétés de votre projet
+    var name: String
+    var category: NewProjectCategory
+    var description: String
+    var deadline: Date
+    
+}
+func saveProject() {
+    let newProject = Project(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
+    
+    NavigationLink(destination: ProjectsScreen()) {
+        EmptyView()
+    }
+}
+
+
+
 //formulaire pour nom du projet et description, en deux cases ici ou sur la view?
