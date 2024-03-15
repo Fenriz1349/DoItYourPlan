@@ -7,44 +7,61 @@
 import SwiftUI
 
 struct SelectedProjectScreen: View {
-    @State private var colors: [Color] = [.red, .blue, .purple, .yellow, .black, .indigo, .cyan, .brown, .mint, .orange]
-    @State private var draggingItem: Color?
+    
+    @State private var pebbles: [String] = myProject.steps.map { step in
+        return step.id.uuidString
+    }
+    @State private var draggingItem: String?
     @State private var zoom: Bool = false
     
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
+                ForEach(pebbles, id: \.self) { pebble in
+                    Text(pebble)
+                }
                 LazyVGrid(columns: [GridItem()], content: {
-                    ForEach(colors, id: \.self) { color in
+                    ForEach(pebbles, id: \.self) { pebble in
+                        
                         GeometryReader {
                             let size = $0.size
                             NavigationLink(destination: TasksView()) {
                                 HStack {
-                                    Text(myProject.steps[1].stepName)
+                                    if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                        Text(step.stepName)
+                                    }
                                     ZStack {
                                         Circle()
-                                            .fill(myProject.steps[1].isDone ? .gray : .blue)
-                                        Text("Etape\r\(myProject.steps[1].orderNumber)")
-                                            .foregroundColor(.white)
+                                        if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                            Circle()
+                                                .fill(step.stepColor)
+                                        }
+                                        if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                            Text("Etape \(step.orderNumber)")
+                                                .foregroundColor(.white)
+                                        }
                                     }
-                                    .draggable(color) {
+                                    .draggable(pebble) {
                                         Circle()
                                             .opacity(0.0)
                                             .onAppear {
-                                                draggingItem = color
+                                                draggingItem = pebble
                                             }
                                     }
-                                    .dropDestination(for: Color.self) { items, location in
+                                    .dropDestination(for: String.self) { items, location in
                                         draggingItem = nil
                                         return false
                                     } isTargeted: { status in
-                                        if let draggingItem, status, draggingItem != color {
-                                            /// Moving Color from source to destination
-                                            if let sourceIndex = colors.firstIndex(of: draggingItem),
-                                               let destinationIndex = colors.firstIndex(of: color) {
+                                        if let draggingItem = draggingItem, status {
+                                            if let sourceIndex = pebbles.firstIndex(of: draggingItem),
+                                               let destinationIndex = pebbles.firstIndex(of: pebble) {
                                                 withAnimation(.bouncy) {
-                                                    let sourceItem = colors.remove(at: sourceIndex)
-                                                    colors.insert(sourceItem, at: destinationIndex)
+                                                    let sourceItem = pebbles.remove(at: sourceIndex)
+                                                    pebbles.insert(sourceItem, at: destinationIndex)
+                                                    myProject.steps = pebbles.compactMap { pebbleID in
+                                                        myProject.steps.first { $0.id.uuidString == pebbleID }
+                                                    }
+                                                    myProject.updateOrder()
                                                 }
                                             }
                                         }
