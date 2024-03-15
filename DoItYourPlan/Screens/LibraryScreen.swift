@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct LibraryScreen: View {
+    @State private var segmentedSelection = 0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Bibliothèque")
+                .font(.system(size: 24))
+                .frame(alignment: .top)
+                .bold()
+                .padding(.bottom,5)
+            Picker("", selection: $segmentedSelection) {
+                Text("Inspirations").tag(0)
+                Text("Tutos").tag(1)
+            }
+            .pickerStyle(.segmented)
+            if segmentedSelection == 0 {
+                InspirationView()
+            }else {
+                TutoView()
+            }
+            Spacer()
+        }
     }
 }
 

@@ -7,7 +7,17 @@
 
 import Foundation
 import SwiftUI
-
+//enum des differents couleurs
+enum CustomColor : String{
+    case purpleC = "purpleCustom"
+    case pinkC = "pinkCustom"
+    case blueC = "blueCustom"
+    case blackC = "blackCustom"
+    case fontBlackC = "fontBlackCustom"
+    case greenC = "greenCustom"
+    case orangeC = "orangeCustom"
+    case yellowC = "yellowCustom"
+}
 //ennum de la liste des category de DIY, renvoie une string de la category
 // le methode .color renvoie la couleur assosié
 enum DiyCategory : String,CaseIterable{
@@ -90,10 +100,57 @@ struct PlanningProjectProgress :Identifiable{
     let rotation : Bool
     
 }
-
+//liste de 3 projets pour afficher les projets en cours
 var projectsProgressList : [PlanningProjectProgress] = [
     PlanningProjectProgress(name: "Projet 1", category :.couture,dateEnd: createDate(22, 3, 2024), dateStepsEnd: nil, progressPercent: 25,rotation: true),
     PlanningProjectProgress(name: "Projet 2", category :.tricot,dateEnd: createDate(18, 6, 2024), dateStepsEnd: nil, progressPercent: 66,rotation: false),
     PlanningProjectProgress(name: "Projet 3", category :.peinture,dateEnd: nil, dateStepsEnd: nil, progressPercent: 75,rotation: true)
 ]
+
+//class pour gérer un element sur l'inspirationBoard
+// id : identifiant unique
+// name : nom de l'inspiration
+// x : position de l'element sur l'abscise
+// y : position de l'element sur l'ordonné
+// rotation : angle de rotation de l'element
+class Inspiration : Identifiable {
+    var id = UUID()
+    let name : String
+    var x : CGFloat
+    var y : CGFloat
+    var rotation : Double
+    
+    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0) {
+        self.name = name
+        self.x = x
+        self.y = y
+        self.rotation = rotation
+    }
+}
+
+//clsse herité de Inspiration pour les Post It
+// color : la couleur de fond du post It
+// content : le contenu du Post It
+class PostIt : Inspiration {
+    var color : CustomColor
+    var contents : [String]
+    
+    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0, color: CustomColor, contents: [String]) {
+            self.color = color
+            self.contents = contents
+            super.init(name: name, x: x, y: y, rotation: rotation)
+        }
+}
+
+//clsse herité de Inspiration pour les Post It
+// color : la couleur de fond du post It
+// content : le contenu du Post It
+class ImageInspiration : Inspiration {
+    var link : String
+    
+    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0, link: String) {
+            self.link = link
+            super.init(name: name, x: x, y: y, rotation: rotation)
+        }
+}
 

@@ -20,7 +20,7 @@ struct ExtPiePercentCompleted: View {
             .cornerRadius(25)
             .foregroundStyle(.green)
             SectorMark(
-                angle : .value("Completion",100-percent),
+                angle : .value("UnCompletion",100-percent),
                 innerRadius: .ratio(0.95)
             )
             .cornerRadius(25)
