@@ -6,11 +6,12 @@
 
 import SwiftUI
 
+let addButtonStep = UUID().uuidString
+
 struct SelectedProjectScreen: View {
-    
     @State private var pebbles: [String] = myProject.steps.map { step in
         return step.id.uuidString
-    }
+    } + [addButtonStep]
     @State private var draggingItem: String?
     @State private var zoom: Bool = false
     
@@ -22,58 +23,86 @@ struct SelectedProjectScreen: View {
                         
                         GeometryReader {
                             let size = $0.size
-                            NavigationLink(destination: TasksView(pebble: pebble)) {
-                                HStack {
-                                    if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
-                                        Text(step.stepName)
-                                            .foregroundColor(.black)
-                                    }
-                                    ZStack {
-                                        Circle()
+                            //ajout bouton +
+                            if pebble == addButtonStep {
+                                Button(action: {
+                                    myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition())
+                                    // Mise à jour du tableau pebbles si nécessaire
+                                    pebbles = myProject.steps.map { step in
+                                        return step.id.uuidString
+                                    } + [addButtonStep]
+                                }) {
+                                    HStack(alignment: .center) {
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                            Text(step.stepName)
+                                                .foregroundColor(.black)
+                                        }
+                                        ZStack {
                                             Circle()
-                                                .fill(step.stepColor.gradient)
-                                        }
-                                        if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
-                                            Text("Etape \(step.orderNumber)")
-                                                .foregroundColor(.white)
-                                        }
-                                    }
-                                    .draggable(pebble) {
-                                        Circle()
-                                            .opacity(0.0)
-                                            .onAppear {
-                                                draggingItem = pebble
+                                            if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                                Circle()
+                                                    .fill(step.stepColor.gradient)
                                             }
+                                            Text("Ajouter\rune étape")
+                                                .foregroundColor(.white)
+                                            
+                                        }
                                     }
-                                    .dropDestination(for: String.self) { items, location in
-                                        draggingItem = nil
-                                        return false
-                                    } isTargeted: { status in
-                                        if let draggingItem = draggingItem, status {
-                                            if let sourceIndex = pebbles.firstIndex(of: draggingItem),
-                                               let destinationIndex = pebbles.firstIndex(of: pebble) {
-                                                withAnimation(.bouncy) {
-                                                    let sourceItem = pebbles.remove(at: sourceIndex)
-                                                    pebbles.insert(sourceItem, at: destinationIndex)
-                                                    myProject.steps = pebbles.compactMap { pebbleID in
-                                                        myProject.steps.first { $0.id.uuidString == pebbleID }
-                                                    }
-                                                    myProject.updateOrder()
+                                    .frame(maxWidth: .infinity)                                }
+                            } else {
+                                //fin ajout bouton
+                                NavigationLink(destination: TasksView(pebble: pebble)) {
+                                    HStack(alignment: .center) {
+                                        if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                            Text(step.stepName)
+                                                .foregroundColor(.black)
+                                        }
+                                        ZStack {
+                                            Circle()
+                                            if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                                Circle()
+                                                    .fill(step.stepColor.gradient)
+                                            }
+                                            if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                                Text("Etape \(step.orderNumber)")
+                                                    .foregroundColor(.white)
+                                            }
+                                        }
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                }
+                                //stepPosition à intégrer ici
+                                .position(x: size.width - 0.5 * size.width * 1 , y: size.height / 2)
+                                .draggable(pebble) {
+                                    Circle()
+                                        .opacity(0.0)
+                                        .onAppear {
+                                            draggingItem = pebble
+                                        }
+                                }
+                                .dropDestination(for: String.self) { items, location in
+                                    draggingItem = nil
+                                    return false
+                                } isTargeted: { status in
+                                    if let draggingItem = draggingItem, status {
+                                        if let sourceIndex = pebbles.firstIndex(of: draggingItem),
+                                           let destinationIndex = pebbles.firstIndex(of: pebble) {
+                                            withAnimation(.bouncy) {
+                                                let sourceItem = pebbles.remove(at: sourceIndex)
+                                                pebbles.insert(sourceItem, at: destinationIndex)
+                                                myProject.steps = pebbles.compactMap { pebbleID in
+                                                    myProject.steps.first { $0.id.uuidString == pebbleID }
                                                 }
+                                                myProject.updateOrder()
                                             }
                                         }
                                     }
                                     
                                 }
-                                //stepPosition à intégrer ici
-                                .position(x: size.width - 0.5 * size.width * 1 , y: size.height / 2)
-                            }
-                        }
+                            } }
                         .frame(height: zoom ? 180 : 100)
                     }
                 })
-                .padding(15)
             }
             .navigationTitle(myProject.projectName)
             .toolbar(content: {
@@ -88,6 +117,7 @@ struct SelectedProjectScreen: View {
                     }
                 }
             })
+            
         }
         
     }
