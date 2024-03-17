@@ -14,6 +14,7 @@
 		631C80DA2BA484DE003D7CF0 /* ExtImageInspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80D92BA484DE003D7CF0 /* ExtImageInspiration.swift */; };
 		631C80DC2BA4E623003D7CF0 /* ExtZoomPostIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */; };
 		631C80E22BA6F26A003D7CF0 /* EditablePostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */; };
+		631C80E42BA7938C003D7CF0 /* AddPostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */; };
 		635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */; };
 		635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AC2BA1F47700747969 /* DayDetailsModal.swift */; };
 		635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */; };
@@ -51,6 +52,7 @@
 		631C80D92BA484DE003D7CF0 /* ExtImageInspiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtImageInspiration.swift; sourceTree = "<group>"; };
 		631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtZoomPostIt.swift; sourceTree = "<group>"; };
 		631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePostItContent.swift; sourceTree = "<group>"; };
+		631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostItContent.swift; sourceTree = "<group>"; };
 		635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPlanningProjectProgress.swift; sourceTree = "<group>"; };
 		635C54AC2BA1F47700747969 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
 		635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				631C80D72BA4842A003D7CF0 /* ExtZoomImage.swift */,
 				631C80D92BA484DE003D7CF0 /* ExtImageInspiration.swift */,
 				631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */,
+				631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */,
 			);
 			path = Extracted;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
+				631C80E42BA7938C003D7CF0 /* AddPostItContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

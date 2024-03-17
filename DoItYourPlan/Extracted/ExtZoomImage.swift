@@ -12,10 +12,17 @@ struct ExtZoomImage: View {
     @Binding var showImage : Bool
     var body: some View {
         ZStack{
+            RoundedRectangle(cornerRadius: 20)
+                .fill(LinearGradient(
+                    gradient: Gradient(colors: [Color("blackCustom").opacity(0.8), Color.gray.opacity(0.5)]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    ))
+                .frame(width: 375,height: 450)
             Image(img.link)
                 .resizable()
                 .frame(width: 350,height: 350)
-//                .position(x: 175, y: 175)
+
             VStack{
                 HStack{
                     Spacer()
@@ -27,6 +34,7 @@ struct ExtZoomImage: View {
                         Text("Supprimer")
                             .bold()
                     }
+                    .padding(.trailing,20)
                 }
                 .font(.system(size: 24))
                 .foregroundStyle(.red)

@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct EditablePostItContent: View {
-    let index: Int
     @Binding var postitContent: String
     @Binding var indexEdition : Int?
     @State private var newContent: String = ""
     
-    init(index: Int, postitContent: Binding<String>, indexEdition: Binding<Int?>) {
-            self.index = index
+    init(postitContent: Binding<String>, indexEdition: Binding<Int?>) {
             self._postitContent = postitContent
             self._indexEdition = indexEdition
             self._newContent = State(initialValue: postitContent.wrappedValue)
