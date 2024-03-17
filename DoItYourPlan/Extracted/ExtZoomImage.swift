@@ -15,7 +15,7 @@ struct ExtZoomImage: View {
             Image(img.link)
                 .resizable()
                 .frame(width: 350,height: 350)
-                .position(x: 175, y: 175)
+//                .position(x: 175, y: 175)
             VStack{
                 HStack{
                     Spacer()
@@ -23,7 +23,7 @@ struct ExtZoomImage: View {
                         img.isShowed.toggle()
                         showImage.toggle()
                     } label: {
-                        Image(systemName: "multiply.circle.fill")
+                        Image(systemName: "clear.fill")
                         Text("Supprimer")
                             .bold()
                     }
@@ -45,5 +45,5 @@ struct ExtZoomImage: View {
 }
 
 #Preview {
-    ExtZoomImage(img: .constant(ImageInspiration(name: "sample1",x:550,y: 150, link: "Sample1")),showImage: .constant(true))
+    ExtZoomImage(img: .constant(ImageInspiration(name: "sample1",x:175,y: 175, link: "Sample1")),showImage: .constant(true))
 }

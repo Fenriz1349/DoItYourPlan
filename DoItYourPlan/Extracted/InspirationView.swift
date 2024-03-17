@@ -11,7 +11,7 @@ struct InspirationView: View {
     @State var showImage : Bool = false
     @State var showPostIt : Bool = false
     @State var postIts : [PostIt] = [
-        PostIt(name: "Post It 1",x: 350,y: 100, rotation : -5,color: .yellowC, contents: ["test"])
+        PostIt(name: "Post It 1",x: 350,y: 100, rotation : -5,color: .yellowC, contents: ["test","test2"])
     ]
     @State var imagesInspiration : [ImageInspiration] = [
         ImageInspiration(name: "sample1",x:550,y: 150, link: "Sample1")
@@ -29,7 +29,6 @@ struct InspirationView: View {
                     Image("liegeBackground")
                         .resizable()
                         .frame(width: 900, height: 400)
-                        
                         .rotationEffect(Angle(degrees: 90))
                     ForEach(postIts.indices, id: \.self) { index in
                         if postIts[index].isShowed {
@@ -39,7 +38,6 @@ struct InspirationView: View {
                                     showPostIt.toggle()
                                 }
                         }
-                        
                     }
                     ForEach(imagesInspiration.indices, id: \.self) { index in
                         if imagesInspiration[index].isShowed {
@@ -51,9 +49,11 @@ struct InspirationView: View {
                     }
                     if showImage {
                         ExtZoomImage(img: $imagesInspiration[0], showImage: $showImage)
+                            .position(x: 450, y: 300)
                     }
                     if showPostIt {
-                        ExtZoomPostIt(postit: $postIts[0], showPostIt: $showPostIt)
+                        ExtZoomPostIt(postit: postIts[0], showPostIt: $showPostIt)
+                            .position(x: 450, y: 300)
                     }
                 }
             }
