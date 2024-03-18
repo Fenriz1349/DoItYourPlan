@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ExtZoomPostIt: View {
-    @StateObject var postit: PostIt
+struct ExtAddPostIt: View {
+    @StateObject var postit: PostIt = PostIt(name: "Titre",x: 175,y: 175 ,color: .blueC, contents: [])
     var width: CGFloat = 300
     @Binding var showPostIt: Bool
-    @State private var editionContent : Bool = false
     @State private var showAddContent : Bool = false
     @State private var indexEdition : Int? = nil
     @State private var indexName  : Int? = nil
-
+    @State private var selectedColor: CustomColorPostIT = .purpleC
+    
     var body: some View {
         ZStack {
 //            arrière plan du zoom sur le post it
@@ -33,14 +33,12 @@ struct ExtZoomPostIt: View {
             VStack {
 //                titre du post it
                 HStack{
-                    if editionContent {
                         Button {
                             indexName = 0
                         } label: {
                             Image(systemName: "pencil.circle")
                                 .foregroundStyle(.yellow)
                         }
-                    }
                     if indexName != nil  {
                         EditablePostItContent( postitContent: $postit.name, indexEdition: $indexName)
                     }else {
@@ -53,8 +51,6 @@ struct ExtZoomPostIt: View {
 //                peuplement de toutes les lignes du postIt
                 ForEach(postit.contents.indices, id: \.self) { index in
                     HStack {
-//                        si on est en mode edition affiche le bouton pour modifier la ligne
-                        if editionContent {
                             Button {
                                 indexEdition = index
                             } label: {
@@ -78,12 +74,6 @@ struct ExtZoomPostIt: View {
                                 }
                                 .offset(CGSize(width: 30.0, height: 0.0))
                             }
-                        } else {
-//                            affichage de la ligne si on est pas en mode edition
-                            Text("-\(postit.contents[index])")
-                                .offset(CGSize(width: 30.0, height: 0.0))
-                            Spacer()
-                        }
                     }
                 }
 //                si on a clicé sur le bouton d'ajouter affichage de l'Ext pour ajouter une ligne
@@ -106,35 +96,42 @@ struct ExtZoomPostIt: View {
                             .font(.system(size: 24))
             VStack {
                 HStack {
-//                    bouton pour activer le mode edition du post it
-                    Button {
-                        editionContent.toggle()
-                    } label: {
-                        Image(systemName: "pencil.circle")
-                        Text("Modifier")
-                            .font(.system(size: 24))
+                    Picker("Couleur", selection: $selectedColor) {
+                        ForEach(CustomColorPostIT.allCases, id: \.self) { color in
+                            Text(color.color())
+                                .foregroundColor(Color(CustomColor.blackC.rawValue))
+                        }
                     }
-                    .foregroundStyle(.yellow)
+                    .pickerStyle(.menu)
+                        .padding()
+                        .onChange(of: selectedColor) {
+                            postit.color = selectedColor
+                        }
                     Spacer()
-//                    bouton pour supprimer le postIt
+//                    bouton pour annuler la création
                     Button {
-                        postit.isShowed.toggle()
                         showPostIt.toggle()
                     } label: {
                         Spacer()
-                        Image(systemName: "trash.fill")
-                        Text("Supprimer")
+                        Image(systemName: "clear.fill")
+                        Text("Annuler")
                             .font(.system(size: 24))
                     }
                     .foregroundColor(.red)
                     .padding(.trailing,10)
                 }
+                .offset(CGSize(width: 0.0, height: -40.0))
                 Spacer()
                 Button {
+                    
                     showPostIt.toggle()
                 } label: {
-                    Text("retour")
-                        .font(.system(size: 24))
+                    HStack{
+                        Image(systemName: "plus.app.fill")
+                        Text("Valider")
+                    }
+                    .font(.system(size: 24))
+                    
                 }
             }
             .frame(width: 350, height: 375)
@@ -143,5 +140,5 @@ struct ExtZoomPostIt: View {
 }
 
 #Preview {
-    ExtZoomPostIt(postit: (PostIt(name: "Post it 1", color: CustomColorPostIT.blueC, contents: ["ligne 1","ligne 2"])),showPostIt: .constant(true))
+    ExtAddPostIt(showPostIt: .constant(true))
 }
