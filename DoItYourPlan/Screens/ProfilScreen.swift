@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ProfilScreen: View {
-    
+    @Binding var userPoints: Int
     
     var body: some View {
+        
         NavigationView {
             
             VStack {
@@ -28,7 +29,7 @@ struct ProfilScreen: View {
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                     Spacer()
-                    NavigationLink(destination: ShopScreen()) {
+                    NavigationLink(destination: ShopScreen(userPoints: $userPoints)) {
                         HStack {
                             Text("Shop")
                             Image(systemName: "chevron.right")
@@ -71,7 +72,7 @@ struct ProfilScreen: View {
                                     .font(.system(size: 24))
                                     .foregroundColor(Color.black)
                                 
-                                Text("100")
+                                Text("\(userPoints)")
                                     .font(.system(size: 24))
                                     .fontWeight(.bold)
                                 Text("Points gagnés")
@@ -146,5 +147,5 @@ struct ProfilScreen: View {
             }}}}
 
 #Preview {
-    ProfilScreen()
+    ShopScreen(userPoints: .constant(250))
 }
