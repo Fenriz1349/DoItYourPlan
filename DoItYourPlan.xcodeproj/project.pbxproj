@@ -15,6 +15,8 @@
 		631C80DC2BA4E623003D7CF0 /* ExtZoomPostIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */; };
 		631C80E22BA6F26A003D7CF0 /* EditablePostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */; };
 		631C80E42BA7938C003D7CF0 /* AddPostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */; };
+		631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B12BA3106D003D7CF0 /* ProjectButton.swift */; };
+		631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */; };
 		635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */; };
 		635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AC2BA1F47700747969 /* DayDetailsModal.swift */; };
 		635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */; };
@@ -40,8 +42,14 @@
 		639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D12B9F0AB100A67779 /* LibraryScreen.swift */; };
 		639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D32B9F0ABC00A67779 /* PlanningScreen.swift */; };
 		639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D52B9F0AD600A67779 /* MaterialScreen.swift */; };
-		639248232BA092DE00A67779 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639248222BA092DE00A67779 /* CalendarView.swift */; };
-		639248252BA0965600A67779 /* FormattedDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639248242BA0965600A67779 /* FormattedDateView.swift */; };
+		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
+		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
+		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
+		CFA4E4912BA44E2700376435 /* ClothesGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4902BA44E2700376435 /* ClothesGridShop.swift */; };
+		CFA4E4932BA44E3800376435 /* AccessoryGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4922BA44E3800376435 /* AccessoryGridShop.swift */; };
+		CFA4E4952BA44E5000376435 /* BackgroundGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */; };
+		CFA4E4972BA452F800376435 /* FaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4962BA452F800376435 /* FaceGridShop.swift */; };
+		CFAB9BC92BA3345400CFCF90 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639248222BA092DE00A67779 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +61,8 @@
 		631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtZoomPostIt.swift; sourceTree = "<group>"; };
 		631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePostItContent.swift; sourceTree = "<group>"; };
 		631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostItContent.swift; sourceTree = "<group>"; };
+		631C80B12BA3106D003D7CF0 /* ProjectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButton.swift; sourceTree = "<group>"; };
+		631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSuccess.swift; sourceTree = "<group>"; };
 		635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPlanningProjectProgress.swift; sourceTree = "<group>"; };
 		635C54AC2BA1F47700747969 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
 		635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
@@ -80,7 +90,13 @@
 		639247D32B9F0ABC00A67779 /* PlanningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningScreen.swift; sourceTree = "<group>"; };
 		639247D52B9F0AD600A67779 /* MaterialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialScreen.swift; sourceTree = "<group>"; };
 		639248222BA092DE00A67779 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		639248242BA0965600A67779 /* FormattedDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDateView.swift; sourceTree = "<group>"; };
+		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
+		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
+		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
+		CFA4E4902BA44E2700376435 /* ClothesGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesGridShop.swift; sourceTree = "<group>"; };
+		CFA4E4922BA44E3800376435 /* AccessoryGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryGridShop.swift; sourceTree = "<group>"; };
+		CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGridShop.swift; sourceTree = "<group>"; };
+		CFA4E4962BA452F800376435 /* FaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceGridShop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				639247AD2B9F091C00A67779 /* ReadMe.swift */,
-				639247AF2B9F093D00A67779 /* Extracted */,
+				CFAB9BCA2BA334D800CFCF90 /* Extracted */,
 				639247B12B9F095500A67779 /* Data */,
 				639247BE2B9F09A300A67779 /* Screens */,
 				6392479F2B9F090500A67779 /* DoItYourPlanApp.swift */,
@@ -182,6 +198,26 @@
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		CFAB9BCA2BA334D800CFCF90 /* Extracted */ = {
+			isa = PBXGroup;
+			children = (
+				639248222BA092DE00A67779 /* CalendarView.swift */,
+				635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */,
+				635C54AC2BA1F47700747969 /* DayDetailsModal.swift */,
+				635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */,
+				631C80B12BA3106D003D7CF0 /* ProjectButton.swift */,
+				631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */,
+				CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */,
+				CFA4E48C2BA44DD300376435 /* HatGridShop.swift */,
+				CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */,
+				CFA4E4902BA44E2700376435 /* ClothesGridShop.swift */,
+				CFA4E4922BA44E3800376435 /* AccessoryGridShop.swift */,
+				CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */,
+				CFA4E4962BA452F800376435 /* FaceGridShop.swift */,
+			);
+			path = Extracted;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,18 +295,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */,
+				CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */,
 				639247D02B9F0A9300A67779 /* FinishedProjectScreen.swift in Sources */,
 				639247CC2B9F0A5900A67779 /* ProjectsScreen.swift in Sources */,
 				639247C22B9F09D700A67779 /* LoadingScreen.swift in Sources */,
+				CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */,
 				639247CE2B9F0A6500A67779 /* NewProjectScreen.swift in Sources */,
-				639248252BA0965600A67779 /* FormattedDateView.swift in Sources */,
 				639247C42B9F0A2C00A67779 /* ProfilScreen.swift in Sources */,
+				CFAB9BC92BA3345400CFCF90 /* CalendarView.swift in Sources */,
 				635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */,
 				631C80D82BA4842A003D7CF0 /* ExtZoomImage.swift in Sources */,
 				639247AE2B9F091C00A67779 /* ReadMe.swift in Sources */,
 				639247A22B9F090500A67779 /* ContentView.swift in Sources */,
 				639247B72B9F097900A67779 /* DataAmina.swift in Sources */,
 				631C80DC2BA4E623003D7CF0 /* ExtZoomPostIt.swift in Sources */,
+				CFA4E4972BA452F800376435 /* FaceGridShop.swift in Sources */,
+				631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */,
+				CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */,
 				639247BD2B9F099500A67779 /* DataMarion.swift in Sources */,
 				631C80E22BA6F26A003D7CF0 /* EditablePostItContent.swift in Sources */,
 				631C80B62BA3508A003D7CF0 /* TutoView.swift in Sources */,
@@ -279,6 +320,7 @@
 				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
 				631C80DA2BA484DE003D7CF0 /* ExtImageInspiration.swift in Sources */,
+				CFA4E4912BA44E2700376435 /* ClothesGridShop.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
 				639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */,
@@ -288,9 +330,12 @@
 				639248232BA092DE00A67779 /* CalendarView.swift in Sources */,
 				631C80B82BA3518A003D7CF0 /* InspirationView.swift in Sources */,
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,
+				CFA4E4952BA44E5000376435 /* BackgroundGridShop.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
 				631C80E42BA7938C003D7CF0 /* AddPostItContent.swift in Sources */,
+				CFA4E4932BA44E3800376435 /* AccessoryGridShop.swift in Sources */,
+				631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

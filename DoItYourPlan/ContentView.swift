@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var userPoints = 250
     var body: some View {
         TabView {
             ProjectsScreen()
@@ -25,7 +26,7 @@ struct ContentView: View {
                     Image(systemName: "calendar")
                     Text("Calendrier")
                 }
-            ProfilScreen()
+            ProfilScreen(userPoints: $userPoints)
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profil")
