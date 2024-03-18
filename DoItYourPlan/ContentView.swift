@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var userPoints = 250
     var body: some View {
         TabView {
-            SelectedProjectScreen()
+            ProjectsScreen()
                 .tabItem {
                     Image(systemName: "square.on.square")
                     Text("Projets")
@@ -31,7 +31,6 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("Profil")
                 }
-            
         }
     }
 }

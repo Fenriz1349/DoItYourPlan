@@ -78,10 +78,10 @@ struct ProjectsScreen: View {
                 }
                
             }
+            Image(systemName: "plus.circle")
+                .font(.system(size: 24))
+                .padding(.top, 10)
         }
-        Image(systemName: "plus.circle")
-            .font(.system(size: 24))
-            .padding(.top, 10)
     }
 }
 
