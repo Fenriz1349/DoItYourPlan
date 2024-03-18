@@ -30,6 +30,7 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("Profil")
                 }
+            
         }
     }
 }
