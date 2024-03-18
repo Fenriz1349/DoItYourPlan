@@ -31,6 +31,13 @@ class Project: Identifiable, ObservableObject {
             steps[index].orderNumber = index + 1
         }
     }
+    
+    func addTask(toStep stepID: UUID, taskName: String, isDone: Bool = false) {
+        if let index = steps.firstIndex(where: { $0.id == stepID }) {
+            let newTask = Task(taskName: taskName, orderNumber: steps[index].tasks.count + 1, isDone: isDone)
+            steps[index].tasks.append(newTask)
+        }
+    }
 }
 
 class Step: Identifiable, ObservableObject {
@@ -52,10 +59,6 @@ class Step: Identifiable, ObservableObject {
         self.tasks = tasks
     }
     
-    func addTask(taskName: String, isDone: Bool = false) {
-        tasks.append(Task(taskName: taskName, orderNumber: orderNumber, isDone: isDone))
-    }
-    
     func removeTask(at index: Int) {
         tasks.remove(at: index)
     }
@@ -63,19 +66,14 @@ class Step: Identifiable, ObservableObject {
     func toggleTaskStatus(taskID: UUID) {
         if let index = tasks.firstIndex(where: { $0.id == taskID }) {
             tasks[index].toggleStatus()
-            print("Task toggled: \(tasks[index])")
-                } else {
-                    print("Task with ID \(taskID) not found.")
-                
         }
     }
     
     func updateTaskOrder() {
-            for (index, _) in tasks.enumerated() {
-                tasks[index].orderNumber = index + 1
-            }
+        for (index, _) in tasks.enumerated() {
+            tasks[index].orderNumber = index + 1
         }
-    
+    }
 }
 
 class Task: Identifiable, ObservableObject {
@@ -108,23 +106,23 @@ func randomStepPosition() -> Double {
 }
 
 var myProject = Project(projectName: "Projet Couture", steps: [
-    Step(stepName: "Préparation des matériaux", orderNumber: 1, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
-        Task(taskName: "Choisir le tissu pour la trousse", orderNumber: 1, isDone: false),
-        Task(taskName: "Laver et repasser le tissu", orderNumber: 2, isDone: false),
-        Task(taskName: "Préparer les fournitures nécessaires", orderNumber: 3, isDone: false)
+    Step(stepName: "Préparation des matériaux", orderNumber: 1, isDone: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+        Task(taskName: "Choisir le tissu pour la trousse", orderNumber: 1, isDone: true),
+        Task(taskName: "Laver et repasser le tissu", orderNumber: 2, isDone: true),
+        Task(taskName: "Préparer les fournitures nécessaires", orderNumber: 3, isDone: true)
     ]),
-    Step(stepName: "Découpe des pièces", orderNumber: 2, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
-        Task(taskName: "Prendre les mesures nécessaires pour découper les pièces de tissu", orderNumber: 1, isDone: false),
-        Task(taskName: "Découper le tissu selon les dimensions requises pour la trousse", orderNumber: 2, isDone: false),
-        Task(taskName: "Découper la fermeture éclair à la bonne taille si nécessaire", orderNumber: 3, isDone: false)
+    Step(stepName: "Découpe des pièces", orderNumber: 2, isDone: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+        Task(taskName: "Prendre les mesures nécessaires pour découper les pièces de tissu", orderNumber: 1, isDone: true),
+        Task(taskName: "Découper le tissu selon les dimensions requises pour la trousse", orderNumber: 2, isDone: true),
+        Task(taskName: "Découper la fermeture éclair à la bonne taille si nécessaire", orderNumber: 3, isDone: true)
     ]),
-    Step(stepName: "Assemblage du corps de la trousse", orderNumber: 3, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
-        Task(taskName: "Épingler les côtés du tissu ensemble, endroit contre endroit", orderNumber: 1, isDone: false),
-        Task(taskName: "Coudre les côtés et le fond de la trousse", orderNumber: 2, isDone: false),
-        Task(taskName: "Faire des entailles aux coins pour faciliter le retournement", orderNumber: 3, isDone: false)
+    Step(stepName: "Assemblage du corps de la trousse", orderNumber: 3, isDone: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+        Task(taskName: "Épingler les côtés du tissu ensemble, endroit contre endroit", orderNumber: 1, isDone: true),
+        Task(taskName: "Coudre les côtés et le fond de la trousse", orderNumber: 2, isDone: true),
+        Task(taskName: "Faire des entailles aux coins pour faciliter le retournement", orderNumber: 3, isDone: true)
     ]),
     Step(stepName: "Fixation de la fermeture éclair", orderNumber: 4, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
-        Task(taskName: "Positionner la fermeture éclair sur le bord de l'ouverture de la trousse", orderNumber: 1, isDone: false),
+        Task(taskName: "Positionner la fermeture éclair sur le bord de l'ouverture de la trousse", orderNumber: 1, isDone: true),
         Task(taskName: "Épingler la fermeture éclair en place", orderNumber: 2, isDone: false),
         Task(taskName: "Coudre la fermeture éclair sur les bords de la trousse", orderNumber: 3, isDone: false)
     ]),

@@ -23,11 +23,10 @@ struct SelectedProjectScreen: View {
                         
                         GeometryReader {
                             let size = $0.size
-                            //ajout bouton +
+                            // Pebble/bouton nouvelle étape
                             if pebble == addButtonStep {
                                 Button(action: {
                                     myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition())
-                                    // Mise à jour du tableau pebbles si nécessaire
                                     pebbles = myProject.steps.map { step in
                                         return step.id.uuidString
                                     } + [addButtonStep]
@@ -50,7 +49,7 @@ struct SelectedProjectScreen: View {
                                     }
                                     .frame(maxWidth: .infinity)                                }
                             } else {
-                                //fin ajout bouton
+                                // Pebble de chaque step
                                 NavigationLink(destination: TasksView(pebble: pebble)) {
                                     HStack(alignment: .center) {
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
@@ -58,10 +57,14 @@ struct SelectedProjectScreen: View {
                                                 .foregroundColor(.black)
                                         }
                                         ZStack {
-                                            Circle()
                                             if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
-                                                Circle()
-                                                    .fill(step.stepColor.gradient)
+                                                if step.isDone {
+                                                    Circle()
+                                                        .fill(.gray.gradient)
+                                                } else {
+                                                    Circle()
+                                                        .fill(step.stepColor.gradient)
+                                                }
                                             }
                                             if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                                 Text("Etape \(step.orderNumber)")
@@ -71,8 +74,7 @@ struct SelectedProjectScreen: View {
                                     }
                                     .frame(maxWidth: .infinity)
                                 }
-                                //stepPosition à intégrer ici
-                                .position(x: size.width - 0.5 * size.width * 1 , y: size.height / 2)
+                                .position(x: size.width - 0.5 * size.width, y: size.height / 2)
                                 .draggable(pebble) {
                                     Circle()
                                         .opacity(0.0)

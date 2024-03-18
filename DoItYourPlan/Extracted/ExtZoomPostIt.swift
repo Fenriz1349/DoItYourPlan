@@ -143,5 +143,5 @@ struct ExtZoomPostIt: View {
 }
 
 #Preview {
-    ExtZoomPostIt(postit: (PostIt(name: "Post it 1", color: CustomColor.blueC, contents: ["ligne 1","ligne 2"])),showPostIt: .constant(true))
+    ExtZoomPostIt(postit: (PostIt(name: "Post it 1", color: CustomColorPostIT.blueC, contents: ["ligne 1","ligne 2"])),showPostIt: .constant(true))
 }
