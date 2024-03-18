@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ExtAddPostIt: View {
+struct ExtNewPostIt: View {
+    var postitlist : PostItList
     @StateObject var postit: PostIt = PostIt(name: "Titre",x: 175,y: 175 ,color: .blueC, contents: [])
     var width: CGFloat = 300
     @Binding var showPostIt: Bool
@@ -104,6 +105,7 @@ struct ExtAddPostIt: View {
                     }
                     .pickerStyle(.menu)
                         .padding()
+                        .scaleEffect(1.5)
                         .onChange(of: selectedColor) {
                             postit.color = selectedColor
                         }
@@ -123,7 +125,7 @@ struct ExtAddPostIt: View {
                 .offset(CGSize(width: 0.0, height: -40.0))
                 Spacer()
                 Button {
-                    
+                    postitlist.addPostIt(postit)
                     showPostIt.toggle()
                 } label: {
                     HStack{
@@ -140,5 +142,5 @@ struct ExtAddPostIt: View {
 }
 
 #Preview {
-    ExtAddPostIt(showPostIt: .constant(true))
+    ExtNewPostIt(postitlist: PostItList(), showPostIt: .constant(true))
 }

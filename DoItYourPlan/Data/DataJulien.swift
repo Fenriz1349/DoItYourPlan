@@ -164,6 +164,16 @@ class PostIt : Inspiration {
         }
 }
 
+class PostItList: ObservableObject {
+    @Published var postIts: [PostIt] = [
+        PostIt(name: "Post It 1", x: 350, y: 100, rotation: -5, color: .yellowC, contents: ["test", "test2"]),
+        PostIt(name: "Post It 2", x: 350, y: 300, rotation: 10, color: .blueC, contents: ["test", "test2"])
+    ]
+    
+    func addPostIt(_ postIt: PostIt) {
+        postIts.append(postIt)
+    }
+}
 //clsse herité de Inspiration pour les Post It
 // color : la couleur de fond du post It
 // content : le contenu du Post It
