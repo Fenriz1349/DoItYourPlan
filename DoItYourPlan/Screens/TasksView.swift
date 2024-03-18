@@ -14,6 +14,11 @@ struct TasksView: View {
     @State private var pebbles: [String] = []
     
     @State private var draggingItem: String?
+
+// En cours
+//    @State private var selectedTaskPosition = CGPoint(x: 0, y: 0)
+//    
+//    @State private var selectedTaskIndex = 0
     
     var body: some View {
         ZStack {
@@ -65,7 +70,9 @@ struct TasksView: View {
                                 Spacer()
                             }
                             .frame(width: size.width, height: 100)
-                            
+                            // En cours
+//                            .offset(selectedTaskIndex == pebbles.firstIndex(of: pebble) ? CGSize(width: selectedTaskPosition.x, height: selectedTaskPosition.y) : .zero)
+
                             .draggable(pebble) {
                                 Circle()
                                     .opacity(0.0)
@@ -84,18 +91,41 @@ struct TasksView: View {
                                             let sourceItem = pebbles.remove(at: sourceIndex)
                                             pebbles.insert(sourceItem, at: destinationIndex)
                                             step.tasks = pebbles.compactMap { pebbleID in
-                                            step.tasks.first { $0.id.uuidString == pebbleID }
+                                                step.tasks.first { $0.id.uuidString == pebbleID }
                                             }
                                             step.updateTaskOrder()
-//
-//                                            myProject.steps = pebbles.compactMap { pebbleID in
-//                                                myProject.steps.first { $0.id.uuidString == pebbleID }
-//                                            }
-//                                            step.updateTaskOrder()
                                         }
                                     }
                                 }
-                            }}
+                            }
+                            .onTapGesture {
+                                       // Action lorsqu'une tâche est tapée
+                                   }
+                                   .gesture(
+                                       // Gesture pour le geste de glissement
+                                       DragGesture()
+                                           .onChanged { gesture in
+// En cours
+//                                               selectedTaskPosition = gesture.location
+                                           }
+                                        .onEnded { value in
+                                            if value.translation.width < -100 {
+                                                if let index = pebbles.firstIndex(of: pebble) {
+// En cours
+//                                                    selectedTaskIndex = index
+                                                    pebbles.remove(at: index)
+                                                    step.tasks = pebbles.compactMap { pebbleID in
+                                                        step.tasks.first { $0.id.uuidString == pebbleID }
+                                                    }
+                                                }
+                                            } 
+// En cours
+//                                            else {
+//                                                selectedTaskPosition = CGPoint(x: 0, y: 100)
+//                                            }
+                                        })
+                            
+                        }
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, 40)
                     Spacer()
