@@ -53,7 +53,7 @@ enum NewProjectCategory: String, CaseIterable{
     
 }
 
-struct Project {
+struct NewProject {
     // Propriétés de votre projet
     var name: String
     var category: NewProjectCategory
@@ -62,7 +62,7 @@ struct Project {
     
 }
 func saveProject() {
-    let newProject = Project(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
+    let newProject = NewProject(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
     
     NavigationLink(destination: ProjectsScreen()) {
         EmptyView()
