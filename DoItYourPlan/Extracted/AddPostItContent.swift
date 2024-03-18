@@ -27,6 +27,7 @@ struct AddPostItContent: View {
                     .foregroundStyle(.green)
                 
             }
+            
         }
     }
 }
