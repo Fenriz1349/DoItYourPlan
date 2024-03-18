@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		631C80B62BA3508A003D7CF0 /* TutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B52BA3508A003D7CF0 /* TutoView.swift */; };
-		631C80B82BA3518A003D7CF0 /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B72BA3518A003D7CF0 /* InspirationView.swift */; };
-		631C80D62BA45E22003D7CF0 /* ExtPostIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80D52BA45E22003D7CF0 /* ExtPostIt.swift */; };
-		631C80D82BA4842A003D7CF0 /* ExtZoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80D72BA4842A003D7CF0 /* ExtZoomImage.swift */; };
-		631C80DA2BA484DE003D7CF0 /* ExtImageInspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80D92BA484DE003D7CF0 /* ExtImageInspiration.swift */; };
-		631C80DC2BA4E623003D7CF0 /* ExtZoomPostIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */; };
-		631C80E22BA6F26A003D7CF0 /* EditablePostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */; };
-		631C80E42BA7938C003D7CF0 /* AddPostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */; };
 		631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B12BA3106D003D7CF0 /* ProjectButton.swift */; };
 		631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */; };
 		635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */; };
@@ -42,6 +34,16 @@
 		639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D12B9F0AB100A67779 /* LibraryScreen.swift */; };
 		639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D32B9F0ABC00A67779 /* PlanningScreen.swift */; };
 		639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D52B9F0AD600A67779 /* MaterialScreen.swift */; };
+		63BF44642BA84A4100270E32 /* DayDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF44632BA84A3B00270E32 /* DayDetailsModal.swift */; };
+		63BF446E2BA84AA900270E32 /* ExtZoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF44652BA84AA800270E32 /* ExtZoomImage.swift */; };
+		63BF446F2BA84AA900270E32 /* FormattedDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF44662BA84AA800270E32 /* FormattedDateView.swift */; };
+		63BF44702BA84AA900270E32 /* ExtPostIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF44672BA84AA800270E32 /* ExtPostIt.swift */; };
+		63BF44712BA84AA900270E32 /* AddPostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF44682BA84AA900270E32 /* AddPostItContent.swift */; };
+		63BF44722BA84AA900270E32 /* ExtImageInspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF44692BA84AA900270E32 /* ExtImageInspiration.swift */; };
+		63BF44732BA84AA900270E32 /* EditablePostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446A2BA84AA900270E32 /* EditablePostItContent.swift */; };
+		63BF44742BA84AA900270E32 /* ExtZoomPostIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446B2BA84AA900270E32 /* ExtZoomPostIt.swift */; };
+		63BF44752BA84AA900270E32 /* TutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446C2BA84AA900270E32 /* TutoView.swift */; };
+		63BF44762BA84AA900270E32 /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446D2BA84AA900270E32 /* InspirationView.swift */; };
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		631C80B12BA3106D003D7CF0 /* ProjectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButton.swift; sourceTree = "<group>"; };
+		631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSuccess.swift; sourceTree = "<group>"; };
 		631C80B52BA3508A003D7CF0 /* TutoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoView.swift; sourceTree = "<group>"; };
 		631C80B72BA3518A003D7CF0 /* InspirationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationView.swift; sourceTree = "<group>"; };
 		631C80D52BA45E22003D7CF0 /* ExtPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPostIt.swift; sourceTree = "<group>"; };
@@ -61,8 +65,6 @@
 		631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtZoomPostIt.swift; sourceTree = "<group>"; };
 		631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePostItContent.swift; sourceTree = "<group>"; };
 		631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostItContent.swift; sourceTree = "<group>"; };
-		631C80B12BA3106D003D7CF0 /* ProjectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButton.swift; sourceTree = "<group>"; };
-		631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSuccess.swift; sourceTree = "<group>"; };
 		635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPlanningProjectProgress.swift; sourceTree = "<group>"; };
 		635C54AC2BA1F47700747969 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
 		635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
@@ -90,6 +92,16 @@
 		639247D32B9F0ABC00A67779 /* PlanningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningScreen.swift; sourceTree = "<group>"; };
 		639247D52B9F0AD600A67779 /* MaterialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialScreen.swift; sourceTree = "<group>"; };
 		639248222BA092DE00A67779 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		63BF44632BA84A3B00270E32 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
+		63BF44652BA84AA800270E32 /* ExtZoomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtZoomImage.swift; sourceTree = "<group>"; };
+		63BF44662BA84AA800270E32 /* FormattedDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDateView.swift; sourceTree = "<group>"; };
+		63BF44672BA84AA800270E32 /* ExtPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPostIt.swift; sourceTree = "<group>"; };
+		63BF44682BA84AA900270E32 /* AddPostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostItContent.swift; sourceTree = "<group>"; };
+		63BF44692BA84AA900270E32 /* ExtImageInspiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtImageInspiration.swift; sourceTree = "<group>"; };
+		63BF446A2BA84AA900270E32 /* EditablePostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePostItContent.swift; sourceTree = "<group>"; };
+		63BF446B2BA84AA900270E32 /* ExtZoomPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtZoomPostIt.swift; sourceTree = "<group>"; };
+		63BF446C2BA84AA900270E32 /* TutoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoView.swift; sourceTree = "<group>"; };
+		63BF446D2BA84AA900270E32 /* InspirationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationView.swift; sourceTree = "<group>"; };
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
@@ -115,6 +127,7 @@
 			children = (
 				6392479E2B9F090500A67779 /* DoItYourPlan */,
 				6392479D2B9F090500A67779 /* Products */,
+				63BF44622BA8489900270E32 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,26 +162,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		639247AF2B9F093D00A67779 /* Extracted */ = {
-			isa = PBXGroup;
-			children = (
-				639248222BA092DE00A67779 /* CalendarView.swift */,
-				639248242BA0965600A67779 /* FormattedDateView.swift */,
-				635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */,
-				635C54AC2BA1F47700747969 /* DayDetailsModal.swift */,
-				635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */,
-				631C80B52BA3508A003D7CF0 /* TutoView.swift */,
-				631C80B72BA3518A003D7CF0 /* InspirationView.swift */,
-				631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */,
-				631C80D52BA45E22003D7CF0 /* ExtPostIt.swift */,
-				631C80D72BA4842A003D7CF0 /* ExtZoomImage.swift */,
-				631C80D92BA484DE003D7CF0 /* ExtImageInspiration.swift */,
-				631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */,
-				631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */,
-			);
-			path = Extracted;
-			sourceTree = "<group>";
-		};
 		639247B12B9F095500A67779 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,9 +193,34 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		63BF44622BA8489900270E32 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				631C80D72BA4842A003D7CF0 /* ExtZoomImage.swift */,
+				631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */,
+				631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */,
+				631C80B52BA3508A003D7CF0 /* TutoView.swift */,
+				631C80D52BA45E22003D7CF0 /* ExtPostIt.swift */,
+				631C80D92BA484DE003D7CF0 /* ExtImageInspiration.swift */,
+				631C80B72BA3518A003D7CF0 /* InspirationView.swift */,
+				631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		CFAB9BCA2BA334D800CFCF90 /* Extracted */ = {
 			isa = PBXGroup;
 			children = (
+				63BF44682BA84AA900270E32 /* AddPostItContent.swift */,
+				63BF446A2BA84AA900270E32 /* EditablePostItContent.swift */,
+				63BF44692BA84AA900270E32 /* ExtImageInspiration.swift */,
+				63BF44672BA84AA800270E32 /* ExtPostIt.swift */,
+				63BF44652BA84AA800270E32 /* ExtZoomImage.swift */,
+				63BF446B2BA84AA900270E32 /* ExtZoomPostIt.swift */,
+				63BF44662BA84AA800270E32 /* FormattedDateView.swift */,
+				63BF446D2BA84AA900270E32 /* InspirationView.swift */,
+				63BF446C2BA84AA900270E32 /* TutoView.swift */,
+				63BF44632BA84A3B00270E32 /* DayDetailsModal.swift */,
 				639248222BA092DE00A67779 /* CalendarView.swift */,
 				635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */,
 				635C54AC2BA1F47700747969 /* DayDetailsModal.swift */,
@@ -294,6 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BF446E2BA84AA900270E32 /* ExtZoomImage.swift in Sources */,
+				63BF446F2BA84AA900270E32 /* FormattedDateView.swift in Sources */,
+				63BF44702BA84AA900270E32 /* ExtPostIt.swift in Sources */,
+				63BF44712BA84AA900270E32 /* AddPostItContent.swift in Sources */,
+				63BF44722BA84AA900270E32 /* ExtImageInspiration.swift in Sources */,
+				63BF44732BA84AA900270E32 /* EditablePostItContent.swift in Sources */,
+				63BF44742BA84AA900270E32 /* ExtZoomPostIt.swift in Sources */,
+				63BF44752BA84AA900270E32 /* TutoView.swift in Sources */,
+				63BF44762BA84AA900270E32 /* InspirationView.swift in Sources */,
 				635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */,
 				CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */,
 				639247D02B9F0A9300A67779 /* FinishedProjectScreen.swift in Sources */,
@@ -304,22 +331,16 @@
 				639247C42B9F0A2C00A67779 /* ProfilScreen.swift in Sources */,
 				CFAB9BC92BA3345400CFCF90 /* CalendarView.swift in Sources */,
 				635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */,
-				631C80D82BA4842A003D7CF0 /* ExtZoomImage.swift in Sources */,
 				639247AE2B9F091C00A67779 /* ReadMe.swift in Sources */,
 				639247A22B9F090500A67779 /* ContentView.swift in Sources */,
 				639247B72B9F097900A67779 /* DataAmina.swift in Sources */,
-				631C80DC2BA4E623003D7CF0 /* ExtZoomPostIt.swift in Sources */,
 				CFA4E4972BA452F800376435 /* FaceGridShop.swift in Sources */,
 				631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */,
 				CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */,
 				639247BD2B9F099500A67779 /* DataMarion.swift in Sources */,
-				631C80E22BA6F26A003D7CF0 /* EditablePostItContent.swift in Sources */,
-				631C80B62BA3508A003D7CF0 /* TutoView.swift in Sources */,
 				639247B52B9F097000A67779 /* DataJulien.swift in Sources */,
-				631C80D62BA45E22003D7CF0 /* ExtPostIt.swift in Sources */,
 				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
-				631C80DA2BA484DE003D7CF0 /* ExtImageInspiration.swift in Sources */,
 				CFA4E4912BA44E2700376435 /* ClothesGridShop.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
@@ -327,13 +348,11 @@
 				639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */,
 				639247CA2B9F0A4E00A67779 /* SelectedProjectScreen.swift in Sources */,
 				639247C62B9F0A3500A67779 /* ShopScreen.swift in Sources */,
-				639248232BA092DE00A67779 /* CalendarView.swift in Sources */,
-				631C80B82BA3518A003D7CF0 /* InspirationView.swift in Sources */,
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,
+				63BF44642BA84A4100270E32 /* DayDetailsModal.swift in Sources */,
 				CFA4E4952BA44E5000376435 /* BackgroundGridShop.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
-				631C80E42BA7938C003D7CF0 /* AddPostItContent.swift in Sources */,
 				CFA4E4932BA44E3800376435 /* AccessoryGridShop.swift in Sources */,
 				631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */,
 			);

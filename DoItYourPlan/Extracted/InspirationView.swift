@@ -49,11 +49,11 @@ struct InspirationView: View {
                     }
                     if showImage {
                         ExtZoomImage(img: $imagesInspiration[0], showImage: $showImage)
-                            .position(x: 450, y: 350)
+                            .position(x: 450, y: 250)
                     }
                     if showPostIt {
                         ExtZoomPostIt(postit: postIts[0], showPostIt: $showPostIt)
-                            .position(x: 450, y: 350)
+                            .position(x: 450, y: 250)
                     }
                 }
             }
