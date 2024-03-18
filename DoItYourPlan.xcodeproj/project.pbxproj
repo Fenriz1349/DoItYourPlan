@@ -164,6 +164,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		639247AF2B9F093D00A67779 /* Extracted */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extracted;
+			sourceTree = "<group>";
+		};
 		639247B12B9F095500A67779 /* Data */ = {
 			isa = PBXGroup;
 			children = (

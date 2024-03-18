@@ -9,10 +9,33 @@ import SwiftUI
 
 struct FinishedProjectScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Retour")
+                .navigationTitle("ProfilScreen")
+                .navigationBarBackButtonHidden(true)
+                .padding(.leading, -150.0)
+                .padding(.top, -350)
+            
+            ZStack{
+                RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    .fill(.blueCustom)
+                    .frame(width: 380, height: 100)
+                    .padding(.bottom, 15)
+                HStack{
+                    VStack{
+                        Text("Projet 2")
+                            .multilineTextAlignment(.leading)
+                        Text("Crochet")
+                    }
+                    ZStack{
+                        Text("70%")
+                            .padding(.leading, 150)
+                    }
+                }
+            }
+        }
     }
 }
-
 #Preview {
     FinishedProjectScreen()
 }

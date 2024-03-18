@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FormattedDateView: View {
+
     @Binding var selectedDate: Date
     var body: some View {
         HStack{
