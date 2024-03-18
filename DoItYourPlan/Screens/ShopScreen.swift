@@ -3,10 +3,18 @@ import SwiftUI
 struct ShopScreen: View {
     @State private var selectedHat: Hat?
     @State private var selectedColorFace: ColorFace?
+    @State private var selectedFace: Face?
+    @State private var selectedHair: Hair?
+    @State private var selectedAccessory: Accessory?
+  
+    @State private var hats: [Hat] = []
+    @State private var faces: [Face] = []
+    @State private var hairs: [Hair] = []
+    @State private var accessorys: [Accessory] = []
     @Binding var userPoints: Int
     @State private var showAlert = false // Affiche ou non l'alerte
     @State private var selectedSegment = 0
-    @State private var hats: [Hat] = []
+        
   
     let segmentImages = ["colorfaceShopScreen", "faceShopScreen", "hairShopScreen","hatShopScreen", "clothesShopScreen", "accessoryShopScreen", "backgroundShopScreen"]
     
@@ -47,6 +55,7 @@ struct ShopScreen: View {
                         
                         Circle()
                             .frame(width: 100, height: 100)
+                            .foregroundColor(Color.white)
                             .padding(.top, -50)
                         Path { path in
                             path.addArc(center: CGPoint(x: 0, y: 0), radius: 90, startAngle: .degrees(180), endAngle: .degrees(0), clockwise: false)
@@ -54,12 +63,29 @@ struct ShopScreen: View {
                             path.closeSubpath()
                         }
                         .frame(width: 100, height: 50)
+                        .foregroundColor(Color.white)
                         .offset(x: 50, y: 100)
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 270)
                     .background(Color("yellowCustom"))
                     
+                    if let selectedFace = selectedFace {
+                        Image(selectedFace.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 130, height: 90)
+                            .offset(y: -17)
+                    
+                }
+                    if let selectedHair = selectedHair {
+                        Image(selectedHair.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150, height: 150)
+                            .offset(y: -50)
+                    
+                }
                     if let selectedHat = selectedHat {
                         Image(selectedHat.image)
                             .resizable()
@@ -67,6 +93,15 @@ struct ShopScreen: View {
                             .frame(width: 140, height: 100)
                             .offset(y: -75)
                     }
+                    if let selectedAccessory = selectedAccessory {
+                        Image(selectedAccessory.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 140, height: 80)
+                            .offset(x: 60, y: 85)
+                    }
+                    
+                        
                 }
                 
                 
@@ -101,15 +136,15 @@ struct ShopScreen: View {
                     if selectedSegment == 0 {
                         /*ColorFaceGridShop(selectedColorFace: $selectedColorFace, userPoints: $userPoints, showAlert: $showAlert)*/
                     } else if selectedSegment == 1 {
-                        
+                        FaceGridShop(selectedFace: $selectedFace, userPoints: $userPoints, showAlert: $showAlert)
                     } else if selectedSegment == 2 {
-                        
+                        HairGridShop(selectedHair: $selectedHair, userPoints: $userPoints, showAlert: $showAlert)
                     } else if selectedSegment == 3 {
                         HatGridShop(selectedHat: $selectedHat, userPoints: $userPoints, showAlert: $showAlert)
                     } else if selectedSegment == 4 {
                         
                     }  else if selectedSegment == 5 {
-                        
+                        AccessoryGridShop(selectedAccessory: $selectedAccessory, userPoints: $userPoints, showAlert: $showAlert)
                     } else if selectedSegment == 6 {
                         
                     }
