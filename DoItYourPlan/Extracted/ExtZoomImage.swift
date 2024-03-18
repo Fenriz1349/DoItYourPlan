@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExtZoomImage: View {
-    @Binding var img : ImageInspiration
+    @StateObject var img : ImageInspiration
     @Binding var showImage : Bool
     var body: some View {
         ZStack{
@@ -53,5 +53,5 @@ struct ExtZoomImage: View {
 }
 
 #Preview {
-    ExtZoomImage(img: .constant(ImageInspiration(name: "sample1",x:175,y: 175, link: "Sample1")),showImage: .constant(true))
+    ExtZoomImage(img: ImageInspiration(name: "sample1",x:175,y: 175, link: "Sample1"),showImage: .constant(true))
 }

@@ -35,7 +35,7 @@ struct NewProjectScreen: View {
                     Section(header: Text("Pour quand souhaites-tu finir ce projet?")) {
                         DatePicker("Date de fin prévue:", selection: $selectedDate, displayedComponents: [.date])
                     }
-                    
+                }
                     Button(action: {
                         saveProject()
 
@@ -46,7 +46,7 @@ struct NewProjectScreen: View {
                             .background(Color.purpleCustom)
                             .cornerRadius(10)
                     }
-                }
+                
                 .navigationBarTitle("Nouveau projet", displayMode: .inline)
                 .navigationBarItems(leading:
                                         NavigationLink(destination: ProjectsScreen()) {
