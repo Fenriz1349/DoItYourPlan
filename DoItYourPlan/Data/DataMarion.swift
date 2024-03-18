@@ -75,8 +75,8 @@ struct Background: Identifiable {
 
 
 var colorFaces: [ColorFace] = [
-            ColorFace(name: "Color Face 1", color: Color("Colorface1"), iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 100)),
-            ColorFace(name: "Color Face 2", color: Color("Colorface2"), iconCadenas: true, points: Points(iconPoints: "icon_points2", nbrPoints: 120)),
+            ColorFace(name: "Color Face 1", color: Color("ColorFace1"), iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 100)),
+            ColorFace(name: "Color Face 2", color: Color("ColorFace2"), iconCadenas: true, points: Points(iconPoints: "icon_points2", nbrPoints: 120)),
             
         ]
   

@@ -11,6 +11,7 @@ struct ShopScreen: View {
     @State private var faces: [Face] = []
     @State private var hairs: [Hair] = []
     @State private var accessorys: [Accessory] = []
+    @State private var colorFaces: [ColorFace] = []
     @Binding var userPoints: Int
     @State private var showAlert = false // Affiche ou non l'alerte
     @State private var selectedSegment = 0
@@ -82,15 +83,15 @@ struct ShopScreen: View {
                         Image(selectedHair.image)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 150, height: 150)
-                            .offset(y: -50)
+                            .frame(width: 150, height: 130)
+                            .offset(y: -45)
                     
                 }
                     if let selectedHat = selectedHat {
                         Image(selectedHat.image)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 140, height: 100)
+                            .frame(width: 150, height: 100)
                             .offset(y: -75)
                     }
                     if let selectedAccessory = selectedAccessory {
@@ -134,7 +135,7 @@ struct ShopScreen: View {
                     
                     
                     if selectedSegment == 0 {
-                        /*ColorFaceGridShop(selectedColorFace: $selectedColorFace, userPoints: $userPoints, showAlert: $showAlert)*/
+                        ColorFaceGridShop(selectedColorFace: $selectedColorFace, userPoints: $userPoints, showAlert: $showAlert)
                     } else if selectedSegment == 1 {
                         FaceGridShop(selectedFace: $selectedFace, userPoints: $userPoints, showAlert: $showAlert)
                     } else if selectedSegment == 2 {
