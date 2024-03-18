@@ -35,6 +35,17 @@ struct NewProjectScreen: View {
                     Section(header: Text("Pour quand souhaites-tu finir ce projet?")) {
                         DatePicker("Date de fin prévue:", selection: $selectedDate, displayedComponents: [.date])
                     }
+                    
+                    Button(action: {
+                        saveProject()
+
+                    }) {
+                        Text("Valider")
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(Color.purpleCustom)
+                            .cornerRadius(10)
+                    }
                 }
                 .navigationBarTitle("Nouveau projet", displayMode: .inline)
                 .navigationBarItems(leading:
@@ -45,15 +56,7 @@ struct NewProjectScreen: View {
             }
         }
         // Bouton "Valider" pour enregistrer le projet
-        Button(action: {
-            saveProject()
-        }) {
-            Text("Valider")
-                .padding()
-                .foregroundColor(.black)
-                .background(Color.purpleCustom)
-                .cornerRadius(10)
-        }
+        
 //        func SaveProject() {
 //            // Action pour enregistrer le projet et naviguer
 //            let newProject = Project(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
