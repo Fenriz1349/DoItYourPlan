@@ -9,14 +9,13 @@ import SwiftUI
 
 struct FinishedProjectScreen: View {
     var body: some View {
-        ScrollView {
+        
             VStack{
                 Text("Retour")
-                    .navigationTitle("ProfilScreen")
                     .navigationBarBackButtonHidden(true)
                     .padding(.leading, -150.0)
                 
-                
+                ScrollView {
                 ZStack{
                     RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                         .fill(.white)
