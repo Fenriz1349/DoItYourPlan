@@ -62,5 +62,3 @@ struct NewProject {
     
 }
 
-
-//formulaire pour nom du projet et description, en deux cases ici ou sur la view?

@@ -13,7 +13,6 @@ struct LibraryScreen: View {
         VStack{
             Text("Bibliothèque")
                 .font(.system(size: 24))
-                .frame(alignment: .top)
                 .bold()
                 .padding(.bottom,5)
             Picker("", selection: $segmentedSelection) {

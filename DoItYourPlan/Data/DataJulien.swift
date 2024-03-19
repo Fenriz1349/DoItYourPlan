@@ -190,3 +190,9 @@ class ImageInspiration : Inspiration {
         }
 }
 
+struct TutoLink : Identifiable {
+    var id = UUID()
+    var name : String
+    var url : String
+    var icone : String
+}
