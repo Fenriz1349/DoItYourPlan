@@ -52,7 +52,7 @@ struct StepDetail: View {
         if segmentedSelection == 0 {
             TasksView(pebble: pebble)
         }else {
-            MaterialScreen()
+            MaterialScreen(stepColor: step.stepColor)
         }
     }
 }
