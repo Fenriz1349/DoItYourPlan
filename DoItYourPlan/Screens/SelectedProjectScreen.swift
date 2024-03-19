@@ -14,6 +14,7 @@ struct SelectedProjectScreen: View {
     } + [addButtonStep]
     @State private var draggingItem: String?
     @State private var zoom: Bool = false
+    @State private var isFirstUnfinishedStepFound: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -26,7 +27,7 @@ struct SelectedProjectScreen: View {
                             // Pebble/bouton nouvelle étape
                             if pebble == addButtonStep {
                                 Button(action: {
-                                    myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition())
+                                    myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition())
                                     pebbles = myProject.steps.map { step in
                                         return step.id.uuidString
                                     } + [addButtonStep]
@@ -44,13 +45,13 @@ struct SelectedProjectScreen: View {
                                             }
                                             Text("Ajouter\rune étape")
                                                 .foregroundColor(.white)
-                                            
                                         }
                                     }
-                                    .frame(maxWidth: .infinity)                                }
+                                    .frame(maxWidth: .infinity)
+                                }
                             } else {
                                 // Pebble de chaque step
-                                NavigationLink(destination: TasksView(pebble: pebble)) {
+                                NavigationLink(destination: StepDetail(pebble: pebble)) {
                                     HStack(alignment: .center) {
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                             Text(step.stepName)
@@ -60,7 +61,7 @@ struct SelectedProjectScreen: View {
                                             if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                                 if step.isDone {
                                                     Circle()
-                                                        .fill(.gray.gradient)
+                                                        .fill(.gray.opacity(0.5).gradient)
                                                 } else {
                                                     Circle()
                                                         .fill(step.stepColor.gradient)
@@ -69,6 +70,13 @@ struct SelectedProjectScreen: View {
                                             if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                                 Text("Etape \(step.orderNumber)")
                                                     .foregroundColor(.white)
+                                                if step.isCurrent {
+                                                    Image(systemName: "checkmark")
+                                                        .resizable()
+                                                        .frame(width: 50, height: 50)
+                                                        .foregroundColor(Color.green)
+                                                        .bold()
+                                                }
                                             }
                                         }
                                     }
@@ -101,7 +109,8 @@ struct SelectedProjectScreen: View {
                                     }
                                     
                                 }
-                            } }
+                            }
+                        }
                         .frame(height: zoom ? 180 : 100)
                     }
                 })
@@ -119,9 +128,7 @@ struct SelectedProjectScreen: View {
                     }
                 }
             })
-            
         }
-        
     }
 }
 

@@ -48,6 +48,7 @@
 		63BF44762BA84AA900270E32 /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446D2BA84AA900270E32 /* InspirationView.swift */; };
 		63D20C1C2BA9C4EE00CA8D2B /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */; };
 		63D20C1E2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */; };
+		63FB179A2BAA1AF400763972 /* StepDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB17992BAA1AF400763972 /* StepDetail.swift */; };
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
@@ -110,6 +111,7 @@
 		63BF446D2BA84AA900270E32 /* InspirationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationView.swift; sourceTree = "<group>"; };
 		63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
 		63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsFinishedProjectsScreen.swift; sourceTree = "<group>"; };
+		63FB17992BAA1AF400763972 /* StepDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetail.swift; sourceTree = "<group>"; };
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
 				50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */,
 				63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */,
+				63FB17992BAA1AF400763972 /* StepDetail.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */,
 				CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */,
 				639247BD2B9F099500A67779 /* DataMarion.swift in Sources */,
+				63FB179A2BAA1AF400763972 /* StepDetail.swift in Sources */,
 				639247B52B9F097000A67779 /* DataJulien.swift in Sources */,
 				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				50EC05BD2BA2F6B500C91DF9 /* TasksView.swift in Sources */,

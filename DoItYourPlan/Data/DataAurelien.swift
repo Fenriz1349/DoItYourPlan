@@ -17,8 +17,8 @@ class Project: Identifiable, ObservableObject {
         self.steps = steps
     }
     
-    func addStep(stepName: String, orderNumber: Int, isDone: Bool, stepColor: Color, stepPosition: Double, tasks: [Task] = []) {
-        let newStep = Step(stepName: stepName, orderNumber: orderNumber, isDone: isDone, stepColor: stepColor, stepPosition: stepPosition, tasks: tasks)
+    func addStep(stepName: String, orderNumber: Int, isDone: Bool, isCurrent: Bool, stepColor: Color, stepPosition: Double, tasks: [Task] = []) {
+        let newStep = Step(stepName: stepName, orderNumber: orderNumber, isDone: isDone, isCurrent: isCurrent, stepColor: stepColor, stepPosition: stepPosition, tasks: tasks)
         steps.append(newStep)
     }
     
@@ -45,15 +45,18 @@ class Step: Identifiable, ObservableObject {
     @Published var stepName: String
     @Published var orderNumber: Int
     @Published var isDone: Bool
+    @Published var isCurrent: Bool
     @Published var stepColor: Color
     @Published var stepPosition: Double
     @Published var tasks: [Task] = []
     
-    init(id: UUID = UUID(), stepName: String, orderNumber: Int, isDone: Bool, stepColor: Color, stepPosition: Double, tasks: [Task]) {
+    
+    init(id: UUID = UUID(), stepName: String, orderNumber: Int, isDone: Bool, isCurrent: Bool, stepColor: Color, stepPosition: Double, tasks: [Task]) {
         self.id = id
         self.stepName = stepName
         self.orderNumber = orderNumber
         self.isDone = isDone
+        self.isCurrent = isCurrent
         self.stepColor = stepColor
         self.stepPosition = stepPosition
         self.tasks = tasks
@@ -106,52 +109,52 @@ func randomStepPosition() -> Double {
 }
 
 var myProject = Project(projectName: "Projet Couture", steps: [
-    Step(stepName: "Préparation des matériaux", orderNumber: 1, isDone: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Préparation des matériaux", orderNumber: 1, isDone: true, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Choisir le tissu pour la trousse", orderNumber: 1, isDone: true),
         Task(taskName: "Laver et repasser le tissu", orderNumber: 2, isDone: true),
         Task(taskName: "Préparer les fournitures nécessaires", orderNumber: 3, isDone: true)
     ]),
-    Step(stepName: "Découpe des pièces", orderNumber: 2, isDone: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Découpe des pièces", orderNumber: 2, isDone: true, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Prendre les mesures nécessaires pour découper les pièces de tissu", orderNumber: 1, isDone: true),
         Task(taskName: "Découper le tissu selon les dimensions requises pour la trousse", orderNumber: 2, isDone: true),
         Task(taskName: "Découper la fermeture éclair à la bonne taille si nécessaire", orderNumber: 3, isDone: true)
     ]),
-    Step(stepName: "Assemblage du corps de la trousse", orderNumber: 3, isDone: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Assemblage du corps de la trousse", orderNumber: 3, isDone: true, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Épingler les côtés du tissu ensemble, endroit contre endroit", orderNumber: 1, isDone: true),
         Task(taskName: "Coudre les côtés et le fond de la trousse", orderNumber: 2, isDone: true),
         Task(taskName: "Faire des entailles aux coins pour faciliter le retournement", orderNumber: 3, isDone: true)
     ]),
-    Step(stepName: "Fixation de la fermeture éclair", orderNumber: 4, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Fixation de la fermeture éclair", orderNumber: 4, isDone: false, isCurrent: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Positionner la fermeture éclair sur le bord de l'ouverture de la trousse", orderNumber: 1, isDone: true),
         Task(taskName: "Épingler la fermeture éclair en place", orderNumber: 2, isDone: false),
         Task(taskName: "Coudre la fermeture éclair sur les bords de la trousse", orderNumber: 3, isDone: false)
     ]),
-    Step(stepName: "Création de la doublure", orderNumber: 5, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Création de la doublure", orderNumber: 5, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Découper les pièces de doublure selon les mêmes dimensions que le tissu extérieur", orderNumber: 1, isDone: false),
         Task(taskName: "Assembler les côtés de la doublure, endroit contre endroit", orderNumber: 2, isDone: false),
         Task(taskName: "Laisser une ouverture sur un des côtés pour retourner la trousse", orderNumber: 3, isDone: false)
     ]),
-    Step(stepName: "Assemblage final", orderNumber: 6, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Assemblage final", orderNumber: 6, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Insérer la doublure dans la trousse en la positionnant correctement", orderNumber: 1, isDone: false),
         Task(taskName: "Épingler les bords de la doublure et de la trousse ensemble", orderNumber: 2, isDone: false),
         Task(taskName: "Coudre les bords ensemble, en prenant soin de refermer l'ouverture laissée précédemment", orderNumber: 3, isDone: false)
     ]),
-    Step(stepName: "Finitions", orderNumber: 7, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Finitions", orderNumber: 7, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Couper les fils en trop", orderNumber: 1, isDone: false),
         Task(taskName: "Repasser la trousse pour aplatir les coutures", orderNumber: 2, isDone: false),
         Task(taskName: "Vérifier qu'il n'y a pas de défauts et effectuer des retouches si nécessaire", orderNumber: 3, isDone: false)
     ]),
-    Step(stepName: "Ajout de décoration (facultatif)", orderNumber: 8, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Ajout de décoration (facultatif)", orderNumber: 8, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Choisir des éléments de décoration tels que des rubans, des boutons, ou des broderies", orderNumber: 1, isDone: false),
         Task(taskName: "Positionner les décorations sur la trousse selon votre goût", orderNumber: 2, isDone: false),
         Task(taskName: "Coudre les décorations en place", orderNumber: 3, isDone: false)
     ]),
-    Step(stepName: "Test et ajustements", orderNumber: 9, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Test et ajustements", orderNumber: 9, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Tester la trousse en y plaçant vos produits de maquillage", orderNumber: 1, isDone: false),
         Task(taskName: "Vérifier que la fermeture éclair fonctionne correctement", orderNumber: 2, isDone: false),
         Task(taskName: "Effectuer des ajustements si nécessaire, comme revoir les dimensions ou renforcer les coutures", orderNumber: 3, isDone: false)
     ]),
-    Step(stepName: "Finition finale", orderNumber: 10, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Finition finale", orderNumber: 10, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Repasser une dernière fois la trousse pour assurer une finition impeccable", orderNumber: 1, isDone: false),
         Task(taskName: "Ajouter une étiquette avec votre nom ou logo si désiré", orderNumber: 2, isDone: false),
         Task(taskName: "Admirer et utiliser votre nouvelle trousse de maquillage faite main avec fierté!", orderNumber: 3, isDone: false)

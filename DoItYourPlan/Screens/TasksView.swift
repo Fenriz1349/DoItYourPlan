@@ -9,6 +9,7 @@ import SwiftUI
 let addButtonTask = UUID().uuidString
 
 struct TasksView: View {
+    
     let pebble: String
     
     @State private var step: Step = myProject.steps[0]
@@ -25,61 +26,85 @@ struct TasksView: View {
     
     @State private var newStepName: String = ""
 
+    @State private var myTasks: [Task] = myProject.steps[0].tasks
+        
     
     var body: some View {
+
         ZStack {
-            VStack {
-                HStack {
-                    if step.stepName == "Nouvelle étape" {
-                        TextField("Nouvelle étape", text: $newStepName)
-                            .frame(width: 150)
-                            .onSubmit {
-                                if !newStepName.isEmpty {
-                                    if let stepUUID = UUID(uuidString: pebble) {
-// Renommer le step
-//                                        myProject.addTask(toStep: stepUUID, taskName: newTaskName, isDone: false)
-                                    }
-                                }
-                            }
-                    }
-                                  else {
-                            
-                            Text(step.stepName)
-                                .onAppear {
-                                    if let stepUUID = UUID(uuidString: pebble),
-                                       let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
-                                        step = matchingStep
-                                        pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
-                                    }
-                                }
-                        }
-                    
-                    ZStack {
-                        Circle()
-                            .fill(step.stepColor)
-                        Text("Étape \(step.orderNumber)")
-                            .foregroundColor(.white)
-                    }
-                }
-                .frame(height: 100)
-                Spacer()
-            }
-            .padding(.top, 90)
+            
+//            VStack {
+//                HStack {
+//                    if step.stepName == "Nouvelle étape" {
+//                        TextField("Nouvelle étape", text: $newStepName)
+//                            .frame(width: 150)
+//                            .onSubmit {
+//                                if !newStepName.isEmpty {
+////                                    if let stepUUID = UUID(uuidString: pebble) {
+////                                        myProject.addTask(toStep: stepUUID, taskName: newTaskName, isDone: false)
+////                                    }
+//                                }
+//                            }
+//                    }
+//                    else {
+//                        Text(step.stepName)
+////                            .onAppear {
+////                                if let stepUUID = UUID(uuidString: pebble),
+////                                   let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
+////                                    step = matchingStep
+////                                    myTasks = matchingStep.tasks
+////                                    pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
+////                                }
+////                            }
+//                    }
+//
+////                    ZStack {
+////                        Circle()
+////                            .fill(step.stepColor)
+////                        Text("Étape \(step.orderNumber)")
+////                            .foregroundColor(.white)
+////                        if step.isCurrent {
+////                            Image(systemName: "checkmark")
+////                                .resizable()
+////                                .frame(width: 50, height: 50)
+////                                .foregroundColor(Color.green)
+////                                .bold()
+////                        }
+////                    }
+//                }
+//                .frame(height: 100)
+//                Spacer()
+//            }
+//            .padding(.top, 20)
             
             ScrollView(.vertical) {
                 LazyVGrid(columns: [GridItem()], content: {
                     ForEach(pebbles, id: \.self) { pebble in
                         GeometryReader {
                             let size = $0.size
-
+                            
                             if pebble == addButtonTask {
                                 HStack {
                                     Image(systemName: "plus.circle")
                                         .font(.system(size: 30))
                                         .foregroundColor(step.stepColor)
-                                        TextField("Ajouter une tâche", text: $newTaskName)
+                                    TextField("Ajouter une tâche", text: $newTaskName)
                                         .onSubmit {
                                             if !newTaskName.isEmpty {
+                                                
+//                                                myTasks.append(Task(taskName: "Choisir le tissu pour la trousse", orderNumber: myTasks.count + 1, isDone: true))
+//                                                if let lastTask = myTasks.last.id.uuidString {
+//                                                    pebbles.append(lastTask.id.uuidString)
+//                                                }
+                                                
+                                                
+                                                if let taskIndex = myTasks.firstIndex(where: { $0.id == UUID(uuidString: pebble) }) {
+                                                    let task = myTasks[taskIndex]
+                                                    task.isDone.toggle()
+                                                    step.tasks[taskIndex] = task
+                                                    myTasks[taskIndex] = task
+                                                }
+                            
                                                 if let stepUUID = UUID(uuidString: pebble) {
                                                     myProject.addTask(toStep: stepUUID, taskName: newTaskName, isDone: false)
                                                 }
@@ -101,10 +126,11 @@ struct TasksView: View {
                                     
                                     HStack {
                                         Button(action: {
-                                            if let taskIndex = step.tasks.firstIndex(where: { $0.id == UUID(uuidString: pebble) }) {
-                                                let task = step.tasks[taskIndex]
+                                            if let taskIndex = myTasks.firstIndex(where: { $0.id == UUID(uuidString: pebble) }) {
+                                                let task = myTasks[taskIndex]
                                                 task.isDone.toggle()
                                                 step.tasks[taskIndex] = task
+                                                myTasks[taskIndex] = task
                                             }
                                         }, label: {
                                             if let task = step.tasks.first(where: { $0.id == UUID(uuidString: pebble) }) {
@@ -113,7 +139,7 @@ struct TasksView: View {
                                                     .foregroundColor(step.stepColor)
                                             }
                                         })
-                                        if let task = step.tasks.first(where: { $0.id == UUID(uuidString: pebble) }) {
+                                        if let task = myTasks.first(where: { $0.id == UUID(uuidString: pebble) }) {
                                             Text(task.taskName)
                                         }
                                         Spacer()
@@ -168,23 +194,31 @@ struct TasksView: View {
                                                     self.selectedTaskxOffset = 0
                                                 }
                                             })
-                                    
                                 }
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 50)
                         Spacer()
                     }
                 }
-                
-                    
-                
                 )
             }
             .padding(.horizontal, 10)
-            .padding(.top, 190)
+//            .padding(.top, 10)
         }
         .ignoresSafeArea()
+        .onAppear {
+            if let stepUUID = UUID(uuidString: pebble),
+               let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
+                step = matchingStep
+                myTasks = matchingStep.tasks
+                pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
+            }
+        }
     }
+}
+
+#Preview {
+    TasksView(pebble: myProject.steps[5].id.uuidString)
 }
