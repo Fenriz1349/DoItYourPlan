@@ -27,66 +27,55 @@ struct TasksView: View {
     @State private var newStepName: String = ""
 
     @State private var myTasks: [Task] = myProject.steps[0].tasks
-    
-    @State private var selectedScreen = 0
-    
-    let segments = ["Tâches", "Matériel"]
-
-
+        
     
     var body: some View {
-       
-        Picker(selection: $selectedScreen, label: Text("")) {
-            ForEach(0..<segments.count) { index in
-                Text(segments[index]).tag(index)
-            }
-        }
-        
+
         ZStack {
             
-            VStack {
-                HStack {
-                    if step.stepName == "Nouvelle étape" {
-                        TextField("Nouvelle étape", text: $newStepName)
-                            .frame(width: 150)
-                            .onSubmit {
-                                if !newStepName.isEmpty {
-//                                    if let stepUUID = UUID(uuidString: pebble) {
-//                                        myProject.addTask(toStep: stepUUID, taskName: newTaskName, isDone: false)
-//                                    }
-                                }
-                            }
-                    }
-                    else {
-                        Text(step.stepName)
-                            .onAppear {
-                                if let stepUUID = UUID(uuidString: pebble),
-                                   let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
-                                    step = matchingStep
-                                    myTasks = matchingStep.tasks
-                                    pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
-                                }
-                            }
-                    }
-                    
-                    ZStack {
-                        Circle()
-                            .fill(step.stepColor)
-                        Text("Étape \(step.orderNumber)")
-                            .foregroundColor(.white)
-                        if step.isCurrent {
-                            Image(systemName: "checkmark")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(Color.green)
-                                .bold()
-                        }
-                    }
-                }
-                .frame(height: 100)
-                Spacer()
-            }
-            .padding(.top, 90)
+//            VStack {
+//                HStack {
+//                    if step.stepName == "Nouvelle étape" {
+//                        TextField("Nouvelle étape", text: $newStepName)
+//                            .frame(width: 150)
+//                            .onSubmit {
+//                                if !newStepName.isEmpty {
+////                                    if let stepUUID = UUID(uuidString: pebble) {
+////                                        myProject.addTask(toStep: stepUUID, taskName: newTaskName, isDone: false)
+////                                    }
+//                                }
+//                            }
+//                    }
+//                    else {
+//                        Text(step.stepName)
+////                            .onAppear {
+////                                if let stepUUID = UUID(uuidString: pebble),
+////                                   let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
+////                                    step = matchingStep
+////                                    myTasks = matchingStep.tasks
+////                                    pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
+////                                }
+////                            }
+//                    }
+//                    
+////                    ZStack {
+////                        Circle()
+////                            .fill(step.stepColor)
+////                        Text("Étape \(step.orderNumber)")
+////                            .foregroundColor(.white)
+////                        if step.isCurrent {
+////                            Image(systemName: "checkmark")
+////                                .resizable()
+////                                .frame(width: 50, height: 50)
+////                                .foregroundColor(Color.green)
+////                                .bold()
+////                        }
+////                    }
+//                }
+//                .frame(height: 100)
+//                Spacer()
+//            }
+//            .padding(.top, 20)
             
             ScrollView(.vertical) {
                 LazyVGrid(columns: [GridItem()], content: {
@@ -209,20 +198,28 @@ struct TasksView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 50)
                         Spacer()
                     }
                 }
                 )
             }
             .padding(.horizontal, 10)
-            .padding(.top, 190)
+//            .padding(.top, 10)
         }
         .ignoresSafeArea()
+        .onAppear {
+            if let stepUUID = UUID(uuidString: pebble),
+               let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
+                step = matchingStep
+                myTasks = matchingStep.tasks
+                pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
+            }
+        }
     }
 }
 
-//#Preview {
-//    TasksView(pebble: myProject.steps[5].id.uuidString)
-//}
+#Preview {
+    TasksView(pebble: myProject.steps[5].id.uuidString)
+}
 

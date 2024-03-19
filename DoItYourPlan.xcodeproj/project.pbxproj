@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50B1EBB12BA9D82B00B49652 /* StepDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1EBB02BA9D82B00B49652 /* StepDetail.swift */; };
 		50EC05BD2BA2F6B500C91DF9 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */; };
 		631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B12BA3106D003D7CF0 /* ProjectButton.swift */; };
 		631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50B1EBB02BA9D82B00B49652 /* StepDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetail.swift; sourceTree = "<group>"; };
 		50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		631C80B12BA3106D003D7CF0 /* ProjectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButton.swift; sourceTree = "<group>"; };
 		631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSuccess.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				639247D32B9F0ABC00A67779 /* PlanningScreen.swift */,
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
 				50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */,
+				50B1EBB02BA9D82B00B49652 /* StepDetail.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				639247A22B9F090500A67779 /* ContentView.swift in Sources */,
 				639247B72B9F097900A67779 /* DataAmina.swift in Sources */,
 				CFA4E4972BA452F800376435 /* FaceGridShop.swift in Sources */,
+				50B1EBB12BA9D82B00B49652 /* StepDetail.swift in Sources */,
 				631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */,
 				CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */,
 				639247BD2B9F099500A67779 /* DataMarion.swift in Sources */,

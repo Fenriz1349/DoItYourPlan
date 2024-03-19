@@ -51,7 +51,7 @@ struct SelectedProjectScreen: View {
                                 }
                             } else {
                                 // Pebble de chaque step
-                                NavigationLink(destination: TasksView(pebble: pebble)) {
+                                NavigationLink(destination: StepDetail(pebble: pebble)) {
                                     HStack(alignment: .center) {
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                             Text(step.stepName)
