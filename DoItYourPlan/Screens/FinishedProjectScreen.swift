@@ -9,11 +9,12 @@ import SwiftUI
 
 struct FinishedProjectScreen: View {
     var body: some View {
-        
             VStack{
-                Text("Retour")
-                    .navigationBarBackButtonHidden(true)
-                    .padding(.leading, -150.0)
+                Text("Mes projets terminés")
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 152)
+                    .padding(.vertical, 10)
+                    .border(Color.gray, width: 1)
                 
                 ScrollView {
                 ZStack{
@@ -33,13 +34,15 @@ struct FinishedProjectScreen: View {
                         
                         HStack{
                             Image("coussinRecycle")
+                                .resizable()
+                                .frame(width: 150, height: 100, alignment: .topLeading)
                                 .padding(.vertical, 20)
+                                .padding(.leading, -35.0)
                             
                             VStack{
                                 Text("Coussins recyclés")
-                                Text("début : 12/01/2024")
-                                Text("fin :  2/12/23")
-                                
+                                Text("Début : 12/01/2024")
+                                Text("Fin : 24/02/2024")
                             }
                         } .padding(.top, -20.0)
                         
@@ -57,18 +60,21 @@ struct FinishedProjectScreen: View {
                             RoundedRectangle (cornerRadius: 15)
                                 .fill(.purpleCustom)
                                 .frame(width: 100, height: 30)
-                            Text("Couture")
+                            Text("Peinture")
                                 .multilineTextAlignment(.leading)
                         } .padding(.trailing, 240.0)
                         
                         HStack{
                             Image("peintureMurSalon")
+                                .resizable()
+                                .frame(width: 150, height: 100, alignment: .topLeading)
                                 .padding(.vertical, 20)
+                                .padding(.leading, -35.0)
                             
                             VStack{
                                 Text("Peinture mur Salon")
-                                Text("début : 01/12/23")
-                                Text("fin : 17/12/23")
+                                Text("Début : 01/12/2023")
+                                Text("Fin : 17/12/2023")
                             }
                         } .padding(.top, -20.0)
                         
@@ -92,12 +98,15 @@ struct FinishedProjectScreen: View {
                         
                         HStack{
                             Image("cadeauCharlie")
+                                .resizable()
+                                .frame(width: 150, height: 100, alignment: .topLeading)
                                 .padding(.vertical, 20)
+                                .padding(.leading, -52.0)
                             
                             VStack{
                                 Text("Cadeau Charlie")
-                                Text("début : 01/12/23")
-                                Text("fin :  2/12/23")
+                                Text("Début : 01/12/2023")
+                                Text("Fin : 15/02/2024")
                             }
                         } .padding(.top, -20.0)
                         
@@ -120,16 +129,17 @@ struct FinishedProjectScreen: View {
                         
                         HStack{
                             Image("rangementJardin")
+                                .resizable()
+                                .frame(width: 150, height: 100, alignment: .topLeading)
                                 .padding(.vertical, 20)
                             
+                            
                             VStack{
-                                Text("Rangement tuyau et bac à fleur")
-                                Text("début : 12/01/2024")
-                                Text("fin :  2/12/23")
-                                
+                                Text("Rangement tuyau et bac à fleurs")
+                                Text("Début : 01/08/2023")
+                                Text("Fin : 07/09/2023")
                             }
                         } .padding(.top, -20.0)
-                        
                     }
                 } /* rectangle 4 ⬆ */
                 
@@ -144,19 +154,20 @@ struct FinishedProjectScreen: View {
                             RoundedRectangle (cornerRadius: 15)
                                 .fill(.purpleCustom)
                                 .frame(width: 100, height: 30)
-                            Text("Jardin")
+                            Text("Menuiserie")
                                 .multilineTextAlignment(.leading)
                         } .padding(.trailing, 240.0)
                         
                         HStack{
                             Image("jardiniereColor")
-                                .padding(.vertical, 20)
+                                .resizable()
+                                .frame(width: 150, height: 100, alignment: .topLeading)     .padding(.vertical, 20)
+                                .padding(.leading, -35.0)
                             
                             VStack{
                                 Text("Jardinières colorés")
-                                Text("début : 12/01/2024")
-                                Text("fin : 2/12/23")
-                                
+                                Text("Début : 20/08/2023")
+                                Text("Fin : 30/08/2023")
                             }
                         } .padding(.top, -20.0)
                         
