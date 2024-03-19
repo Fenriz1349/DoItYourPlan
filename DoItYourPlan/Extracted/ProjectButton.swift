@@ -14,18 +14,8 @@ struct ProjectButton: View {
     
     
     var body: some View {
-       
-        ZStack{
-            let offset: CGFloat = 5
-            RoundedRectangle(cornerRadius: 6
-                .foregroundColor(.black)
-                .offset(y: configuration.isPressed ? offset : 0)
-                             
-            )
-        }
-           
         
-                /*RoundedRectangle(cornerRadius: 20)
+        RoundedRectangle(cornerRadius: 20)
             .fill(Color("yellowCustom"))
             .shadow(color: Color.black, radius: 4, x: 0, y: 2)
             .frame(width: 170, height: 50)
@@ -47,7 +37,7 @@ struct ProjectButton: View {
         
     }
     
-}*/
+}
 #Preview {
     ProjectButton(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projets en cours")
 }

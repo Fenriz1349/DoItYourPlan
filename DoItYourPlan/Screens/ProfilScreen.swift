@@ -87,7 +87,7 @@ struct ProfilScreen: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 140, height: 80)
-                                    .offset(x: 60, y: 65)
+                                    .offset(x: -130, y: 85)
                             }
                             
                         }

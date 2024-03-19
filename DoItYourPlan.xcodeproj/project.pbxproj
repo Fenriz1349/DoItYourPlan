@@ -34,6 +34,9 @@
 		639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D12B9F0AB100A67779 /* LibraryScreen.swift */; };
 		639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D32B9F0ABC00A67779 /* PlanningScreen.swift */; };
 		639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D52B9F0AD600A67779 /* MaterialScreen.swift */; };
+		CF572FC02BA9D43100A5BF82 /* ProjectButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF572FBF2BA9D43100A5BF82 /* ProjectButtons.swift */; };
+		CF572FC22BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */; };
+		CF572FC52BA9DE1C00A5BF82 /* Confetti in Frameworks */ = {isa = PBXBuildFile; productRef = CF572FC42BA9DE1C00A5BF82 /* Confetti */; };
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
@@ -74,6 +77,8 @@
 		639247D32B9F0ABC00A67779 /* PlanningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningScreen.swift; sourceTree = "<group>"; };
 		639247D52B9F0AD600A67779 /* MaterialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialScreen.swift; sourceTree = "<group>"; };
 		639248222BA092DE00A67779 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		CF572FBF2BA9D43100A5BF82 /* ProjectButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtons.swift; sourceTree = "<group>"; };
+		CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsProjectScreen.swift; sourceTree = "<group>"; };
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF572FC52BA9DE1C00A5BF82 /* Confetti in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +166,7 @@
 				639247D12B9F0AB100A67779 /* LibraryScreen.swift */,
 				639247D32B9F0ABC00A67779 /* PlanningScreen.swift */,
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
+				CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 				CFA4E4922BA44E3800376435 /* AccessoryGridShop.swift */,
 				CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */,
 				CFA4E4962BA452F800376435 /* FaceGridShop.swift */,
+				CF572FBF2BA9D43100A5BF82 /* ProjectButtons.swift */,
 			);
 			path = Extracted;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 			);
 			name = DoItYourPlan;
 			packageProductDependencies = (
+				CF572FC42BA9DE1C00A5BF82 /* Confetti */,
 			);
 			productName = DoItYourPlan;
 			productReference = 6392479C2B9F090500A67779 /* DoItYourPlan.app */;
@@ -231,6 +240,7 @@
 			);
 			mainGroup = 639247932B9F090500A67779;
 			packageReferences = (
+				CF572FC32BA9DE1C00A5BF82 /* XCRemoteSwiftPackageReference "confetti-swiftui" */,
 			);
 			productRefGroup = 6392479D2B9F090500A67779 /* Products */;
 			projectDirPath = "";
@@ -267,6 +277,7 @@
 				639247CE2B9F0A6500A67779 /* NewProjectScreen.swift in Sources */,
 				639247C42B9F0A2C00A67779 /* ProfilScreen.swift in Sources */,
 				CFAB9BC92BA3345400CFCF90 /* CalendarView.swift in Sources */,
+				CF572FC22BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift in Sources */,
 				635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */,
 				639247AE2B9F091C00A67779 /* ReadMe.swift in Sources */,
 				639247A22B9F090500A67779 /* ContentView.swift in Sources */,
@@ -279,6 +290,7 @@
 				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
 				CFA4E4912BA44E2700376435 /* ClotheGridShop.swift in Sources */,
+				CF572FC02BA9D43100A5BF82 /* ProjectButtons.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
 				639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */,
@@ -494,6 +506,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF572FC32BA9DE1C00A5BF82 /* XCRemoteSwiftPackageReference "confetti-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ottijp/confetti-swiftui";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF572FC42BA9DE1C00A5BF82 /* Confetti */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF572FC32BA9DE1C00A5BF82 /* XCRemoteSwiftPackageReference "confetti-swiftui" */;
+			productName = Confetti;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 639247942B9F090500A67779 /* Project object */;
 }
