@@ -15,6 +15,14 @@ struct detailsFinishedProjectsScreen: View {
                 .padding(.horizontal, 142.0)
                 .padding(.vertical, 10)
                 .border(Color.gray, width: 1)
+            ScrollView{
+                Image("coussinRecycle")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                
+                Text ("Bravo Craft Genius !")
+                Text ("Projet en 6 semaines, comme prévu ! ")
+            }
         }
     }
 }
