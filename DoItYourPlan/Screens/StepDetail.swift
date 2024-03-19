@@ -16,7 +16,7 @@ struct StepDetail: View {
 
     
     var body: some View {
-        
+                
         HStack {
             Text(step.stepName)
                 .onAppear {
