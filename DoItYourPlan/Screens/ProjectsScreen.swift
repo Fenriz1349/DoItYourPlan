@@ -92,11 +92,10 @@ struct ProjectsScreen: View {
                                 Text("Projet 4")
                                     .multilineTextAlignment(.leading)
                                 Text("Peinture")
-                            }
-                            ZStack{
-                                Text("70%")
-                                    .padding(.leading, 150)
-                            }
+                            }.padding(.leading, 40)
+                            Spacer()
+                            ExtPiePercentCompleted(percent: 70)
+                                .padding(.trailing, 40)
                         }
                     }
                 }
