@@ -11,11 +11,11 @@ struct ProjectsScreen: View {
     @State var showNewProjet : Bool = false
     var body: some View {
         NavigationStack{
+            
             Text("Mes projets")
                 .padding(.horizontal, 152)
                 .padding(.vertical, 10)
                 .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                .padding(.top,-90)
             
             Text("Bonjour ! Craft Génius")
                 .font(.title)
@@ -27,26 +27,26 @@ struct ProjectsScreen: View {
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 25)
             ScrollView{
-                NavigationLink(destination: SelectedProjectScreen()){
+                NavigationLink(destination:SelectedProjectScreen()){
                     ZStack{
                         RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                             .fill(.purpleCustom)
                             .frame(width: 380, height: 100)
                             .padding(.bottom, 15)
+                        
                         HStack{
                             
                             VStack{
                                 Text("Projet 1")
                                     .multilineTextAlignment(.leading)
                                 Text("Couture")
-                            }
-                            ZStack{
-                                Text("70%")
-                                    .padding(.leading, 150)
-                            }
+                            } .padding(.leading, 40)
+                            Spacer()
+                            ExtPiePercentCompleted(percent: 70)
+                                .padding(.trailing, 40)
                         }
+                        .foregroundStyle(.black)
                     }
-                    .foregroundStyle(.black)
                 }
                 ZStack{
                     RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
@@ -58,11 +58,10 @@ struct ProjectsScreen: View {
                             Text("Projet 2")
                                 .multilineTextAlignment(.leading)
                             Text("Crochet")
-                        }
-                        ZStack{
-                            Text("70%")
-                                .padding(.leading, 150)
-                        }
+                        }.padding(.leading, 40)
+                        Spacer()
+                        ExtPiePercentCompleted(percent: 70)
+                            .padding(.trailing, 40)
                     }
                 }
                 ZStack{
@@ -75,12 +74,12 @@ struct ProjectsScreen: View {
                             Text("Projet 3")
                                 .multilineTextAlignment(.leading)
                             Text("Peinture")
-                        }
-                        ZStack{
-                            Text("70%")
-                                .padding(.leading, 150)
-                        }
+                        }.padding(.leading, 40)
+                        Spacer()
+                        ExtPiePercentCompleted(percent: 70)
+                            .padding(.trailing, 40)
                     }
+                    
                 }
                 if showNewProjet {
                     ZStack{
@@ -102,15 +101,15 @@ struct ProjectsScreen: View {
                     }
                 }
             }
-            NavigationLink(destination: NewProjectScreen(showNewProjet: $showNewProjet)){
-            Image(systemName: "plus.circle")
+            NavigationLink(destination:NewProjectScreen(showNewProjet: $showNewProjet)){
+                Image(systemName: "plus.circle")
                     .font(.system(size: 24))
                     .padding(.top, 10)
+                    .foregroundStyle(.black)
             }
         }
     }
 }
-
 #Preview {
     ProjectsScreen()
 }

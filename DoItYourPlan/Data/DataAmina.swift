@@ -21,5 +21,3 @@ var myProjectsList : [myProjectsView] = [
     myProjectsView(color: "pinkColor", title: "Projet 2 ", category: "Crochet", progress: 70),
     myProjectsView(color: "blueColor", title: "Projet 3", category: "Peinture", progress: 70)
 ]
-
-
