@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MaterialScreen: View {
     @State var materials = ["3 metres de jacquard Rouge","2 metres de ruban dentelle dorée", "3 bobines fil rouge similaire","2 bobines dorées", "Patron Burda Style 6550", "Paire de ciseaux", "Craies/marqueur pour patron", "Aiguilles n°90", "Epingles à tissus"]
-    @State var materialName = ""
     
+    @State var newMaterial: String = ""
     
     var body: some View {
         NavigationView{
@@ -22,6 +22,17 @@ struct MaterialScreen: View {
                         }
                     }
                     Section {
+                        TextField("Ajouter un nouveau matériel", text: $newMaterial)
+                        }
+                        
+                    Button("Ajouter") {
+                        if !newMaterial.isEmpty {
+                            materials.append(newMaterial)
+                        }
+                        
+                        
+                        
+                        
                         Button(action: addMaterial) {
                             Text("Ajouter un nouveau matériau")
                         }
@@ -37,9 +48,9 @@ struct MaterialScreen: View {
         }
     }
     func addMaterial() {
-         guard !materialName.isEmpty else { return }
-         materials.append(materialName)
-         materialName = ""
+         guard !newMaterial.isEmpty else { return }
+         materials.append(newMaterial)
+        newMaterial = ""
      }
  }
 

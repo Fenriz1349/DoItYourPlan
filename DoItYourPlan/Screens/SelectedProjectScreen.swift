@@ -14,6 +14,7 @@ struct SelectedProjectScreen: View {
     } + [addButtonStep]
     @State private var draggingItem: String?
     @State private var zoom: Bool = false
+    @State private var isFirstUnfinishedStepFound: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -23,11 +24,10 @@ struct SelectedProjectScreen: View {
                         
                         GeometryReader {
                             let size = $0.size
-                            //ajout bouton +
+                            // Pebble/bouton nouvelle étape
                             if pebble == addButtonStep {
                                 Button(action: {
-                                    myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, stepColor: randomColor(), stepPosition: randomStepPosition())
-                                    // Mise à jour du tableau pebbles si nécessaire
+                                    myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition())
                                     pebbles = myProject.steps.map { step in
                                         return step.id.uuidString
                                     } + [addButtonStep]
@@ -45,12 +45,12 @@ struct SelectedProjectScreen: View {
                                             }
                                             Text("Ajouter\rune étape")
                                                 .foregroundColor(.white)
-                                            
                                         }
                                     }
-                                    .frame(maxWidth: .infinity)                                }
+                                    .frame(maxWidth: .infinity)
+                                }
                             } else {
-                                //fin ajout bouton
+                                // Pebble de chaque step
                                 NavigationLink(destination: TasksView(pebble: pebble)) {
                                     HStack(alignment: .center) {
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
@@ -58,21 +58,31 @@ struct SelectedProjectScreen: View {
                                                 .foregroundColor(.black)
                                         }
                                         ZStack {
-                                            Circle()
                                             if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
-                                                Circle()
-                                                    .fill(step.stepColor.gradient)
+                                                if step.isDone {
+                                                    Circle()
+                                                        .fill(.gray.opacity(0.5).gradient)
+                                                } else {
+                                                    Circle()
+                                                        .fill(step.stepColor.gradient)
+                                                }
                                             }
                                             if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
                                                 Text("Etape \(step.orderNumber)")
                                                     .foregroundColor(.white)
+                                                if step.isCurrent {
+                                                    Image(systemName: "checkmark")
+                                                        .resizable()
+                                                        .frame(width: 50, height: 50)
+                                                        .foregroundColor(Color.green)
+                                                        .bold()
+                                                }
                                             }
                                         }
                                     }
                                     .frame(maxWidth: .infinity)
                                 }
-                                //stepPosition à intégrer ici
-                                .position(x: size.width - 0.5 * size.width * 1 , y: size.height / 2)
+                                .position(x: size.width - 0.5 * size.width, y: size.height / 2)
                                 .draggable(pebble) {
                                     Circle()
                                         .opacity(0.0)
@@ -99,7 +109,8 @@ struct SelectedProjectScreen: View {
                                     }
                                     
                                 }
-                            } }
+                            }
+                        }
                         .frame(height: zoom ? 180 : 100)
                     }
                 })
@@ -117,9 +128,7 @@ struct SelectedProjectScreen: View {
                     }
                 }
             })
-            
         }
-        
     }
 }
 
