@@ -12,9 +12,9 @@ struct ProfilScreen: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
-            VStack {
+//            VStack {
                 HStack {
                     NavigationLink(destination: SettingsScreen()) {
                         Image(systemName: "gearshape")
@@ -144,8 +144,11 @@ struct ProfilScreen: View {
                 }
                 
                 
-            }}}}
+            }
+//        }
+    }
+}
 
 #Preview {
-    ShopScreen(userPoints: .constant(250))
+    ProfilScreen(userPoints: .constant(250))
 }

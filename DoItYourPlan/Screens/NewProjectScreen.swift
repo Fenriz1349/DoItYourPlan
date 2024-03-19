@@ -13,7 +13,7 @@ struct NewProjectScreen: View {
     @State var selectedOption = NewProjectCategory.couture
     @State var projectDescription = ""
     @State var selectedDate: Date = Date()
-    
+    @Binding var showNewProjet : Bool
     var body: some View {
         NavigationView {
             VStack {
@@ -36,20 +36,24 @@ struct NewProjectScreen: View {
                         DatePicker("Date de fin prévue:", selection: $selectedDate, displayedComponents: [.date])
                     }
                 }
-                    Button(action: {
-//                        saveProject()
+                NavigationLink(destination: ProjectsScreen(showNewProjet: showNewProjet)
+                    .navigationBarHidden(true), isActive: $showNewProjet) {
+                    EmptyView()
+                }
 
-                    }) {
-                        Text("Valider")
-                            .padding()
-                            .foregroundColor(.black)
-                            .background(Color.purpleCustom)
-                            .cornerRadius(10)
-                    }
+                Button(action: {
+                    showNewProjet.toggle()
+                }) {
+                    Text("Valider")
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(Color.purpleCustom)
+                        .cornerRadius(10)
+                }
                 
                 .navigationBarTitle("Nouveau projet", displayMode: .inline)
                 .navigationBarItems(leading:
-                                        NavigationLink(destination: ProjectsScreen()) {
+                                        NavigationLink(destination: ProjectsScreen(showNewProjet: showNewProjet)) {
                     Text("retour")
                 }
                 )
@@ -73,5 +77,5 @@ struct NewProjectScreen: View {
 }
     
     #Preview {
-        NewProjectScreen()
+        NewProjectScreen(showNewProjet: .constant(false))
     }

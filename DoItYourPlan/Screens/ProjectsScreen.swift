@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ProjectsScreen: View {
+    @State var showNewProjet : Bool = false
     var body: some View {
-        VStack{
+        NavigationStack{
             Text("Mes projets")
                 .padding(.horizontal, 152)
                 .padding(.vertical, 10)
@@ -25,61 +26,87 @@ struct ProjectsScreen: View {
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 25)
-            ZStack{
-                RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .fill(.purpleCustom)
-                    .frame(width: 380, height: 100)
-                    .padding(.bottom, 15)
-                HStack{
-                
-                    VStack{
-                        Text("Projet 1")
-                            .multilineTextAlignment(.leading)
-                        Text("Couture")
-                    }
+            ScrollView{
+                NavigationLink(destination: SelectedProjectScreen()){
                     ZStack{
-                        Text("70%")
-                            .padding(.leading, 150)
+                        RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .fill(.purpleCustom)
+                            .frame(width: 380, height: 100)
+                            .padding(.bottom, 15)
+                        HStack{
+                            
+                            VStack{
+                                Text("Projet 1")
+                                    .multilineTextAlignment(.leading)
+                                Text("Couture")
+                            }
+                            ZStack{
+                                Text("70%")
+                                    .padding(.leading, 150)
+                            }
+                        }
+                    }
+                    .foregroundStyle(.black)
+                }
+                ZStack{
+                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                        .fill(.blueCustom)
+                        .frame(width: 380, height: 100)
+                        .padding(.bottom, 15)
+                    HStack{
+                        VStack{
+                            Text("Projet 2")
+                                .multilineTextAlignment(.leading)
+                            Text("Crochet")
+                        }
+                        ZStack{
+                            Text("70%")
+                                .padding(.leading, 150)
+                        }
+                    }
+                }
+                ZStack{
+                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                        .fill(.pinkCustom)
+                        .frame(width: 380, height: 100)
+                    HStack{
+                        
+                        VStack{
+                            Text("Projet 3")
+                                .multilineTextAlignment(.leading)
+                            Text("Peinture")
+                        }
+                        ZStack{
+                            Text("70%")
+                                .padding(.leading, 150)
+                        }
+                    }
+                }
+                if showNewProjet {
+                    ZStack{
+                        RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .fill(.pinkCustom)
+                            .frame(width: 380, height: 100)
+                        HStack{
+                            
+                            VStack{
+                                Text("Projet 4")
+                                    .multilineTextAlignment(.leading)
+                                Text("Peinture")
+                            }
+                            ZStack{
+                                Text("70%")
+                                    .padding(.leading, 150)
+                            }
+                        }
                     }
                 }
             }
-            ZStack{
-                RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .fill(.blueCustom)
-                    .frame(width: 380, height: 100)
-                    .padding(.bottom, 15)
-                HStack{
-                    VStack{
-                        Text("Projet 2")
-                            .multilineTextAlignment(.leading)
-                        Text("Crochet")
-                    }
-                    ZStack{
-                        Text("70%")
-                            .padding(.leading, 150)
-                    }
-                }
-            }
-            ZStack{
-                RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .fill(.pinkCustom)
-                    .frame(width: 380, height: 100)
-                HStack{
-                
-                    VStack{
-                        Text("Projet 3")
-                            .multilineTextAlignment(.leading)
-                        Text("Peinture")
-                    }
-                    ZStack{
-                        Text("70%")
-                            .padding(.leading, 150)
-                    }
-                }
-            }
+            NavigationLink(destination: NewProjectScreen(showNewProjet: $showNewProjet)){
             Image(systemName: "plus.circle")
-                .font(.system(size: 24))
-                .padding(.top, 10)
+                    .font(.system(size: 24))
+                    .padding(.top, 10)
+            }
         }
     }
 }
