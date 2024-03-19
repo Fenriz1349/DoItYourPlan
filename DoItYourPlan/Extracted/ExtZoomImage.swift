@@ -13,11 +13,8 @@ struct ExtZoomImage: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
-                .fill(LinearGradient(
-                    gradient: Gradient(colors: [Color("blackCustom").opacity(0.8), Color.gray.opacity(0.5)]),
-                        startPoint: .top,
-                        endPoint: .bottom
-                    ))
+                .fill(Color.gray.opacity(0.5))
+                .frame(width: 375,height: 450)
                 .frame(width: 375,height: 450)
             Image(img.link)
                 .resizable()

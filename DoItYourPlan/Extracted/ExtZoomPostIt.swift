@@ -20,11 +20,7 @@ struct ExtZoomPostIt: View {
         ZStack {
 //            arrière plan du zoom sur le post it
             RoundedRectangle(cornerRadius: 20)
-                .fill(LinearGradient(
-                    gradient: Gradient(colors: [Color("blackCustom").opacity(0.8), Color.gray.opacity(0.5)]),
-                        startPoint: .top,
-                        endPoint: .bottom
-                    ))
+                .fill(Color.gray.opacity(0.5))
                 .frame(width: 375,height: 450)
 //                fond du post It de sa propre couleur
             Rectangle()
