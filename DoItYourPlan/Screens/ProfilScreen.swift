@@ -189,9 +189,7 @@ struct ProfilScreen: View {
                         }.foregroundColor(.black)
                     }
                 )
-            
-                    
-                    
+             
         }}}
 
 #Preview {

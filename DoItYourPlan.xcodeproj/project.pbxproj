@@ -37,6 +37,7 @@
 		CF572FC02BA9D43100A5BF82 /* ProjectButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF572FBF2BA9D43100A5BF82 /* ProjectButtons.swift */; };
 		CF572FC22BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */; };
 		CF572FC52BA9DE1C00A5BF82 /* Confetti in Frameworks */ = {isa = PBXBuildFile; productRef = CF572FC42BA9DE1C00A5BF82 /* Confetti */; };
+		CF572FC92BAA253100A5BF82 /* CongratulationsTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF572FC82BAA253100A5BF82 /* CongratulationsTaskScreen.swift */; };
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
@@ -79,6 +80,7 @@
 		639248222BA092DE00A67779 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CF572FBF2BA9D43100A5BF82 /* ProjectButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtons.swift; sourceTree = "<group>"; };
 		CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsProjectScreen.swift; sourceTree = "<group>"; };
+		CF572FC82BAA253100A5BF82 /* CongratulationsTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsTaskScreen.swift; sourceTree = "<group>"; };
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				639247D32B9F0ABC00A67779 /* PlanningScreen.swift */,
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
 				CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */,
+				CF572FC82BAA253100A5BF82 /* CongratulationsTaskScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
 				CFA4E4932BA44E3800376435 /* AccessoryGridShop.swift in Sources */,
+				CF572FC92BAA253100A5BF82 /* CongratulationsTaskScreen.swift in Sources */,
 				631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

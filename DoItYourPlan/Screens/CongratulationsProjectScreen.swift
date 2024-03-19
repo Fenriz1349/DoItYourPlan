@@ -8,11 +8,11 @@
 import SwiftUI
 import Confetti
 
-struct CongratulationsPrjectScreen: View {
+struct CongratulationsProjectScreen: View {
     
     @State private var isConfettiActive = false
     @State private var isAnimating = false
-    @State private var shouldNavigate = false
+   
     var body: some View {
         NavigationView {
             ZStack {
@@ -54,20 +54,16 @@ struct CongratulationsPrjectScreen: View {
                         .padding(.bottom)
                     
                     Spacer()
-                    
-                    Button("Continuer") {
-                        self.shouldNavigate = true
-                    }
                 }
+                    
                 
-                if shouldNavigate {
-                    ProfilScreen(userPoints: .constant(250), userSelections: userSelections)
-                               }
-                           }
+                
+                
                 if isConfettiActive {
                     ConfettiView()
                 }
             }
+        
             .onAppear {
                 self.isConfettiActive = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
@@ -76,8 +72,8 @@ struct CongratulationsPrjectScreen: View {
             }
         }
     }
-    
 
+}
 #Preview {
-    CongratulationsPrjectScreen()
+    CongratulationsProjectScreen()
 }
