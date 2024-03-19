@@ -12,6 +12,7 @@ var projectName = ""
 var selectedOption = NewProjectCategory.couture
 var projectDescription = ""
 var selectedDate: Date = Date()
+var newProject = Project(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
 
 
 enum NewProjectCategory: String, CaseIterable{
@@ -62,11 +63,10 @@ struct Project {
     
 }
 func saveProject() {
-    let newProject = Project(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
     
-    NavigationLink(destination: ProjectsScreen()) {
-        EmptyView()
-    }
+//    NavigationLink(destination: ProjectsScreen()) {
+//        EmptyView()
+//    }
 }
 
 
