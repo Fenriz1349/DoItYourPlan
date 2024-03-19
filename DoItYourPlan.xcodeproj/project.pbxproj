@@ -29,7 +29,6 @@
 		639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D12B9F0AB100A67779 /* LibraryScreen.swift */; };
 		639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D32B9F0ABC00A67779 /* PlanningScreen.swift */; };
 		639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D52B9F0AD600A67779 /* MaterialScreen.swift */; };
-		9B9E6B842BA9D8A300D47AC0 /* MaterialScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9E6B832BA9D8A300D47AC0 /* MaterialScreen2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +55,6 @@
 		639247D12B9F0AB100A67779 /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
 		639247D32B9F0ABC00A67779 /* PlanningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningScreen.swift; sourceTree = "<group>"; };
 		639247D52B9F0AD600A67779 /* MaterialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialScreen.swift; sourceTree = "<group>"; };
-		9B9E6B832BA9D8A300D47AC0 /* MaterialScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialScreen2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +133,6 @@
 				639247D12B9F0AB100A67779 /* LibraryScreen.swift */,
 				639247D32B9F0ABC00A67779 /* PlanningScreen.swift */,
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
-				9B9E6B832BA9D8A300D47AC0 /* MaterialScreen2.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 				639247C62B9F0A3500A67779 /* ShopScreen.swift in Sources */,
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
-				9B9E6B842BA9D8A300D47AC0 /* MaterialScreen2.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MaterialScreen2: View {
+struct MaterialScreen: View {
     // Structure pour stocker le nom de l'objet et son prix
     struct MaterialItem: Identifiable {
         var id = UUID()
@@ -17,16 +17,29 @@ struct MaterialScreen2: View {
     
     // Tableau de matériaux avec les objets et leurs prix
     @State var materials: [MaterialItem] = [
-        MaterialItem(name: "3 metres de jacquard Rouge", price: 10.0),
-        MaterialItem(name: "2 metres de ruban dentelle dorée", price: 5.0),
-        MaterialItem(name: "3 bobines fil rouge similaire", price: 3.0),
-        MaterialItem(name: "2 bobines dorées", price: 3.50),
-        
-//  @State var materials = [ "Patron Burda Style 6550", "Paire de ciseaux", "Craies/marqueur pour patron", "Aiguilles n°90", "Epingles à tissus"]
+        MaterialItem(name: "1m de jacquard Rouge", price: 10.5),
+        MaterialItem(name: "50cm de ruban dentelle dorée", price: 5.0),
+        MaterialItem(name: "2 bobines de fil rouge", price: 0.0),
+        MaterialItem(name: "1 bobine dorée", price: 3.5),
+        MaterialItem(name: "Patron Burda", price: 6.50),
+        MaterialItem(name: "Marqueur Patron", price: 2.99),
+        MaterialItem(name: "Paire de ciseaux", price: 0.0),
+        MaterialItem(name: "Aiguilles 70/10", price: 6.24),
+        MaterialItem(name: "Pinces pour couture", price: 9.49)
     ]
     
     @State var newMaterial = ""
     @State var selectedMaterials = Set<UUID>()
+    
+    var totalMaterialPrice: Double {
+        // Calculer le total des prix des matériaux
+        return materials.reduce(0) { $0 + $1.price }
+    }
+    
+    var totalRemainingPrice: Double {
+        let remainingMaterials = materials.filter { !selectedMaterials.contains($0.id)}
+        return remainingMaterials.reduce(0) { $0 + $1.price}
+    }
     
     var body: some View {
         NavigationView {
@@ -44,6 +57,20 @@ struct MaterialScreen2: View {
                                 }
                         }
                     }
+                    //   pour calculer le total de mon tableau
+                    HStack{
+                        Section(header: Text("Cout total")) {
+                            Text("\(String(format: "%.2f", totalMaterialPrice))€")
+                                .font(.headline)
+                        }
+                        Spacer()
+                        Section(header: Text("Reste à acheter")) {
+                            Text("\(String(format: "%.2f", totalRemainingPrice))€")
+                                .font(.headline)
+                        }
+                        
+                    }
+                    
                     Section {
                         HStack {
                             TextField("Nouveau matériau", text: $newMaterial)
@@ -72,7 +99,7 @@ struct MaterialScreen2: View {
 }
 
 struct MaterialRow: View {
-    var material: MaterialScreen2.MaterialItem
+    var material: MaterialScreen.MaterialItem
     var isSelected: Bool
     
     var body: some View {
@@ -92,5 +119,5 @@ struct MaterialRow: View {
 }
 
 #Preview {
-    MaterialScreen2()
+    MaterialScreen()
 }
