@@ -33,27 +33,6 @@ struct InspirationView: View {
                     .frame(width: 350, height: 50)
                 Text("page d'inspiration Projet 1")
             }
-            HStack{
-                Button {
-                    showNewPostIt.toggle()
-                } label: {
-                    HStack{
-                        Image(systemName: "plus.app.fill")
-                        Text("Ajouter PostIt")
-                            .font(.system(size: 18))
-                    }
-                }.padding(.leading,10)
-                Spacer()
-                Button {
-                    showNewPostIt.toggle()
-                } label: {
-                    HStack{
-                        Image(systemName: "plus.app.fill")
-                        Text("Ajouter Image")
-                            .font(.system(size: 18))
-                    }
-                }.padding(.trailing,10)
-            }
             ScrollView {
                 ZStack {
                     Image("liegeBackground")
@@ -129,6 +108,27 @@ struct InspirationView: View {
                             .position(x: 450, y: 250)
                     }
                 }
+            }
+            HStack{
+                Button {
+                    showNewPostIt.toggle()
+                } label: {
+                    HStack{
+                        Image(systemName: "plus.app.fill")
+                        Text("Ajouter PostIt")
+                            .font(.system(size: 18))
+                    }
+                }.padding(.leading,10)
+                Spacer()
+                Button {
+                    showNewPostIt.toggle()
+                } label: {
+                    HStack{
+                        Image(systemName: "plus.app.fill")
+                        Text("Ajouter Image")
+                            .font(.system(size: 18))
+                    }
+                }.padding(.trailing,10)
             }
         }
     }
