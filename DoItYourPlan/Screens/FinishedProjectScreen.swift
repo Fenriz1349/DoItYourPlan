@@ -9,48 +9,55 @@ import SwiftUI
 
 struct FinishedProjectScreen: View {
     var body: some View {
-            VStack{
-                Text("Mes projets terminés")
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 152)
-                    .padding(.vertical, 10)
-                    .border(Color.gray, width: 1)
-                
-                ScrollView {
-                ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .fill(.white)
-                        .frame(width: 380, height: 150)
-                        .border(.purpleCustom)
-                        .padding(.bottom, 15)
-                    VStack{
-                        ZStack{
-                            RoundedRectangle (cornerRadius: 15)
-                                .fill(.purpleCustom)
-                                .frame(width: 100, height: 30)
-                            Text("Couture")
-                                .multilineTextAlignment(.leading)
-                        } .padding(.trailing, 240.0)
+        
+        NavigationStack{
+            Text("Mes projets terminés")
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 152)
+                .padding(.vertical, 10)
+                .border(Color.gray, width: 1)
+            
+            ScrollView {
+                NavigationLink(destination:detailsFinishedProjectsScreen()){
+                    ZStack{
+                        RoundedRectangle (cornerRadius: 25.0)
+                            .fill(.white)
+                            .frame(width: 380, height: 150)
+                            .border(.purpleCustom)
+                            .padding(.bottom, 15)
                         
-                        HStack{
-                            Image("coussinRecycle")
-                                .resizable()
-                                .frame(width: 150, height: 100, alignment: .topLeading)
-                                .padding(.vertical, 20)
-                                .padding(.leading, -35.0)
-                            
-                            VStack{
-                                Text("Coussins recyclés")
-                                Text("Début : 12/01/2024")
-                                Text("Fin : 24/02/2024")
+                        VStack{
+                            ZStack{
+                                RoundedRectangle (cornerRadius: 15)
+                                    .fill(.purpleCustom)
+                                    .frame(width: 100, height: 30)
+                                
+                                Text("Couture")
+                                    .multilineTextAlignment(.leading)
+                                    .foregroundColor(.black)
                             }
-                        } .padding(.top, -20.0)
-                        
+                            .padding(.trailing, 240.0)
+                            
+                            HStack{
+                                Image("coussinRecycle")
+                                    .resizable()
+                                    .frame(width: 150, height: 100, alignment: .topLeading)
+                                    .padding(.vertical, 20)
+                                    .padding(.leading, -35.0)
+                                
+                                VStack{
+                                    Text("Coussins recyclés")
+                                    Text("Début : 12/01/2024")
+                                    Text("Fin : 24/02/2024")
+                                }.foregroundStyle(.black)
+                            } .padding(.top, -20.0)
+                            
+                        }
                     }
                 } /* rectangle 1 ⬆ */
                 
                 ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle (cornerRadius: 25.0)
                         .fill(.white)
                         .frame(width: 380, height: 150)
                         .border(.purpleCustom)
@@ -82,7 +89,7 @@ struct FinishedProjectScreen: View {
                 } /* rectangle 2 ⬆ */
                 
                 ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle (cornerRadius: 25.0)
                         .fill(.white)
                         .frame(width: 380, height: 150)
                         .border(.purpleCustom)
@@ -113,7 +120,7 @@ struct FinishedProjectScreen: View {
                     }
                 } /* rectangle 3 ⬆ */
                 ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle (cornerRadius: 25.0)
                         .fill(.white)
                         .frame(width: 380, height: 150)
                         .border(.purpleCustom)
@@ -144,7 +151,7 @@ struct FinishedProjectScreen: View {
                 } /* rectangle 4 ⬆ */
                 
                 ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle (cornerRadius: 25.0)
                         .fill(.white)
                         .frame(width: 380, height: 150)
                         .border(.purpleCustom)

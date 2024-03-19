@@ -30,6 +30,7 @@
 		639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D32B9F0ABC00A67779 /* PlanningScreen.swift */; };
 		639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639247D52B9F0AD600A67779 /* MaterialScreen.swift */; };
 		9BA548D92BA99237004C4319 /* ExtPiePercentCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA548D82BA99237004C4319 /* ExtPiePercentCompleted.swift */; };
+		9BA548DB2BA9D4A0004C4319 /* DetailsFinishedProjectsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA548DA2BA9D4A0004C4319 /* DetailsFinishedProjectsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		639247D32B9F0ABC00A67779 /* PlanningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningScreen.swift; sourceTree = "<group>"; };
 		639247D52B9F0AD600A67779 /* MaterialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialScreen.swift; sourceTree = "<group>"; };
 		9BA548D82BA99237004C4319 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
+		9BA548DA2BA9D4A0004C4319 /* DetailsFinishedProjectsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFinishedProjectsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +140,10 @@
 				639247C52B9F0A3500A67779 /* ShopScreen.swift */,
 				639247C72B9F0A4000A67779 /* SettingsScreen.swift */,
 				639247C92B9F0A4E00A67779 /* SelectedProjectScreen.swift */,
-				639247CB2B9F0A5800A67779 /* ProjectsScreen.swift */,
 				639247CD2B9F0A6500A67779 /* NewProjectScreen.swift */,
+				639247CB2B9F0A5800A67779 /* ProjectsScreen.swift */,
 				639247CF2B9F0A9300A67779 /* FinishedProjectScreen.swift */,
+				9BA548DA2BA9D4A0004C4319 /* DetailsFinishedProjectsScreen.swift */,
 				639247D12B9F0AB100A67779 /* LibraryScreen.swift */,
 				639247D32B9F0ABC00A67779 /* PlanningScreen.swift */,
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
@@ -238,6 +241,7 @@
 				639247C62B9F0A3500A67779 /* ShopScreen.swift in Sources */,
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
+				9BA548DB2BA9D4A0004C4319 /* DetailsFinishedProjectsScreen.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
