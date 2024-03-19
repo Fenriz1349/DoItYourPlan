@@ -62,13 +62,13 @@ struct NewProject {
     
 }
 
-func saveProject() {
-    let newProject = NewProject(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
-    
-    NavigationLink(destination: ProjectsScreen()) {
-        EmptyView()
-    }
-}
+//func saveProject() {
+//    let newProject = NewProject(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
+//    
+//    NavigationLink(destination: ProjectsScreen()) {
+//        EmptyView()
+//    }
+//}
 
 
 

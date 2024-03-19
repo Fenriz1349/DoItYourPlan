@@ -76,7 +76,6 @@ struct ProjectsScreen: View {
                             .padding(.leading, 150)
                     }
                 }
-               
             }
             Image(systemName: "plus.circle")
                 .font(.system(size: 24))

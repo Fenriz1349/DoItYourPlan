@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 //enum des differents couleurs
-enum CustomColor : String{
+enum CustomColor : String,CaseIterable{
     case purpleC = "purpleCustom"
     case pinkC = "pinkCustom"
     case blueC = "blueCustom"
@@ -17,6 +17,26 @@ enum CustomColor : String{
     case greenC = "greenCustom"
     case orangeC = "orangeCustom"
     case yellowC = "yellowCustom"
+}
+
+enum CustomColorPostIT : String,CaseIterable{
+    case purpleC = "purpleCustom"
+    case pinkC = "pinkCustom"
+    case blueC = "blueCustom"
+    case greenC = "greenCustom"
+    case orangeC = "orangeCustom"
+    case yellowC = "yellowCustom"
+    
+    func color() ->String{
+        switch self {
+        case .purpleC : return "violet"
+        case .pinkC : return "rose"
+        case .blueC : return "bleu"
+        case .greenC : return "vert"
+        case .orangeC : return "orange"
+        case .yellowC : return "jaune"
+        }
+    }
 }
 //ennum de la liste des category de DIY, renvoie une string de la category
 // le methode .color renvoie la couleur assosié
@@ -134,16 +154,26 @@ class Inspiration : Identifiable,ObservableObject {
 // color : la couleur de fond du post It
 // content : le contenu du Post It
 class PostIt : Inspiration {
-    @Published var color : CustomColor
+    @Published var color : CustomColorPostIT
     @Published var contents : [String]
     
-    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0,isShowed : Bool = true,color: CustomColor, contents: [String]) {
+    init(name: String, x: CGFloat = 0, y: CGFloat = 0, rotation: Double = 0,isShowed : Bool = true,color: CustomColorPostIT, contents: [String]) {
             self.color = color
             self.contents = contents
             super.init(name: name, x: x, y: y, rotation: rotation)
         }
 }
 
+class PostItList: ObservableObject {
+    @Published var postIts: [PostIt] = [
+        PostIt(name: "Post It 1", x: 350, y: 100, rotation: -5, color: .yellowC, contents: ["test", "test2"]),
+        PostIt(name: "Post It 2", x: 350, y: 300, rotation: 10, color: .blueC, contents: ["test", "test2"])
+    ]
+    
+    func addPostIt(_ postIt: PostIt) {
+        postIts.append(postIt)
+    }
+}
 //clsse herité de Inspiration pour les Post It
 // color : la couleur de fond du post It
 // content : le contenu du Post It

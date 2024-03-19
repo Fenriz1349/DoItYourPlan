@@ -42,13 +42,12 @@ struct ExtZoomImage: View {
                 Button {
                     showImage.toggle()
                 } label: {
-                    Text("retour")
+                    Text("fermer")
                         .font(.system(size: 24))
                 }
             }
         }
         .frame(width: 350,height: 375)
-//        .background(.red)
     }
 }
 

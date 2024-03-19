@@ -37,7 +37,7 @@ struct NewProjectScreen: View {
                     }
                 }
                     Button(action: {
-                        saveProject()
+//                        saveProject()
 
                     }) {
                         Text("Valider")
