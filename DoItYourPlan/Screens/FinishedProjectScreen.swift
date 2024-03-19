@@ -25,7 +25,7 @@ struct FinishedProjectScreen: View {
                             .frame(width: 380, height: 150)
                             .border(.purpleCustom)
                             .padding(.bottom, 15)
-                        
+
                         VStack{
                             ZStack{
                                 RoundedRectangle (cornerRadius: 15)
@@ -39,14 +39,15 @@ struct FinishedProjectScreen: View {
                             .padding(.trailing, 240.0)
                             
                             HStack{
-                                Image("coussinRecycle")
+                                Image("cosplayGirl3")
                                     .resizable()
-                                    .frame(width: 150, height: 100, alignment: .topLeading)
+                                    .frame(width: 130, height: 100)
                                     .padding(.vertical, 20)
                                     .padding(.leading, -35.0)
+                                  
                                 
                                 VStack{
-                                    Text("Coussins recyclés")
+                                    Text("Costume Cosplay BatGirl")
                                     Text("Début : 12/01/2024")
                                     Text("Fin : 24/02/2024")
                                 }.foregroundStyle(.black)
@@ -84,7 +85,6 @@ struct FinishedProjectScreen: View {
                                 Text("Fin : 17/12/2023")
                             }
                         } .padding(.top, -20.0)
-                        
                     }
                 } /* rectangle 2 ⬆ */
                 
@@ -178,8 +178,35 @@ struct FinishedProjectScreen: View {
                             }
                         } .padding(.top, -20.0)
                         
+                    }/* rectangle 5 ⬆ */
+                }
+                VStack{
+                    ZStack{
+                        RoundedRectangle (cornerRadius: 15)
+                            .fill(.purpleCustom)
+                            .frame(width: 100, height: 30)
+                        
+                        Text("Couture")
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(.black)
                     }
-                } /* rectangle 5 ⬆ */
+                    .padding(.trailing, 240.0)
+                    
+                    HStack{
+                        Image("coussinRecycle")
+                            .resizable()
+                            .frame(width: 150, height: 100, alignment: .topLeading)
+                            .padding(.vertical, 20)
+                            .padding(.leading, -35.0)
+                        
+                        VStack{
+                            Text("Coussins recyclés")
+                            Text("Début : 12/01/2024")
+                            Text("Fin : 24/02/2024")
+                        }.foregroundStyle(.black)
+                    } .padding(.top, -20.0)
+                    
+                }
             }
         }
     }

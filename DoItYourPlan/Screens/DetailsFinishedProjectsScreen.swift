@@ -16,12 +16,28 @@ struct detailsFinishedProjectsScreen: View {
                 .padding(.vertical, 10)
                 .border(Color.gray, width: 1)
             ScrollView{
-                Image("coussinRecycle")
-                    .resizable()
-                    .frame(width: 100, height: 100)
+                Spacer()
+                    .frame(height: 30)
+                Text ("🎊 Bravo Craft Genius ! 🎊 ")
+                Text ("Projet réalisé en 6 semaines, comme prévu ! ")
+                Spacer()
+                    .frame(height: 50)
                 
-                Text ("Bravo Craft Genius !")
-                Text ("Projet en 6 semaines, comme prévu ! ")
+                    Image("cosplayGirl1")
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                        .cornerRadius(20)
+                    Image("cosplayGirl2")
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                        .cornerRadius(20)
+                
+                Spacer()
+                    .frame(height: 30)
+                
+                Text("Partage ta création sur tes réseaux sociaux 📱")
+                
+                
             }
         }
     }
