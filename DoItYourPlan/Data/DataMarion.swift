@@ -4,10 +4,18 @@
 //
 //  Created by apprenant68 on 11/03/2024.
 //
-
-
 import SwiftUI
 
+class UserSelections: ObservableObject {
+    @Published var selectedHat: Hat?
+    @Published var selectedColorFace: ColorFace?
+    @Published var selectedFace: Face?
+    @Published var selectedHair: Hair?
+    @Published var selectedAccessory: Accessory?
+    @Published var selectedBackground: Background?
+    @Published var selectedClothe: Clothe?
+}
+var userSelections = UserSelections()
 struct ColorFace: Identifiable {
     let id = UUID()
     let name: String
@@ -32,9 +40,6 @@ struct Hair: Identifiable {
     var points: Points?
 }
 
-  
-
-
 struct Hat: Identifiable {
     let id = UUID()
     let name: String
@@ -42,19 +47,13 @@ struct Hat: Identifiable {
     var iconCadenas: Bool 
     var points: Points?
 }
-struct Points {
-    var iconPoints: String
-    var nbrPoints: Int
-}
 
-
-struct Clothes: Identifiable {
+struct Clothe: Identifiable {
     let id = UUID()
     let name: String
-    let image: String
-    let iconPoints: String
-    let iconCadenas: String
-    let nbrPoints: Int
+    let color: Color
+    var iconCadenas: Bool
+    var points: Points?
 }
 
 struct Accessory: Identifiable {
@@ -67,18 +66,32 @@ struct Accessory: Identifiable {
 struct Background: Identifiable {
     let id = UUID()
     let name: String
-    let image: String
-    let iconPoints: String
-    let iconCadenas: String
-    let nbrPoints: Int
+    let color: Color
+    var iconCadenas: Bool
+    var points: Points?
+}
+struct Points {
+    var iconPoints: String
+    var nbrPoints: Int
 }
 
-
 var colorFaces: [ColorFace] = [
-            ColorFace(name: "Color Face 1", color: Color("ColorFace1"), iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 100)),
-            ColorFace(name: "Color Face 2", color: Color("ColorFace2"), iconCadenas: true, points: Points(iconPoints: "icon_points2", nbrPoints: 120)),
-            
-        ]
+    ColorFace(name: "Color Face 1", color: Color("ColorFace1"), iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 50)),
+    ColorFace(name: "Color Face 2", color: Color("ColorFace2"), iconCadenas: true, points: Points(iconPoints: "icon_points2", nbrPoints: 30)),
+    ColorFace(name: "Color Face 3", color: Color("ColorFace3"), iconCadenas: false, points: nil),
+    ColorFace(name: "Color Face 4", color: Color("ColorFace4"), iconCadenas: true, points: Points(iconPoints: "icon_points4", nbrPoints: 40)),
+    ColorFace(name: "Color Face 5", color: Color("ColorFace5"), iconCadenas: false, points: nil),
+    ColorFace(name: "Color Face 6", color: Color("ColorFace6"), iconCadenas: true, points: Points(iconPoints: "icon_points6", nbrPoints: 50)),
+    ColorFace(name: "Color Face 7", color: Color("ColorFace7"), iconCadenas: false, points: nil),
+    ColorFace(name: "Color Face 8", color: Color("ColorFace8"), iconCadenas: true, points: Points(iconPoints: "icon_points8", nbrPoints: 60)),
+    ColorFace(name: "Color Face 9", color: Color("ColorFace9"), iconCadenas: false, points: nil),
+    ColorFace(name: "Color Face 10", color: Color("ColorFace10"), iconCadenas: true, points: Points(iconPoints: "icon_points10", nbrPoints: 70)),
+    ColorFace(name: "Color Face 11", color: Color("ColorFace11"), iconCadenas: false, points: nil),
+    ColorFace(name: "Color Face 12", color: Color("ColorFace12"), iconCadenas: true, points: Points(iconPoints: "icon_points12", nbrPoints: 80)),
+    ColorFace(name: "Color Face 13", color: Color("ColorFace13"), iconCadenas: false, points: nil),
+    ColorFace(name: "Color Face 14", color: Color("ColorFace14"), iconCadenas: true, points: Points(iconPoints: "icon_points14", nbrPoints: 90)),
+]
+
   
 var faces: [Face] = [
         Face(name: "Face 1", image: "face1", iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 40)),
@@ -133,10 +146,19 @@ var hats: [Hat] = [
 ]
 
 
-let clothes: [Clothes] = [
-    Clothes(name: "Clothes 1", image: "clothes1", iconPoints: "icon_points1", iconCadenas: "icon_cadenas1", nbrPoints: 30),
-    Clothes(name: "Clothes 2", image: "clothes2", iconPoints: "icon_points2", iconCadenas: "icon_cadenas2", nbrPoints: 35),
-    // Ajoutez d'autres vêtements ici...
+var clothes: [Clothe] = [
+    Clothe(name: "Clothe 1", color: Color("Clothe1"), iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 50)),
+    Clothe(name: "Clothe 2", color: Color("Clothe2"), iconCadenas: true, points: Points(iconPoints: "icon_points2", nbrPoints: 50)),
+    Clothe(name: "Clothe 3", color: Color("Clothe3"), iconCadenas: false, points: nil),
+    Clothe(name: "Clothe 4", color: Color("Clothe4"), iconCadenas: true, points: Points(iconPoints: "icon_points4", nbrPoints: 70)),
+    Clothe(name: "Clothe 5", color: Color("Clothe5"), iconCadenas: false, points: nil),
+    Clothe(name: "Clothe 6", color: Color("Clothe6"), iconCadenas: true, points: Points(iconPoints: "icon_points6", nbrPoints: 110)),
+    Clothe(name: "Clothe 7", color: Color("Clothe7"), iconCadenas: false, points: nil),
+    Clothe(name: "Clothe 8", color: Color("Clothe8"), iconCadenas: true, points: Points(iconPoints: "icon_points8", nbrPoints: 150)),
+    Clothe(name: "Clothe 9", color: Color("Clothe9"), iconCadenas: false, points: nil),
+    Clothe(name: "Clothe 10", color: Color("Clothe10"), iconCadenas: true, points: Points(iconPoints: "icon_points10", nbrPoints: 190)),
+    Clothe(name: "Clothe 11", color: Color("Clothe11"), iconCadenas: false, points: nil),
+    Clothe(name: "Clothe 12", color: Color("Clothe12"), iconCadenas: true, points: Points(iconPoints: "icon_points12", nbrPoints: 230)),
 ]
 
 var accessories: [Accessory] = [
@@ -159,8 +181,16 @@ var accessories: [Accessory] = [
     Accessory(name: "Access 17", image: "access17", iconCadenas: false, points: nil),
 ]
 
-let backgrounds: [Background] = [
-    Background(name: "Background 1", image: "background1", iconPoints: "icon_points1", iconCadenas: "icon_cadenas1", nbrPoints: 10),
-    Background(name: "Background 2", image: "background2", iconPoints: "icon_points2", iconCadenas: "icon_cadenas2", nbrPoints: 15),
-    // Ajoutez d'autres arrière-plans ici...
+var backgrounds: [Background] = [
+    Background(name: "Background 1", color: Color("beigeCustom"), iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 50)),
+    Background(name: "Background 2", color: Color("yellowCustom"), iconCadenas: true, points: Points(iconPoints: "icon_points1", nbrPoints: 50)),
+    Background(name: "Background 3", color: Color("orangeCustom"), iconCadenas: false, points: nil),
+    Background(name: "Background 4", color: Color("pinkCustom"), iconCadenas: true, points: Points(iconPoints: "icon_points4", nbrPoints: 70)),
+    Background(name: "Background 5", color: Color("purpleCustom"), iconCadenas: false, points: nil),
+    Background(name: "Background 6", color: Color("blueCustom"), iconCadenas: true, points: Points(iconPoints: "icon_points6", nbrPoints: 110)),
+    Background(name: "Background 7", color: Color("blue2Custom"), iconCadenas: false, points: nil),
+    Background(name: "Background 8", color: Color("greenCustom"), iconCadenas: true, points: Points(iconPoints: "icon_points8", nbrPoints: 150)),
+    Background(name: "Background 9", color: Color("green2Custom"), iconCadenas: false, points: nil),
+    Background(name: "Background 10", color: Color("grayCustom"), iconCadenas: true, points: Points(iconPoints: "icon_points10", nbrPoints: 190)),
+   
 ]

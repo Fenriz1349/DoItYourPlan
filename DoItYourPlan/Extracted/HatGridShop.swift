@@ -10,6 +10,8 @@ struct HatGridShop: View {
     @Binding var selectedHat: Hat?
     @Binding var userPoints: Int // Les points de l'utilisateur sont passés ici
     @Binding var showAlert: Bool
+    @ObservedObject var userSelections: UserSelections
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 0)
             .fill(Color.black)
@@ -63,14 +65,13 @@ struct HatGridShop: View {
                                 userPoints -= hat.points?.nbrPoints ?? 0
                                 if let index = hats.firstIndex(where: { $0.id == hat.id }) {
                                     hats[index].iconCadenas = false
-                                
-                                selectedHat = hats[index]
+                                    userSelections.selectedHat = hats[index]
                             }
                             } else {
                                 showAlert = true // Affiche l'alerte car l'utilisateur n'a pas assez de points
                             }
                         } else {
-                            selectedHat = hat // Affecter le chapeau sélectionné à selectedHat
+                            userSelections.selectedHat = hat // Affecter le chapeau sélectionné à selectedHat
                             
                         }
                     }
@@ -83,5 +84,5 @@ struct HatGridShop: View {
     }}
 
 #Preview {
-    HatGridShop(selectedHat: .constant(nil), userPoints: .constant(100), showAlert: .constant(false))
+    HatGridShop(selectedHat: .constant(nil), userPoints: .constant(100), showAlert: .constant(false), userSelections: userSelections)
 }

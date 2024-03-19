@@ -37,7 +37,7 @@
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
-		CFA4E4912BA44E2700376435 /* ClothesGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4902BA44E2700376435 /* ClothesGridShop.swift */; };
+		CFA4E4912BA44E2700376435 /* ClotheGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4902BA44E2700376435 /* ClotheGridShop.swift */; };
 		CFA4E4932BA44E3800376435 /* AccessoryGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4922BA44E3800376435 /* AccessoryGridShop.swift */; };
 		CFA4E4952BA44E5000376435 /* BackgroundGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */; };
 		CFA4E4972BA452F800376435 /* FaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E4962BA452F800376435 /* FaceGridShop.swift */; };
@@ -77,7 +77,7 @@
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
-		CFA4E4902BA44E2700376435 /* ClothesGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesGridShop.swift; sourceTree = "<group>"; };
+		CFA4E4902BA44E2700376435 /* ClotheGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClotheGridShop.swift; sourceTree = "<group>"; };
 		CFA4E4922BA44E3800376435 /* AccessoryGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryGridShop.swift; sourceTree = "<group>"; };
 		CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGridShop.swift; sourceTree = "<group>"; };
 		CFA4E4962BA452F800376435 /* FaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceGridShop.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 				CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */,
 				CFA4E48C2BA44DD300376435 /* HatGridShop.swift */,
 				CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */,
-				CFA4E4902BA44E2700376435 /* ClothesGridShop.swift */,
+				CFA4E4902BA44E2700376435 /* ClotheGridShop.swift */,
 				CFA4E4922BA44E3800376435 /* AccessoryGridShop.swift */,
 				CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */,
 				CFA4E4962BA452F800376435 /* FaceGridShop.swift */,
@@ -278,7 +278,7 @@
 				639247B52B9F097000A67779 /* DataJulien.swift in Sources */,
 				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
-				CFA4E4912BA44E2700376435 /* ClothesGridShop.swift in Sources */,
+				CFA4E4912BA44E2700376435 /* ClotheGridShop.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
 				639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */,

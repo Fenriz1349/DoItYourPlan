@@ -11,6 +11,7 @@ struct HairGridShop: View {
     @Binding var selectedHair: Hair?
     @Binding var userPoints: Int // Les points de l'utilisateur sont passés ici
     @Binding var showAlert: Bool
+    @ObservedObject var userSelections: UserSelections
     var body: some View {
         RoundedRectangle(cornerRadius: 0)
             .fill(Color.black)
@@ -64,13 +65,13 @@ struct HairGridShop: View {
                                 userPoints -= hair.points?.nbrPoints ?? 0
                                 if let index = hairs.firstIndex(where: { $0.id == hair.id }) {
                                     hairs[index].iconCadenas = false
-                                    selectedHair = hairs[index]
+                                    userSelections.selectedHair = hairs[index]
                                 }
                             } else {
                                 showAlert = true // Affiche l'alerte car l'utilisateur n'a pas assez de points
                             }
                         } else {
-                            selectedHair = hair // Affecter le cheveu sélectionné à selectedHair
+                            userSelections.selectedHair = hair // Affecter le cheveu sélectionné à selectedHair
                         }
                     }
                 }
@@ -82,7 +83,7 @@ struct HairGridShop: View {
 
 #Preview {
  
-        HairGridShop(selectedHair: .constant(nil), userPoints: .constant(100), showAlert: .constant(false))
+        HairGridShop(selectedHair: .constant(nil), userPoints: .constant(100), showAlert: .constant(false), userSelections: userSelections)
     }
 
 

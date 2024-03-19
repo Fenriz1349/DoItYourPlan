@@ -8,12 +8,14 @@ import SwiftUI
 
 struct AccessoryGridShop: View {
     @Binding var selectedAccessory: Accessory?
-    @Binding var userPoints: Int // Les points de l'utilisateur sont passés ici
+    @Binding var userPoints: Int 
     @Binding var showAlert: Bool
+    @ObservedObject var userSelections: UserSelections
+
     var body: some View {
         RoundedRectangle(cornerRadius: 0)
             .fill(Color.black)
-            .frame(height: 1) // Hauteur de la bordure
+            .frame(height: 1)
         ScrollView {
             Text("Accessoires")
                 .font(.system(size: 24))
@@ -31,31 +33,30 @@ struct AccessoryGridShop: View {
                             if accessory.iconCadenas {
                                 HStack {
                                     Spacer()
-                                    Image(systemName: "lock.fill") // Icône du cadenas
-                                        .foregroundColor(.black)
+                                    Image(systemName: "lock.fill")                                        .foregroundColor(.black)
                                         .padding(.top, -37)
                                         .padding(.leading, -25)
                                 }
                             } else {
-                                Color.clear // Vue vide pour maintenir l'espace
+                                Color.clear
                             }
                         }
-                        .frame(width: 90, height: 90) // Taille de l'image et de la zone des points
+                        .frame(width: 90, height: 90)
                         .overlay(
                             Image(accessory.image)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 60, height: 60) // Taille de l'image
+                                .frame(width: 60, height: 60)
                         )
                         if accessory.iconCadenas, let points = accessory.points {
                             HStack {
-                                Image(systemName: "leaf.fill") // Icône des points
+                                Image(systemName: "leaf.fill")
                                     .foregroundColor(.black)
-                                Text("\(points.nbrPoints)") // Nombre de points
+                                Text("\(points.nbrPoints)")
                                     .foregroundColor(.black)
                             }
                         } else {
-                            Color.clear // Vue vide pour maintenir l'espace
+                            Color.clear
                         }
                     }.onTapGesture {
                         if accessory.iconCadenas {
@@ -63,13 +64,14 @@ struct AccessoryGridShop: View {
                                 userPoints -= accessory.points?.nbrPoints ?? 0
                                 if let index = accessories.firstIndex(where: { $0.id == accessory.id }) {
                                     accessories[index].iconCadenas = false
-                                    selectedAccessory = accessories[index]
+                                    userSelections.selectedAccessory = accessories[index]
                                 }
                             } else {
-                                showAlert = true // Affiche l'alerte car l'utilisateur n'a pas assez de points
+                                showAlert = true
                             }
                         } else {
-                            selectedAccessory = accessory // Affecter l'accessoire sélectionné à selectedAccessory
+                            userSelections.selectedAccessory = accessory
+
                         }
                     }
                 }
@@ -80,7 +82,8 @@ struct AccessoryGridShop: View {
 }
 
 #Preview {
-        AccessoryGridShop(selectedAccessory: .constant(nil), userPoints: .constant(100), showAlert: .constant(false))
+    AccessoryGridShop(selectedAccessory: .constant(nil), userPoints: .constant(100), showAlert: .constant(false), userSelections: userSelections)
+       
     }
 
 

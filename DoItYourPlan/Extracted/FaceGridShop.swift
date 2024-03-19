@@ -5,6 +5,8 @@ struct FaceGridShop: View {
     @Binding var selectedFace: Face?
     @Binding var userPoints: Int // Les points de l'utilisateur sont passés ici
     @Binding var showAlert: Bool
+    @ObservedObject var userSelections: UserSelections
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 0)
             .fill(Color.black)
@@ -58,13 +60,13 @@ struct FaceGridShop: View {
                                 userPoints -= face.points?.nbrPoints ?? 0
                                 if let index = faces.firstIndex(where: { $0.id == face.id }) {
                                     faces[index].iconCadenas = false
-                                    selectedFace = faces[index]
+                                    userSelections.selectedFace = faces[index]
                                 }
                             } else {
                                 showAlert = true // Affiche l'alerte car l'utilisateur n'a pas assez de points
                             }
                         } else {
-                            selectedFace = face // Affecter la face sélectionnée à selectedFace
+                            userSelections.selectedFace = face // Affecter la face sélectionnée à selectedFace
                         }
                     }
                 }
@@ -75,7 +77,7 @@ struct FaceGridShop: View {
 }
 
 #Preview {
-        FaceGridShop(selectedFace: .constant(nil), userPoints: .constant(100), showAlert: .constant(false))
+        FaceGridShop(selectedFace: .constant(nil), userPoints: .constant(100), showAlert: .constant(false), userSelections: userSelections)
     }
 
 
