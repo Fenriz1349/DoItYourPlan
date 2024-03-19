@@ -61,15 +61,3 @@ struct NewProject {
     var deadline: Date
     
 }
-
-//func saveProject() {
-//    let newProject = NewProject(name: projectName, category: selectedOption, description: projectDescription, deadline: selectedDate)
-//    
-//    NavigationLink(destination: ProjectsScreen()) {
-//        EmptyView()
-//    }
-//}
-
-
-
-//formulaire pour nom du projet et description, en deux cases ici ou sur la view?

@@ -19,7 +19,7 @@ struct CalendarView: View {
                 }
             Divider().frame(height: 1)
                 DatePicker("Sélectionnez une date", selection: $selectedDate, displayedComponents: [.date])
-                    .background(Color("purpleCustom"), in : RoundedRectangle(cornerRadius: 10))
+                    .background(Color("purpleCustom"), in : RoundedRectangle(cornerRadius: 20))
                     .environment(\.locale, Locale(identifier: "fr_FR"))
                     .datePickerStyle(.graphical)
                     .frame(width: 300, height: 300)
