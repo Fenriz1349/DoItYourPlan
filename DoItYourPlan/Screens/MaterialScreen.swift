@@ -22,8 +22,18 @@ struct MaterialScreen: View {
                         }
                     }
                     Section {
-                        Button(action: addMaterial) {
-                            Text("Ajouter un nouveau matériau")
+                        HStack {
+                            TextField("Nouveau matériau", text: $newMaterial)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            Button(action: addMaterial) {
+                                Text("Ajouter")
+                                
+                                
+                            }
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(Color.purpleCustom)
+                            .cornerRadius(10)
                         }
                     }
                 }
@@ -36,24 +46,23 @@ struct MaterialScreen: View {
         }
     }
     func addMaterial() {
-         guard !newMaterial.isEmpty
-        else {
-             return }
-         materials.append(newMaterial)
-         newMaterial = ""
-     }
- }
+        guard !newMaterial.isEmpty
+        else { return }
+        materials.append(newMaterial)
+        newMaterial = ""
+    }
+}
 
- struct MaterialRow: View {
-     var material: String
-     
-     var body: some View {
-         HStack {
-             Text(material)
-             Spacer()
-         }
-     }
- }
+struct MaterialRow: View {
+    var material: String
+    
+    var body: some View {
+        HStack {
+            Text(material)
+            Spacer()
+        }
+    }
+}
 
 
 
