@@ -56,12 +56,12 @@ struct FinishedProjectScreen: View {
                         RoundedRectangle (cornerRadius: 25.0)
                             .fill(.white)
                             .frame(width: 380, height: 150)
-                            .border(.purpleCustom)
+                            .border(.orangeCustom)
                             .padding(.bottom, 15)
                         VStack{
                             ZStack{
                                 RoundedRectangle (cornerRadius: 15)
-                                    .fill(.purpleCustom)
+                                    .fill(.orangeCustom)
                                     .frame(width: 100, height: 30)
                                 Text("Peinture")
                                     .multilineTextAlignment(.leading)
@@ -87,14 +87,14 @@ struct FinishedProjectScreen: View {
                         RoundedRectangle (cornerRadius: 25.0)
                             .fill(.white)
                             .frame(width: 380, height: 150)
-                            .border(.purpleCustom)
+                            .border(.blueCustom)
                             .padding(.bottom, 15)
                         VStack{
                             ZStack{
                                 RoundedRectangle (cornerRadius: 15)
-                                    .fill(.purpleCustom)
+                                    .fill(.blueCustom)
                                     .frame(width: 100, height: 30)
-                                Text("Craft")
+                                Text("Dessin")
                                     .multilineTextAlignment(.leading)
                             } .padding(.trailing, 240.0)
                             
@@ -118,12 +118,74 @@ struct FinishedProjectScreen: View {
                         RoundedRectangle (cornerRadius: 25.0)
                             .fill(.white)
                             .frame(width: 380, height: 150)
-                            .border(.purpleCustom)
+                            .border(.greenCustom)
                             .padding(.bottom, 15)
                         VStack{
                             ZStack{
                                 RoundedRectangle (cornerRadius: 15)
-                                    .fill(.purpleCustom)
+                                    .fill(.greenCustom)
+                                    .frame(width: 100, height: 30)
+                                Text("Jardinage")
+                                    .multilineTextAlignment(.leading)
+                            } .padding(.trailing, 240.0)
+                            
+                            HStack{
+                                Image("jardiniereColor")
+                                    .resizable()
+                                    .frame(width: 150, height: 100, alignment: .topLeading)     .padding(.vertical, 20)
+                                    .padding(.leading, -35.0)
+                                
+                                VStack{
+                                    Text("Jardinières colorés")
+                                    Text("Début : 20/08/2023")
+                                    Text("Fin : 30/08/2023")
+                                }
+                            } .padding(.top, -20.0)
+                            /* rectangle 4 ⬆ */
+                            ZStack{
+                                RoundedRectangle (cornerRadius: 25.0)
+                                    .fill(.white)
+                                    .frame(width: 380, height: 150)
+                                    .border(.purpleCustom)
+                                    .padding(.bottom, 15)
+                                VStack{
+                                    ZStack{
+                                        RoundedRectangle (cornerRadius: 15)
+                                            .fill(.purpleCustom)
+                                            .frame(width: 100, height: 30)
+                                        
+                                        Text("Couture")
+                                            .multilineTextAlignment(.leading)
+                                            .foregroundColor(.black)
+                                    }
+                                    .padding(.trailing, 240.0)
+                                    
+                                    HStack{
+                                        Image("coussinRecycle")
+                                            .resizable()
+                                            .frame(width: 150, height: 100, alignment: .topLeading)
+                                            .padding(.vertical, 20)
+                                            .padding(.leading, -35.0)
+                                        
+                                        VStack{
+                                            Text("Coussins recyclés")
+                                            Text("Début : 12/01/2024")
+                                            Text("Fin : 24/02/2024")
+                                        }.foregroundStyle(.black)
+                                    } .padding(.top, -20.0)
+                                }/* rectangle 5 ⬆ */
+                            }
+                            
+                    ZStack{
+                        RoundedRectangle (cornerRadius: 25.0)
+                            .fill(.white)
+                            .frame(width: 380, height: 150)
+                            .border(.greenCustom)
+                            .padding(.bottom, 15)
+                        VStack{
+                            ZStack{
+                                RoundedRectangle (cornerRadius: 15)
+                                    .fill(.greenCustom)
                                     .frame(width: 100, height: 30)
                                 Text("Jardinage")
                                     .multilineTextAlignment(.leading)
@@ -142,66 +204,11 @@ struct FinishedProjectScreen: View {
                                     Text("Fin : 07/09/2023")
                                 }
                             } .padding(.top, -20.0)
+                        }/* rectangle 6 ⬆ */
+                    }
                         }
-                    } /* rectangle 4 ⬆ */
+                    }
                     
-                    ZStack{
-                        RoundedRectangle (cornerRadius: 25.0)
-                            .fill(.white)
-                            .frame(width: 380, height: 150)
-                            .border(.purpleCustom)
-                            .padding(.bottom, 15)
-                        VStack{
-                            ZStack{
-                                RoundedRectangle (cornerRadius: 15)
-                                    .fill(.purpleCustom)
-                                    .frame(width: 100, height: 30)
-                                Text("Menuiserie")
-                                    .multilineTextAlignment(.leading)
-                            } .padding(.trailing, 240.0)
-                            
-                            HStack{
-                                Image("jardiniereColor")
-                                    .resizable()
-                                    .frame(width: 150, height: 100, alignment: .topLeading)     .padding(.vertical, 20)
-                                    .padding(.leading, -35.0)
-                                
-                                VStack{
-                                    Text("Jardinières colorés")
-                                    Text("Début : 20/08/2023")
-                                    Text("Fin : 30/08/2023")
-                                }
-                            } .padding(.top, -20.0)
-                            
-                        }/* rectangle 5 ⬆ */
-                    }
-                    VStack{
-                        ZStack{
-                            RoundedRectangle (cornerRadius: 15)
-                                .fill(.purpleCustom)
-                                .frame(width: 100, height: 30)
-                            
-                            Text("Couture")
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(.black)
-                        }
-                        .padding(.trailing, 240.0)
-                        
-                        HStack{
-                            Image("coussinRecycle")
-                                .resizable()
-                                .frame(width: 150, height: 100, alignment: .topLeading)
-                                .padding(.vertical, 20)
-                                .padding(.leading, -35.0)
-                            
-                            VStack{
-                                Text("Coussins recyclés")
-                                Text("Début : 12/01/2024")
-                                Text("Fin : 24/02/2024")
-                            }.foregroundStyle(.black)
-                        } .padding(.top, -20.0)
-                        
-                    }
                 }.navigationBarTitle("Mes projets terminés", displayMode: .inline)
             }
         }
