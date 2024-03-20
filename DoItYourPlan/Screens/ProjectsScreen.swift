@@ -94,7 +94,7 @@ struct ProjectsScreen: View {
                                 Text("Peinture")
                             }.padding(.leading, 40)
                             Spacer()
-                            ExtPiePercentCompleted(percent: 70)
+                            ExtPiePercentCompleted(percent: 0)
                                 .padding(.trailing, 40)
                         }
                     }

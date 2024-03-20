@@ -18,12 +18,15 @@ struct LibraryScreen: View {
             Picker("", selection: $segmentedSelection) {
                 Text("Inspirations").tag(0)
                 Text("Tutos").tag(1)
+                Text("Liens").tag(2)
             }
             .pickerStyle(.segmented)
             if segmentedSelection == 0 {
                 InspirationView()
+            }else if segmentedSelection == 1 {
+                TutoVideosView()
             }else {
-                TutoView()
+                TutoLinksView()
             }
             Spacer()
         }

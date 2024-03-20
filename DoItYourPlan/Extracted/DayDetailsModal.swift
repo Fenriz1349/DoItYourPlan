@@ -36,12 +36,11 @@ struct DayDetailsModal: View {
                 .bold()
                 .padding()
             if !ListProjectOfSelectedDay.isEmpty{
-                    Text("Le \(formattedDatePlanning(day)) vous avez :")
                 ForEach(ListProjectOfSelectedDay) {projet in
                     ExtPlanningProjectProgress(project: projet)
                         }
             }else {
-                Text("Vous n'avez pas d'evenement")
+                Text("Tu n'as pas d'evenement")
             }
             Button ("fermer"){
                 presentationMode.wrappedValue.dismiss()

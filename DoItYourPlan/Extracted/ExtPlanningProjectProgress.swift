@@ -39,8 +39,7 @@ struct ExtPlanningProjectProgress: View {
             .frame(width: 325,height: 50)
             .padding()
             .background(Color(project.category.color()))
-            .clipShape(RoundedRectangle(cornerRadius: 25))
-            .rotationEffect(Angle(degrees: project.rotation ? 2 : -2))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
         }
     }
 }

@@ -117,14 +117,13 @@ struct PlanningProjectProgress :Identifiable{
     let dateEnd : Date?
     let dateStepsEnd : [Date]?
     let progressPercent : Int
-    let rotation : Bool
     
 }
 //liste de 3 projets pour afficher les projets en cours
 var projectsProgressList : [PlanningProjectProgress] = [
-    PlanningProjectProgress(name: "Projet 1", category :.couture,dateEnd: createDate(22, 3, 2024), dateStepsEnd: nil, progressPercent: 25,rotation: true),
-    PlanningProjectProgress(name: "Projet 2", category :.tricot,dateEnd: createDate(18, 6, 2024), dateStepsEnd: nil, progressPercent: 66,rotation: false),
-    PlanningProjectProgress(name: "Projet 3", category :.peinture,dateEnd: nil, dateStepsEnd: nil, progressPercent: 75,rotation: true)
+    PlanningProjectProgress(name: "Projet 1", category :.couture,dateEnd: createDate(22, 3, 2024), dateStepsEnd: nil, progressPercent: 25),
+    PlanningProjectProgress(name: "Projet 2", category :.tricot,dateEnd: createDate(18, 6, 2024), dateStepsEnd: nil, progressPercent: 66),
+    PlanningProjectProgress(name: "Projet 3", category :.peinture,dateEnd: nil, dateStepsEnd: nil, progressPercent: 75)
 ]
 
 //class pour gérer un element sur l'inspirationBoard

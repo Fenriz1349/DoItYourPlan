@@ -129,7 +129,7 @@ struct ExtZoomPostIt: View {
                 Button {
                     showPostIt.toggle()
                 } label: {
-                    Text("retour")
+                    Text("fermer")
                         .font(.system(size: 24))
                 }
             }

@@ -31,7 +31,7 @@ struct InspirationView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.black, lineWidth: 1)
                     .frame(width: 350, height: 50)
-                Text("page d'inspiration Projet 1")
+                Text("Inspiration Projet 1")
             }
             ScrollView {
                 ZStack {
@@ -49,7 +49,7 @@ struct InspirationView: View {
                                     showPostIt.toggle()
                                 }
                                 .gesture(
-                                    LongPressGesture(minimumDuration: 1.0)
+                                    LongPressGesture(minimumDuration: 0.5)
                                         .onEnded { _ in
                                             selectedPostItIndex = index
                                         }
