@@ -49,6 +49,9 @@
 		63D20C1C2BA9C4EE00CA8D2B /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */; };
 		63D20C1E2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */; };
 		63FB179A2BAA1AF400763972 /* StepDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB17992BAA1AF400763972 /* StepDetail.swift */; };
+		63FB179C2BAAD36500763972 /* CongratulationsProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB179B2BAAD36500763972 /* CongratulationsProjectScreen.swift */; };
+		63FB179E2BAAD39200763972 /* CongratulationsTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB179D2BAAD39200763972 /* CongratulationsTaskScreen.swift */; };
+		63FB17A12BAAD47F00763972 /* Confetti in Frameworks */ = {isa = PBXBuildFile; productRef = 63FB17A02BAAD47F00763972 /* Confetti */; };
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
@@ -112,6 +115,8 @@
 		63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
 		63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsFinishedProjectsScreen.swift; sourceTree = "<group>"; };
 		63FB17992BAA1AF400763972 /* StepDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetail.swift; sourceTree = "<group>"; };
+		63FB179B2BAAD36500763972 /* CongratulationsProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsProjectScreen.swift; sourceTree = "<group>"; };
+		63FB179D2BAAD39200763972 /* CongratulationsTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsTaskScreen.swift; sourceTree = "<group>"; };
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
@@ -126,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FB17A12BAAD47F00763972 /* Confetti in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +208,8 @@
 				50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */,
 				63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */,
 				63FB17992BAA1AF400763972 /* StepDetail.swift */,
+				63FB179B2BAAD36500763972 /* CongratulationsProjectScreen.swift */,
+				63FB179D2BAAD39200763972 /* CongratulationsTaskScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 			);
 			name = DoItYourPlan;
 			packageProductDependencies = (
+				63FB17A02BAAD47F00763972 /* Confetti */,
 			);
 			productName = DoItYourPlan;
 			productReference = 6392479C2B9F090500A67779 /* DoItYourPlan.app */;
@@ -300,6 +309,7 @@
 			);
 			mainGroup = 639247932B9F090500A67779;
 			packageReferences = (
+				63FB179F2BAAD47F00763972 /* XCRemoteSwiftPackageReference "confetti-swiftui" */,
 			);
 			productRefGroup = 6392479D2B9F090500A67779 /* Products */;
 			projectDirPath = "";
@@ -329,7 +339,9 @@
 			files = (
 				63BF446E2BA84AA900270E32 /* ExtZoomImage.swift in Sources */,
 				63BF446F2BA84AA900270E32 /* FormattedDateView.swift in Sources */,
+				63FB179C2BAAD36500763972 /* CongratulationsProjectScreen.swift in Sources */,
 				63BF44702BA84AA900270E32 /* ExtPostIt.swift in Sources */,
+				63FB179E2BAAD39200763972 /* CongratulationsTaskScreen.swift in Sources */,
 				63BF44712BA84AA900270E32 /* AddPostItContent.swift in Sources */,
 				63BF44722BA84AA900270E32 /* ExtImageInspiration.swift in Sources */,
 				63BF44732BA84AA900270E32 /* EditablePostItContent.swift in Sources */,
@@ -578,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63FB179F2BAAD47F00763972 /* XCRemoteSwiftPackageReference "confetti-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ottijp/confetti-swiftui";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63FB17A02BAAD47F00763972 /* Confetti */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63FB179F2BAAD47F00763972 /* XCRemoteSwiftPackageReference "confetti-swiftui" */;
+			productName = Confetti;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 639247942B9F090500A67779 /* Project object */;
 }
