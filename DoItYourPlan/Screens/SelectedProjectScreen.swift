@@ -1,7 +1,7 @@
 //
 //  DoItYourPlan
 //
-//  Created by aurelien on 12/03/24.
+//  Created by Aurélien Chevalier on 12/03/24.
 //
 
 import SwiftUI
@@ -26,7 +26,7 @@ struct SelectedProjectScreen: View {
                         
                         GeometryReader {
                             let size = $0.size
-                            // Pebble/bouton nouvelle étape
+                            // Pebble new step
                             if pebble == addButtonStep {
                                 Button(action: {
                                     myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition())
@@ -52,7 +52,7 @@ struct SelectedProjectScreen: View {
                                     .frame(maxWidth: .infinity)
                                 }
                             } else {
-                                // Pebble de chaque step
+                                // Pebble each step
                                 NavigationLink(destination: StepDetail(pebble: pebble)) {
                                     HStack(alignment: .center) {
                                         if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {

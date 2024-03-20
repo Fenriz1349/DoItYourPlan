@@ -4,6 +4,7 @@
 //
 //  Created by Aurélien Chevalier on 14/03/2024.
 //
+
 import SwiftUI
 
 let addButtonTask = UUID().uuidString
@@ -25,24 +26,23 @@ struct TasksView: View {
     @State private var newTaskName: String = ""
     
     @State private var newStepName: String = ""
-
+    
     @State private var myTasks: [Task] = myProject.steps[0].tasks
-
-// TaskName edit
-//    @State private var editTaskName: String = ""
-//    
-//    @State private var isEditing = false
+    
+    @State private var isCongratulationTaskViewVisible = false
+    
+    @State private var isCongratulationStepViewVisible = false
 
     
     var body: some View {
-
+        
         ZStack {
             ScrollView(.vertical) {
                 LazyVGrid(columns: [GridItem()], content: {
                     ForEach(pebbles, id: \.self) { pebble in
                         GeometryReader {
                             let size = $0.size
-                            
+                            // Pebble task adding
                             if pebble == addButtonTask {
                                 HStack {
                                     Image(systemName: "plus.circle")
@@ -65,6 +65,7 @@ struct TasksView: View {
                                 .frame(width: size.width, height: 100)
                             }
                             else {
+                                // Pebble task
                                 ZStack {
                                     HStack {
                                         Spacer()
@@ -80,6 +81,25 @@ struct TasksView: View {
                                                 task.isDone.toggle()
                                                 step.tasks[taskIndex] = task
                                                 myTasks[taskIndex] = task
+                                                                                                
+                                                    if let maxStepOrderNumber = myProject.steps.max(by: { $0.orderNumber < $1.orderNumber }) {
+                                                        if myTasks.allSatisfy({ $0.isDone }) && !(step.orderNumber == maxStepOrderNumber.orderNumber) {
+                                                            isCongratulationTaskViewVisible = true
+                                                            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                                                                isCongratulationTaskViewVisible = false
+                                                            }
+                                                        }
+                                                    }
+                                                
+                                                if let maxStepOrderNumber = myProject.steps.max(by: { $0.orderNumber < $1.orderNumber }) {
+                                                    if myTasks.allSatisfy({ $0.isDone }) && (step.orderNumber == maxStepOrderNumber.orderNumber) {
+                                                        isCongratulationStepViewVisible = true
+                                                        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                                                            isCongratulationStepViewVisible = false
+                                                        }
+                                                    }
+                                                }
+                                                
                                             }
                                         }, label: {
                                             if let task = step.tasks.first(where: { $0.id == UUID(uuidString: pebble) }) {
@@ -89,11 +109,6 @@ struct TasksView: View {
                                             }
                                         })
                                         if let task = myTasks.first(where: { $0.id == UUID(uuidString: pebble) }) {
-// TaskNameEdit
-//                                            TextField(task.taskName, text: $editTaskName, onEditingChanged: { editing in
-//                                                self.isEditing = editing
-//                                            })
-                                            
                                             Text(task.taskName)
                                         }
                                         Spacer()
@@ -126,9 +141,6 @@ struct TasksView: View {
                                             }
                                         }
                                     }
- // Action lorsqu'une tâche est tapée
-//                                    .onTapGesture {
-//                                    }
                                     .gesture(
                                         DragGesture()
                                             .onChanged { gesture in
@@ -159,7 +171,6 @@ struct TasksView: View {
                 )
             }
             .padding(.horizontal, 10)
-//            .padding(.top, 10)
         }
         .ignoresSafeArea()
         .onAppear {
@@ -170,6 +181,12 @@ struct TasksView: View {
                 pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
             }
         }
+        .sheet(isPresented: $isCongratulationTaskViewVisible) {
+                SettingsScreen()
+                }
+        .sheet(isPresented: $isCongratulationStepViewVisible) {
+            CalendarView()
+                }
     }
 }
 
