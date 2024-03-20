@@ -22,53 +22,59 @@ struct NewProjectScreen: View {
         var deadline: Date
     }
     var body: some View {
-        NavigationView {
             NavigationStack {
-                Form {
-                
-                    Section(header: Text("Nom du projet")) {
-                        TextField("Nom du projet", text: $projectName)
-                            
-                    }
-                    Section(header: Text("Choisis la catégorie de ton projet DIY")) {
-                        Picker("Catégorie:", selection: $selectedOption) {
-                            ForEach(NewProjectCategory.allCases, id: \.self) { category in
-                                Text(category.rawValue)
-                                // Style du menu déroulant: ajouter couleur selon le choix de catégorie
+                VStack{
+                        Form {
+                            Section(header: Text("Nommes ton projet")) {
+                                TextField("Nom du projet", text: $projectName)
+                                
+                            }
+                            Section(header: Text("Choisis la catégorie de ton projet DIY")) {
+                                Picker("Catégorie:", selection: $selectedOption) {
+                                    ForEach(NewProjectCategory.allCases, id: \.self) { category in
+                                        Text(category.rawValue)
+                                        
+                                    }
+                                }
+                                .foregroundColor(.black)
+                            }
+                            Section(header: Text("Détails")) {
+                                TextField("Description du projet", text: $projectDescription)
+                            }
+                            Section(header: Text("Pour quand souhaites-tu finir ce projet?")) {
+                                DatePicker("Date de fin prévue:", selection: $selectedDate, displayedComponents: [.date])
                             }
                         }
-                        .foregroundColor(.black)
-                    }
-                    Section(header: Text("Détails")) {
-                        TextField("Description du projet", text: $projectDescription)
-                    }
-                    Section(header: Text("Pour quand souhaites-tu finir ce projet?")) {
-                        DatePicker("Date de fin prévue:", selection: $selectedDate, displayedComponents: [.date])
-                    }
+                        Text("")
+                    Text("")
+                    
+                    Button(action: {
+                                showNewProjet.toggle()
+                            }) {
+                                Text("Valider")
+                                    .padding()
+                                    .foregroundColor(.black)
+                                    .background(Color.purpleCustom)
+                                    .cornerRadius(25.0)
+                            
+                        }
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+
+                    
+                    
                 }
                 NavigationLink(destination: ProjectsScreen(showNewProjet: showNewProjet),
                                isActive: $showNewProjet) {
                     EmptyView()
                 }
-
-                Button(action: {
-                    showNewProjet.toggle()
-                }) {
-                    Text("Valider")
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(Color.purpleCustom)
-                        .cornerRadius(10)
-                }
-                .navigationBarTitle("Nouveau projet", displayMode: .inline)
-                .navigationBarItems(leading:
-                                        NavigationLink(destination: ProjectsScreen()) {
-                    Text("retour")
-                })
+                               .navigationBarTitle("Nouveau projet", displayMode: .inline)
             }
         }
     }
+
+#Preview {
+    NewProjectScreen(showNewProjet: .constant(false))
 }
-    #Preview {
-        NewProjectScreen(showNewProjet: .constant(false))
-    }
