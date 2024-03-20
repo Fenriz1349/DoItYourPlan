@@ -14,7 +14,7 @@ struct CongratulationsProjectScreen: View {
     @State private var isAnimating = false
    
     var body: some View {
-        NavigationView {
+       
             ZStack {
                 VStack(spacing: 20) {
                     Spacer()
@@ -73,7 +73,7 @@ struct CongratulationsProjectScreen: View {
         }
     }
 
-}
+
 #Preview {
     CongratulationsProjectScreen()
 }
