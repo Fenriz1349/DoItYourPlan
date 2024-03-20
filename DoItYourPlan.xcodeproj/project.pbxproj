@@ -11,6 +11,7 @@
 		631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B12BA3106D003D7CF0 /* ProjectButton.swift */; };
 		631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */; };
 		633B1D012BAAEA3D00248898 /* TutoLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B1D002BAAEA3D00248898 /* TutoLinksView.swift */; };
+		633B1D032BAB08AE00248898 /* ProjectButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B1D022BAB08AE00248898 /* ProjectButtons.swift */; };
 		635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */; };
 		635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AC2BA1F47700747969 /* DayDetailsModal.swift */; };
 		635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */; };
@@ -76,6 +77,7 @@
 		631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePostItContent.swift; sourceTree = "<group>"; };
 		631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostItContent.swift; sourceTree = "<group>"; };
 		633B1D002BAAEA3D00248898 /* TutoLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoLinksView.swift; sourceTree = "<group>"; };
+		633B1D022BAB08AE00248898 /* ProjectButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtons.swift; sourceTree = "<group>"; };
 		635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPlanningProjectProgress.swift; sourceTree = "<group>"; };
 		635C54AC2BA1F47700747969 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
 		635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */,
 				635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */,
 				631C80B12BA3106D003D7CF0 /* ProjectButton.swift */,
+				633B1D022BAB08AE00248898 /* ProjectButtons.swift */,
 				63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */,
 				CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */,
 				CFA4E48C2BA44DD300376435 /* HatGridShop.swift */,
@@ -373,6 +376,7 @@
 				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				50EC05BD2BA2F6B500C91DF9 /* TasksView.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
+				633B1D032BAB08AE00248898 /* ProjectButtons.swift in Sources */,
 				CFA4E4912BA44E2700376435 /* ClothesGridShop.swift in Sources */,
 				63B610862BA8857900784F50 /* ExtNewPostIt.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,

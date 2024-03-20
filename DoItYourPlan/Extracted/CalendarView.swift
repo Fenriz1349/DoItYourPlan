@@ -21,7 +21,7 @@ struct CalendarView: View {
                 DatePicker("Sélectionnez une date", selection: $selectedDate, displayedComponents: [.date])
                     .environment(\.locale, Locale(identifier: "fr_FR"))
                     .datePickerStyle(.graphical)
-                    .accentColor(Color(CustomColor.purpleC.rawValue))
+                    .accentColor(.purple)
                     .frame(width: 300, height: 300)
                     .padding()
                     .overlay(
@@ -34,6 +34,7 @@ struct CalendarView: View {
                         )
                     .fontWeight(.semibold)
                     .contentShape(RoundedRectangle(cornerRadius: 20))
+                    .padding(.horizontal, 20) 
         }
         .sheet(isPresented: $showModalDayCalendar) {
             DayDetailsModal(day: $selectedDate)

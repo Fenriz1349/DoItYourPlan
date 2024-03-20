@@ -52,7 +52,7 @@ struct ProfilScreen: View {
                                 Image(selectedFace.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 130, height: 90)
+                                    .frame(width: 110, height: 70)
                                     .offset(y: -17)
                                 
                             }
@@ -60,8 +60,8 @@ struct ProfilScreen: View {
                                 Image(selectedHair.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 150, height: 130)
-                                    .offset(y: -45)
+                                    .frame(width: 150, height: 100)
+                                    .offset(y: -55)
                                 
                             }
                             if let selectedHat = userSelections.selectedHat {
@@ -87,7 +87,7 @@ struct ProfilScreen: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 140, height: 80)
-                                    .offset(x: 60, y: 65)
+                                    .offset(x: -130, y: 85)
                             }
                             
                         }
@@ -126,13 +126,14 @@ struct ProfilScreen: View {
                         
                         HStack {
                             NavigationLink(destination: ProjectsScreen()) {
-                                ProjectButton(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projets en cours")
+                                ProjectButtons(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projets en cours")
                             }
                             
                             NavigationLink(destination: FinishedProjectScreen()) {
-                                ProjectButton(iconName: "checkmark.rectangle.stack", projectNumber: 4, projectTitle: "Projets terminés")
+                                ProjectButtons(iconName: "checkmark.rectangle.stack", projectNumber: 4, projectTitle: "Projets terminés")
                             }
-                        }.buttonStyle(PlainButtonStyle())
+                        }.buttonStyle(PressableButtonStyle())
+                       
                         
                         Text("Succès")
                             .font(.system(size: 24))
@@ -189,9 +190,7 @@ struct ProfilScreen: View {
                         }.foregroundColor(.black)
                     }
                 )
-            
-                    
-                    
+             
         }}}
 
 #Preview {

@@ -21,6 +21,7 @@ struct TutoLinksView: View {
         TutoLink(name: "Créa Mania", url: "https://thehandicrafthub.com", icone: "creaMania")
     ]
     var body: some View {
+        
         ScrollView{
             ForEach (listTutosLink) {component in
                 HStack{
@@ -30,6 +31,15 @@ struct TutoLinksView: View {
                 }
                 .padding(.leading,20)
             }
+            Button {
+//                showAddContent.toggle()
+            } label: {
+                HStack{
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 24))
+                }
+            }
+            .buttonStyle(PressableButtonStylesIcone(width: 45, color: .green))
         }
     }
 }

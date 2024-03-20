@@ -31,7 +31,7 @@ struct TutoVideosView: View {
                                     .fill(.white)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 20)
-                                            .stroke(Color.black, lineWidth: 3)
+                                            .stroke(Color(CustomColorPostIT.purpleC.rawValue), lineWidth: 1)
                                     )
                                 VStack{
                                     Button {
@@ -54,10 +54,20 @@ struct TutoVideosView: View {
                                         .lineLimit(2)
                                         .font(.system(size: 16))
                                 }
-                                .padding(5)
+                                .padding(10)
                             }
+                            .padding(5)
                         }
                     }
+                    Button {
+    //                    showAddContent.toggle()
+                    } label: {
+                        HStack{
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 24))
+                        }
+                    }
+                    .buttonStyle(PressableButtonStylesIcone(width: 45, color: .green))
                 }
             }
             if showYoutube {

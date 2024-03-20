@@ -23,10 +23,10 @@ struct AddPostItContent: View {
                 }
                 showAddContent.toggle()
             } label: {
-                Image(systemName: "checkmark.circle.fill")
-                    .foregroundStyle(.green)
+                Image(systemName: "checkmark.circle")
                 
             }
+            .buttonStyle(PressableButtonStylesIcone(width: 40, color: .green))
             
         }
     }
