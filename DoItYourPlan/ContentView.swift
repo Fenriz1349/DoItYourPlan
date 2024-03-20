@@ -22,6 +22,11 @@ struct ContentView: View {
                     Image(systemName: "books.vertical")
                     Text("Bibliothèque")
                 }
+            SelectedProjectScreen()
+                .tabItem {
+                    Image(systemName: "arrow.counterclockwise")
+                    Text("En Cours")
+                }
             PlanningScreen()
                 .tabItem {
                     Image(systemName: "calendar")

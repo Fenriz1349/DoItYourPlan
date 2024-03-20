@@ -34,8 +34,9 @@ struct ExtZoomPostIt: View {
                             indexName = 0
                         } label: {
                             Image(systemName: "pencil.circle")
-                                .foregroundStyle(.yellow)
                         }
+                        .buttonStyle(PressableButtonStylesIcone(width: 40, color: .yellow))
+
                     }
                     if indexName != nil  {
                         EditablePostItContent( postitContent: $postit.name, indexEdition: $indexName)
@@ -55,8 +56,8 @@ struct ExtZoomPostIt: View {
                                 indexEdition = index
                             } label: {
                                 Image(systemName: "pencil.circle")
-                                    .foregroundStyle(.yellow)
                             }
+                            .buttonStyle(PressableButtonStylesIcone(width: 40, color: .yellow))
                             .offset(CGSize(width: -30.0, height: 0.0))
 //                            si on modifie la ligne on affiche le TextField
                             if indexEdition == index {
@@ -70,8 +71,8 @@ struct ExtZoomPostIt: View {
 
                                 } label: {
                                     Image(systemName: "trash.fill")
-                                        .foregroundStyle(.red)
                                 }
+                                .buttonStyle(PressableButtonStylesIcone(width: 40, color: .red))
                                 .offset(CGSize(width: 30.0, height: 0.0))
                             }
                         } else {
@@ -90,11 +91,12 @@ struct ExtZoomPostIt: View {
                     Button {
                         showAddContent.toggle()
                     } label: {
-                        Image(systemName: "plus.app.fill")
-                        Text("Ajouter")
-                            .font(.system(size: 24))
+                        HStack{
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 24))
+                        }
                     }
-                    .foregroundColor(.green)
+                    .buttonStyle(PressableButtonStylesIcone(width: 45, color: .green))
                 }
                 Spacer()
             }
@@ -106,32 +108,34 @@ struct ExtZoomPostIt: View {
                     Button {
                         editionContent.toggle()
                     } label: {
-                        Image(systemName: "pencil.circle")
-                        Text("Modifier")
-                            .font(.system(size: 24))
+                            Image(systemName: "pencil.tip")
+                                .font(.system(size: 24))
                     }
-                    .foregroundStyle(.yellow)
+                    .buttonStyle(PressableButtonStylesIcone(width: 45, color: .yellow))
+                    .offset(x:0.0,y:-25.0)
                     Spacer()
 //                    bouton pour supprimer le postIt
                     Button {
                         postit.isShowed.toggle()
                         showPostIt.toggle()
                     } label: {
-                        Spacer()
-                        Image(systemName: "trash.fill")
-                        Text("Supprimer")
-                            .font(.system(size: 24))
+                        HStack{
+                            Image(systemName: "trash.fill")
+                                .font(.system(size: 24))
+                        }
                     }
-                    .foregroundColor(.red)
+                    .buttonStyle(PressableButtonStylesIcone(width: 45, color: .red))
+                    .offset(x:0.0,y:-25.0)
                     .padding(.trailing,10)
                 }
                 Spacer()
                 Button {
                     showPostIt.toggle()
                 } label: {
-                    Text("retour")
+                    Image(systemName: "multiply.circle")
                         .font(.system(size: 24))
                 }
+                .buttonStyle(PressableButtonStylesIcone(width: 45, color: .blue))
             }
             .frame(width: 350, height: 375)
         }

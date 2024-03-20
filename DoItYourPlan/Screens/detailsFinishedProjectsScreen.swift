@@ -9,21 +9,16 @@ import SwiftUI
 
 struct detailsFinishedProjectsScreen: View {
     var body: some View {
-        VStack{
-            Text("Détails Projet")
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 142.0)
-                .padding(.vertical, 10)
-                .border(Color.gray, width: 1)
-            ScrollView{
-                Spacer()
-                    .frame(height: 30)
-                Text ("🎊 Bravo Craft Genius ! 🎊 ")
-                Text ("Projet réalisé en 6 semaines, comme prévu ! ")
-                Spacer()
-                    .frame(height: 50)
-                
-                    Image("cosplayGirl1")
+        NavigationStack{
+                ScrollView{
+                    Spacer()
+                        .frame(height: 30)
+                    Text ("🎊 Bravo Craft Genius ! 🎊 ")
+                        .fontWeight(.bold)
+                    Text ("Projet réalisé en 6 semaines, comme prévu ! ")
+                    Spacer()
+                        .frame(height: 20)
+                    Image("cosplaygirl1")
                         .resizable()
                         .frame(width: 300, height: 300)
                         .cornerRadius(20)
@@ -31,18 +26,31 @@ struct detailsFinishedProjectsScreen: View {
                         .resizable()
                         .frame(width: 300, height: 300)
                         .cornerRadius(20)
-                
-                Spacer()
-                    .frame(height: 30)
-                
-                Text("Partage ta création sur tes réseaux sociaux 📱")
-                
-                
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    Text("Partage ton DIY sur tes réseaux sociaux:")
+                    
+                    HStack{
+                        Image("logoFacebook")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Image("logoInstagram")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Image("logoPinterest")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Image("logoWhatsapp")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                } .navigationBarTitle("Détails projets", displayMode: .inline)
             }
-        }
+        
     }
 }
-
 #Preview {
     detailsFinishedProjectsScreen()
 }

@@ -8,16 +8,16 @@
 
 import SwiftUI
 
-struct PressableButtonStyles: ButtonStyle {
+struct PressableButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(Color.blue)
+                .foregroundColor(Color("purple2Custom"))
                 .blur(radius: configuration.isPressed ? 0 : 1)
                 .offset(x: 0, y: configuration.isPressed ? 5 : 10)
             
             RoundedRectangle(cornerRadius: 20)
-                .fill(configuration.isPressed ? Color.gray : Color.blue)
+                .fill(configuration.isPressed ? Color.gray : Color("purpleCustom"))
                 .offset(x: 0, y: configuration.isPressed ? 5 : 0)
             
             configuration.label
@@ -29,27 +29,26 @@ struct PressableButtonStyles: ButtonStyle {
     }
 }
 
-struct ProjectButton: View {
+struct ProjectButtons: View {
     let iconName: String
     let projectNumber: Int
     let projectTitle: String
     
     var body: some View {
-        Button(action: {
-                   // Action for the button
-        }) {            HStack {
-            Image(systemName: iconName)
-                .font(.system(size: 24))
-            
-            VStack(alignment: .leading) {
-                Text("\(projectNumber)")
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                Text(projectTitle)
-                    .font(.system(size: 16))
-            }
-        }.foregroundColor(.black)
-        }.buttonStyle(PressableButtonStyles())
+       
+            HStack {
+                Image(systemName: iconName)
+                    .font(.system(size: 24))
+                
+                VStack(alignment: .leading) {
+                    Text("\(projectNumber)")
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                    Text(projectTitle)
+                        .font(.system(size: 16))
+                }
+            }.foregroundColor(.black).buttonStyle(PressableButtonStyle())
+           
         }
        
     }
@@ -57,6 +56,6 @@ struct ProjectButton: View {
 
 
         #Preview{
-            ProjectButton(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projet en cours")
+            ProjectButtons(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projet en cours")
             }
         

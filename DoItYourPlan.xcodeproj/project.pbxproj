@@ -10,6 +10,11 @@
 		50EC05BD2BA2F6B500C91DF9 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */; };
 		631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B12BA3106D003D7CF0 /* ProjectButton.swift */; };
 		631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */; };
+		633B1D012BAAEA3D00248898 /* TutoLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B1D002BAAEA3D00248898 /* TutoLinksView.swift */; };
+		633B1D032BAB08AE00248898 /* ProjectButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B1D022BAB08AE00248898 /* ProjectButtons.swift */; };
+		633B1D052BAB3DB100248898 /* SelectedProjectScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B1D042BAB3DB100248898 /* SelectedProjectScreen2.swift */; };
+		633B1D072BAB3DF500248898 /* StepDetail2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B1D062BAB3DF500248898 /* StepDetail2.swift */; };
+		633B1D092BAB3E1D00248898 /* TasksView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B1D082BAB3E1D00248898 /* TasksView2.swift */; };
 		635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */; };
 		635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AC2BA1F47700747969 /* DayDetailsModal.swift */; };
 		635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */; };
@@ -44,11 +49,14 @@
 		63BF44722BA84AA900270E32 /* ExtImageInspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF44692BA84AA900270E32 /* ExtImageInspiration.swift */; };
 		63BF44732BA84AA900270E32 /* EditablePostItContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446A2BA84AA900270E32 /* EditablePostItContent.swift */; };
 		63BF44742BA84AA900270E32 /* ExtZoomPostIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446B2BA84AA900270E32 /* ExtZoomPostIt.swift */; };
-		63BF44752BA84AA900270E32 /* TutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446C2BA84AA900270E32 /* TutoView.swift */; };
+		63BF44752BA84AA900270E32 /* TutoVideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446C2BA84AA900270E32 /* TutoVideosView.swift */; };
 		63BF44762BA84AA900270E32 /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF446D2BA84AA900270E32 /* InspirationView.swift */; };
 		63D20C1C2BA9C4EE00CA8D2B /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */; };
 		63D20C1E2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */; };
 		63FB179A2BAA1AF400763972 /* StepDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB17992BAA1AF400763972 /* StepDetail.swift */; };
+		63FB179C2BAAD36500763972 /* CongratulationsProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB179B2BAAD36500763972 /* CongratulationsProjectScreen.swift */; };
+		63FB179E2BAAD39200763972 /* CongratulationsTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB179D2BAAD39200763972 /* CongratulationsTaskScreen.swift */; };
+		63FB17A12BAAD47F00763972 /* Confetti in Frameworks */ = {isa = PBXBuildFile; productRef = 63FB17A02BAAD47F00763972 /* Confetti */; };
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
@@ -71,6 +79,11 @@
 		631C80DB2BA4E623003D7CF0 /* ExtZoomPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtZoomPostIt.swift; sourceTree = "<group>"; };
 		631C80E12BA6F26A003D7CF0 /* EditablePostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePostItContent.swift; sourceTree = "<group>"; };
 		631C80E32BA7938C003D7CF0 /* AddPostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostItContent.swift; sourceTree = "<group>"; };
+		633B1D002BAAEA3D00248898 /* TutoLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoLinksView.swift; sourceTree = "<group>"; };
+		633B1D022BAB08AE00248898 /* ProjectButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtons.swift; sourceTree = "<group>"; };
+		633B1D042BAB3DB100248898 /* SelectedProjectScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProjectScreen2.swift; sourceTree = "<group>"; };
+		633B1D062BAB3DF500248898 /* StepDetail2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetail2.swift; sourceTree = "<group>"; };
+		633B1D082BAB3E1D00248898 /* TasksView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView2.swift; sourceTree = "<group>"; };
 		635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPlanningProjectProgress.swift; sourceTree = "<group>"; };
 		635C54AC2BA1F47700747969 /* DayDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsModal.swift; sourceTree = "<group>"; };
 		635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPiePercentCompleted.swift; sourceTree = "<group>"; };
@@ -107,11 +120,13 @@
 		63BF44692BA84AA900270E32 /* ExtImageInspiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtImageInspiration.swift; sourceTree = "<group>"; };
 		63BF446A2BA84AA900270E32 /* EditablePostItContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePostItContent.swift; sourceTree = "<group>"; };
 		63BF446B2BA84AA900270E32 /* ExtZoomPostIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtZoomPostIt.swift; sourceTree = "<group>"; };
-		63BF446C2BA84AA900270E32 /* TutoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoView.swift; sourceTree = "<group>"; };
+		63BF446C2BA84AA900270E32 /* TutoVideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoVideosView.swift; sourceTree = "<group>"; };
 		63BF446D2BA84AA900270E32 /* InspirationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationView.swift; sourceTree = "<group>"; };
 		63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
 		63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsFinishedProjectsScreen.swift; sourceTree = "<group>"; };
 		63FB17992BAA1AF400763972 /* StepDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetail.swift; sourceTree = "<group>"; };
+		63FB179B2BAAD36500763972 /* CongratulationsProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsProjectScreen.swift; sourceTree = "<group>"; };
+		63FB179D2BAAD39200763972 /* CongratulationsTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsTaskScreen.swift; sourceTree = "<group>"; };
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
@@ -126,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FB17A12BAAD47F00763972 /* Confetti in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +209,7 @@
 				639247C52B9F0A3500A67779 /* ShopScreen.swift */,
 				639247C72B9F0A4000A67779 /* SettingsScreen.swift */,
 				639247C92B9F0A4E00A67779 /* SelectedProjectScreen.swift */,
+				633B1D042BAB3DB100248898 /* SelectedProjectScreen2.swift */,
 				639247CB2B9F0A5800A67779 /* ProjectsScreen.swift */,
 				639247CD2B9F0A6500A67779 /* NewProjectScreen.swift */,
 				639247CF2B9F0A9300A67779 /* FinishedProjectScreen.swift */,
@@ -200,8 +217,12 @@
 				639247D32B9F0ABC00A67779 /* PlanningScreen.swift */,
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
 				50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */,
+				633B1D082BAB3E1D00248898 /* TasksView2.swift */,
 				63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */,
 				63FB17992BAA1AF400763972 /* StepDetail.swift */,
+				633B1D062BAB3DF500248898 /* StepDetail2.swift */,
+				63FB179B2BAAD36500763972 /* CongratulationsProjectScreen.swift */,
+				63FB179D2BAAD39200763972 /* CongratulationsTaskScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -232,15 +253,16 @@
 				63BF446B2BA84AA900270E32 /* ExtZoomPostIt.swift */,
 				63BF44662BA84AA800270E32 /* FormattedDateView.swift */,
 				63BF446D2BA84AA900270E32 /* InspirationView.swift */,
-				63BF446C2BA84AA900270E32 /* TutoView.swift */,
+				63BF446C2BA84AA900270E32 /* TutoVideosView.swift */,
 				63BF44632BA84A3B00270E32 /* DayDetailsModal.swift */,
 				639248222BA092DE00A67779 /* CalendarView.swift */,
 				635C54AA2BA1A14C00747969 /* ExtPlanningProjectProgress.swift */,
 				635C54AC2BA1F47700747969 /* DayDetailsModal.swift */,
+				631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */,
 				635C54AE2BA222F000747969 /* ExtPiePercentCompleted.swift */,
 				631C80B12BA3106D003D7CF0 /* ProjectButton.swift */,
+				633B1D022BAB08AE00248898 /* ProjectButtons.swift */,
 				63D20C1B2BA9C4EE00CA8D2B /* YoutubeView.swift */,
-				631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */,
 				CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */,
 				CFA4E48C2BA44DD300376435 /* HatGridShop.swift */,
 				CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */,
@@ -249,6 +271,7 @@
 				CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */,
 				CFA4E4962BA452F800376435 /* FaceGridShop.swift */,
 				63B610852BA8857900784F50 /* ExtNewPostIt.swift */,
+				633B1D002BAAEA3D00248898 /* TutoLinksView.swift */,
 			);
 			path = Extracted;
 			sourceTree = "<group>";
@@ -270,6 +293,7 @@
 			);
 			name = DoItYourPlan;
 			packageProductDependencies = (
+				63FB17A02BAAD47F00763972 /* Confetti */,
 			);
 			productName = DoItYourPlan;
 			productReference = 6392479C2B9F090500A67779 /* DoItYourPlan.app */;
@@ -300,6 +324,7 @@
 			);
 			mainGroup = 639247932B9F090500A67779;
 			packageReferences = (
+				63FB179F2BAAD47F00763972 /* XCRemoteSwiftPackageReference "confetti-swiftui" */,
 			);
 			productRefGroup = 6392479D2B9F090500A67779 /* Products */;
 			projectDirPath = "";
@@ -329,12 +354,14 @@
 			files = (
 				63BF446E2BA84AA900270E32 /* ExtZoomImage.swift in Sources */,
 				63BF446F2BA84AA900270E32 /* FormattedDateView.swift in Sources */,
+				63FB179C2BAAD36500763972 /* CongratulationsProjectScreen.swift in Sources */,
 				63BF44702BA84AA900270E32 /* ExtPostIt.swift in Sources */,
+				63FB179E2BAAD39200763972 /* CongratulationsTaskScreen.swift in Sources */,
 				63BF44712BA84AA900270E32 /* AddPostItContent.swift in Sources */,
 				63BF44722BA84AA900270E32 /* ExtImageInspiration.swift in Sources */,
 				63BF44732BA84AA900270E32 /* EditablePostItContent.swift in Sources */,
 				63BF44742BA84AA900270E32 /* ExtZoomPostIt.swift in Sources */,
-				63BF44752BA84AA900270E32 /* TutoView.swift in Sources */,
+				63BF44752BA84AA900270E32 /* TutoVideosView.swift in Sources */,
 				63BF44762BA84AA900270E32 /* InspirationView.swift in Sources */,
 				635C54AD2BA1F47800747969 /* DayDetailsModal.swift in Sources */,
 				CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */,
@@ -346,6 +373,7 @@
 				639247C42B9F0A2C00A67779 /* ProfilScreen.swift in Sources */,
 				CFAB9BC92BA3345400CFCF90 /* CalendarView.swift in Sources */,
 				635C54AB2BA1A14C00747969 /* ExtPlanningProjectProgress.swift in Sources */,
+				633B1D092BAB3E1D00248898 /* TasksView2.swift in Sources */,
 				639247AE2B9F091C00A67779 /* ReadMe.swift in Sources */,
 				639247A22B9F090500A67779 /* ContentView.swift in Sources */,
 				639247B72B9F097900A67779 /* DataAmina.swift in Sources */,
@@ -358,11 +386,13 @@
 				635C54AF2BA222F000747969 /* ExtPiePercentCompleted.swift in Sources */,
 				50EC05BD2BA2F6B500C91DF9 /* TasksView.swift in Sources */,
 				639247D62B9F0AD600A67779 /* MaterialScreen.swift in Sources */,
+				633B1D032BAB08AE00248898 /* ProjectButtons.swift in Sources */,
 				CFA4E4912BA44E2700376435 /* ClothesGridShop.swift in Sources */,
 				63B610862BA8857900784F50 /* ExtNewPostIt.swift in Sources */,
 				639247C82B9F0A4000A67779 /* SettingsScreen.swift in Sources */,
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
 				639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */,
+				633B1D072BAB3DF500248898 /* StepDetail2.swift in Sources */,
 				639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */,
 				639247CA2B9F0A4E00A67779 /* SelectedProjectScreen.swift in Sources */,
 				63D20C1E2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift in Sources */,
@@ -372,6 +402,8 @@
 				CFA4E4952BA44E5000376435 /* BackgroundGridShop.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
 				63D20C1C2BA9C4EE00CA8D2B /* YoutubeView.swift in Sources */,
+				633B1D052BAB3DB100248898 /* SelectedProjectScreen2.swift in Sources */,
+				633B1D012BAAEA3D00248898 /* TutoLinksView.swift in Sources */,
 				639247D42B9F0ABC00A67779 /* PlanningScreen.swift in Sources */,
 				CFA4E4932BA44E3800376435 /* AccessoryGridShop.swift in Sources */,
 				631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */,
@@ -578,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63FB179F2BAAD47F00763972 /* XCRemoteSwiftPackageReference "confetti-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ottijp/confetti-swiftui";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63FB17A02BAAD47F00763972 /* Confetti */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63FB179F2BAAD47F00763972 /* XCRemoteSwiftPackageReference "confetti-swiftui" */;
+			productName = Confetti;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 639247942B9F090500A67779 /* Project object */;
 }

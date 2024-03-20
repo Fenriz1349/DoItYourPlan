@@ -19,13 +19,22 @@ struct CalendarView: View {
                 }
             Divider().frame(height: 1)
                 DatePicker("Sélectionnez une date", selection: $selectedDate, displayedComponents: [.date])
-                    .background(Color("purpleCustom"), in : RoundedRectangle(cornerRadius: 20))
                     .environment(\.locale, Locale(identifier: "fr_FR"))
                     .datePickerStyle(.graphical)
+                    .accentColor(.purple)
                     .frame(width: 300, height: 300)
                     .padding()
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color(CustomColor.purpleC.rawValue), lineWidth: 8)
+                        )
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.black, lineWidth: 2)
+                        )
                     .fontWeight(.semibold)
-                    .contentShape(Rectangle())
+                    .contentShape(RoundedRectangle(cornerRadius: 20))
+                    .padding(.horizontal, 20) 
         }
         .sheet(isPresented: $showModalDayCalendar) {
             DayDetailsModal(day: $selectedDate)

@@ -27,11 +27,12 @@ struct ExtZoomImage: View {
                         img.isShowed.toggle()
                         showImage.toggle()
                     } label: {
-                        Image(systemName: "clear.fill")
-                        Text("Supprimer")
-                            .bold()
+                        HStack{
+                            Image(systemName: "trash.fill")
+                                .bold()
+                        }
                     }
-                    .padding(.trailing,20)
+                    .buttonStyle(PressableButtonStylesIcone(width: 45, color: .red))
                 }
                 .font(.system(size: 24))
                 .foregroundStyle(.red)
@@ -39,9 +40,10 @@ struct ExtZoomImage: View {
                 Button {
                     showImage.toggle()
                 } label: {
-                    Text("fermer")
+                    Image(systemName: "multiply.circle")
                         .font(.system(size: 24))
                 }
+                .buttonStyle(PressableButtonStylesIcone(width: 45, color: .blue))
             }
         }
         .frame(width: 350,height: 375)

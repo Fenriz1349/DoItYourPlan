@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FormattedDateView: View {
-
+    @State private var isPurple = true
     @Binding var selectedDate: Date
     var body: some View {
         HStack{
@@ -16,11 +16,19 @@ struct FormattedDateView: View {
             Spacer()
             Text("consulter")
             Image(systemName: "chevron.right")
+                .foregroundColor(isPurple ? Color("purpleCustom") : .black)
+                .onAppear {
+                    Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                        withAnimation {
+                            self.isPurple.toggle()
+                        }
+                    }
+                }
         }
         .frame(width: 300)
         .font(.system(size: 24))
         .bold()
-        .foregroundColor(Color("purpleCustom"))
+        
         .padding()
         .animation(.spring(), value: selectedDate)
     }

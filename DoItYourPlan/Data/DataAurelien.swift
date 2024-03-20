@@ -160,3 +160,33 @@ var myProject = Project(projectName: "Projet Couture", steps: [
         Task(taskName: "Admirer et utiliser votre nouvelle trousse de maquillage faite main avec fierté!", orderNumber: 3, isDone: false)
     ])
 ])
+
+var myProject2 = Project(projectName: "Projet Lampe en Bois", steps: [
+    Step(stepName: "Préparation du matériel", orderNumber: 1, isDone: true, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+        Task(taskName: "Choisir le type de bois", orderNumber: 1, isDone: true),
+        Task(taskName: "Acheter ou rassembler le matériel électrique nécessaire (douille, fil, interrupteur)", orderNumber: 2, isDone: true),
+        Task(taskName: "Préparer les outils de travail (scie, perceuse, papier de verre)", orderNumber: 3, isDone: true),
+        Task(taskName: "Esquisser le design de la lampe", orderNumber: 4, isDone: true),
+        Task(taskName: "Déterminer les dimensions de la lampe", orderNumber: 5, isDone: true)
+    ]),
+    Step(stepName: "Découpe et assemblage du bois", orderNumber: 2, isDone: true, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+        Task(taskName: "Découper le bois selon les dimensions prévues", orderNumber: 1, isDone: true),
+        Task(taskName: "Poncer les pièces de bois pour lisser les surfaces", orderNumber: 2, isDone: true),
+        Task(taskName: "Assembler les pièces pour former la structure de la lampe", orderNumber: 3, isDone: true),
+        Task(taskName: "Vérifier la stabilité de la structure", orderNumber: 4, isDone: true),
+        Task(taskName: "Appliquer un traitement de finition sur le bois (vernis, huile)", orderNumber: 5, isDone: true)
+    ]),
+    Step(stepName: "Installation électrique", orderNumber: 3, isDone: true, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+        Task(taskName: "Percez un trou pour le passage du fil électrique", orderNumber: 1, isDone: true),
+        Task(taskName: "Installer la douille", orderNumber: 2, isDone: true),
+        Task(taskName: "Passer le fil à travers la structure et la douille", orderNumber: 3, isDone: true),
+        Task(taskName: "Fixer l'interrupteur au fil", orderNumber: 4, isDone: true),
+        Task(taskName: "Tester la connexion électrique", orderNumber: 5, isDone: true)
+    ]),
+    Step(stepName: "Finitions et décoration", orderNumber: 4, isDone: false, isCurrent: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+        Task(taskName: "Choisir un abat-jour adapté au design de la lampe", orderNumber: 1, isDone: false),
+        Task(taskName: "Installer l'abat-jour", orderNumber: 2, isDone: false),
+        Task(taskName: "Appliquer des éléments décoratifs si désiré", orderNumber: 3, isDone: false),
+        Task(taskName: "Effectuer les retouches finales sur le bois si nécessaire", orderNumber: 4, isDone: false)
+    ])
+])

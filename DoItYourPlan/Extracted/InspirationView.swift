@@ -15,11 +15,16 @@ struct InspirationView: View {
     @State var imageIndex: Int = 0
     @State private var selectedPostItIndex: Int? = nil
     @State private var selectedImageIndex: Int? = nil
-    @StateObject var listePostIt  = PostItList()
+    @State var listePostIt: [PostIt] = [
+        PostIt(name: "Thème", x: 350, y: 100, rotation: -5, color: .yellowC, contents: ["printemps", "marguerite","soleil"]),
+        PostIt(name: "Matériaux", x: 350, y: 300, rotation: 10, color: .blueC, contents: ["tissu vintage", "coton","forme cloche"]),
+        PostIt(name: "Endroits", x: 380, y: 450, rotation: -7, isShowed: true,color: .pinkC, contents: ["marché aux puces","Vieux Port"])
+    ]
     @State var imagesInspiration: [ImageInspiration] = [
         ImageInspiration(name: "sample1", x: 550, y: 150, link: "Sample1"),
         ImageInspiration(name: "sample2", x: 560, y: 200, link: "Sample2"),
-        ImageInspiration(name: "sample2", x: 570, y: 250, link: "Sample3")
+        ImageInspiration(name: "sample2", x: 570, y: 250, link: "Sample3"),
+        ImageInspiration(name: "robeInspiFlower",x: 550,y: 450, link: "robeInspiFlower")
     ]
     
     @State var postItDragOffset: CGSize = .zero
@@ -31,7 +36,7 @@ struct InspirationView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.black, lineWidth: 1)
                     .frame(width: 350, height: 50)
-                Text("page d'inspiration Projet 1")
+                Text("Inspiration Robe Florale")
             }
             ScrollView {
                 ZStack {
@@ -40,28 +45,28 @@ struct InspirationView: View {
                         .frame(width: 900, height: 400)
                         .rotationEffect(Angle(degrees: 90))
                     
-                    ForEach(listePostIt.postIts.indices, id: \.self) { index in
-                        if listePostIt.postIts[index].isShowed {
-                            ExtPostIt(width: 150, postit: $listePostIt.postIts[index])
-                                .position(x: listePostIt.postIts[index].x, y: listePostIt.postIts[index].y)
+                    ForEach(listePostIt.indices, id: \.self) { index in
+                        if listePostIt[index].isShowed {
+                            ExtPostIt(width: 150, postit: $listePostIt[index])
+                                .position(x: listePostIt[index].x, y: listePostIt[index].y)
                                 .onTapGesture {
                                     postItIndex = index
                                     showPostIt.toggle()
                                 }
                                 .gesture(
-                                    LongPressGesture(minimumDuration: 1.0)
+                                    LongPressGesture(minimumDuration: 0.5)
                                         .onEnded { _ in
                                             selectedPostItIndex = index
                                         }
                                 )
-                                .simultaneousGesture( // Utilisez simultaneousGesture pour combiner plusieurs gestes
+                                .simultaneousGesture( 
                                     DragGesture()
                                         .onChanged { value in
                                             postItDragOffset = value.translation
                                         }
                                         .onEnded { value in
-                                            listePostIt.postIts[index].x += value.translation.width
-                                            listePostIt.postIts[index].y += value.translation.height
+                                            listePostIt[index].x += value.translation.width
+                                            listePostIt[index].y += value.translation.height
                                             postItDragOffset = .zero
                                             selectedPostItIndex = nil
                                         }
@@ -100,12 +105,12 @@ struct InspirationView: View {
                             .position(x: 450, y: 250)
                     }
                     if showPostIt {
-                        ExtZoomPostIt(postit: listePostIt.postIts[postItIndex], showPostIt: $showPostIt)
+                        ExtZoomPostIt(postit: listePostIt[postItIndex], showPostIt: $showPostIt)
                             .position(x: 450, y: 250)
                     }
                     if showNewPostIt {
-                        ExtNewPostIt(postitlist: listePostIt, showPostIt: $showNewPostIt)
-                            .position(x: 450, y: 250)
+//                        ExtNewPostIt(postitlist: listePostIt, showPostIt: $showNewPostIt)
+//                            .position(x: 450, y: 250)
                     }
                 }
             }
@@ -114,21 +119,23 @@ struct InspirationView: View {
                     showNewPostIt.toggle()
                 } label: {
                     HStack{
-                        Image(systemName: "plus.app.fill")
+                        Image(systemName: "plus.circle")
                         Text("Ajouter PostIt")
-                            .font(.system(size: 18))
                     }
+                    .font(.system(size: 18))
                 }.padding(.leading,10)
+                    .buttonStyle(PressableButtonStylesCustom(color: .green))
                 Spacer()
                 Button {
                     showNewPostIt.toggle()
                 } label: {
                     HStack{
-                        Image(systemName: "plus.app.fill")
+                        Image(systemName: "plus.circle")
                         Text("Ajouter Image")
-                            .font(.system(size: 18))
                     }
+                    .font(.system(size: 18))
                 }.padding(.trailing,10)
+                    .buttonStyle(PressableButtonStylesCustom(color: .green))
             }
         }
     }

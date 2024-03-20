@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-let addButtonTask = UUID().uuidString
+let addButtonTask2 = UUID().uuidString
 
-struct TasksView: View {
+struct TasksView2: View {
     
     let pebble: String
     
-    @State private var step: Step = myProject.steps[0]
+    @State private var step: Step = myProject2.steps[0]
     
     @State private var pebbles: [String] = []
     
@@ -27,7 +27,7 @@ struct TasksView: View {
     
     @State private var newStepName: String = ""
     
-    @State private var myTasks: [Task] = myProject.steps[0].tasks
+    @State private var myTasks: [Task] = myProject2.steps[0].tasks
     
     @State private var isCongratulationTaskViewVisible = false
     
@@ -43,7 +43,7 @@ struct TasksView: View {
                         GeometryReader {
                             let size = $0.size
                             // Pebble task adding
-                            if pebble == addButtonTask {
+                            if pebble == addButtonTask2 {
                                 HStack {
                                     Image(systemName: "plus.circle")
                                         .font(.system(size: 30))
@@ -82,7 +82,7 @@ struct TasksView: View {
                                                 step.tasks[taskIndex] = task
                                                 myTasks[taskIndex] = task
                                                                                                 
-                                                    if let maxStepOrderNumber = myProject.steps.max(by: { $0.orderNumber < $1.orderNumber }) {
+                                                    if let maxStepOrderNumber = myProject2.steps.max(by: { $0.orderNumber < $1.orderNumber }) {
                                                         if myTasks.allSatisfy({ $0.isDone }) && !(step.orderNumber == maxStepOrderNumber.orderNumber) {
                                                             isCongratulationTaskViewVisible = true
                                                             Timer.scheduledTimer(withTimeInterval: 7, repeats: false) { _ in
@@ -91,7 +91,7 @@ struct TasksView: View {
                                                         }
                                                     }
                                                 
-                                                if let maxStepOrderNumber = myProject.steps.max(by: { $0.orderNumber < $1.orderNumber }) {
+                                                if let maxStepOrderNumber = myProject2.steps.max(by: { $0.orderNumber < $1.orderNumber }) {
                                                     if myTasks.allSatisfy({ $0.isDone }) && (step.orderNumber == maxStepOrderNumber.orderNumber) {
                                                         isCongratulationProjectViewVisible = true
                                                         Timer.scheduledTimer(withTimeInterval: 7, repeats: false) { _ in
@@ -175,10 +175,10 @@ struct TasksView: View {
         .ignoresSafeArea()
         .onAppear {
             if let stepUUID = UUID(uuidString: pebble),
-               let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
+               let matchingStep = myProject2.steps.first(where: { $0.id == stepUUID }) {
                 step = matchingStep
                 myTasks = matchingStep.tasks
-                pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
+                pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask2]
             }
         }
         .sheet(isPresented: $isCongratulationTaskViewVisible) {
@@ -192,5 +192,5 @@ struct TasksView: View {
 
 
 #Preview {
-    TasksView(pebble: myProject.steps[5].id.uuidString)
+    TasksView(pebble: myProject2.steps[5].id.uuidString)
 }
