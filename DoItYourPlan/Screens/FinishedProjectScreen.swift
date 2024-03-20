@@ -12,8 +12,8 @@ struct FinishedProjectScreen: View {
         
         NavigationStack{
             Text("Mes projets terminés")
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 152)
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal, 152)
                 .padding(.vertical, 10)
                 .border(Color.gray, width: 1)
             
