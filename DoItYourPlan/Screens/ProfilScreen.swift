@@ -52,7 +52,7 @@ struct ProfilScreen: View {
                                 Image(selectedFace.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 130, height: 90)
+                                    .frame(width: 110, height: 70)
                                     .offset(y: -17)
                                 
                             }
@@ -60,8 +60,8 @@ struct ProfilScreen: View {
                                 Image(selectedHair.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 150, height: 130)
-                                    .offset(y: -45)
+                                    .frame(width: 150, height: 100)
+                                    .offset(y: -55)
                                 
                             }
                             if let selectedHat = userSelections.selectedHat {
@@ -132,7 +132,8 @@ struct ProfilScreen: View {
                             NavigationLink(destination: FinishedProjectScreen()) {
                                 ProjectButtons(iconName: "checkmark.rectangle.stack", projectNumber: 4, projectTitle: "Projets terminés")
                             }
-                        }.buttonStyle(PlainButtonStyle())
+                        }.buttonStyle(PressableButtonStyle())
+                       
                         
                         Text("Succès")
                             .font(.system(size: 24))

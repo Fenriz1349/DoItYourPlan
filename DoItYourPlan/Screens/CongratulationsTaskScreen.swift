@@ -32,7 +32,7 @@ struct CongratulationsTaskScreen: View {
                 
                 Circle()
                     .fill(Color.white)
-                    .shadow(color: Color("purpleCustom"), radius: 4, x: 0, y: 2)
+                    .shadow(color:.yellow, radius: 4, x: 0, y: 2)
                     .frame(width: isZooming ? 300 : 150, height: isZooming ? 300 : 150)
                     .overlay(
                         VStack{
@@ -43,7 +43,7 @@ struct CongratulationsTaskScreen: View {
                             
                         }
                             .font(.system(size: isZooming ? 66 : 22, weight: .bold))
-                            .foregroundColor(Color("purpleCustom"))
+                            .foregroundColor(Color.yellow)
                     )
                 
                     .rotationEffect(.degrees(rotationAngle))

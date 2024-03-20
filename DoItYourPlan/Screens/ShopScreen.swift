@@ -85,7 +85,7 @@ struct ShopScreen: View {
                         Image(selectedFace.image)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 130, height: 90)
+                            .frame(width: 110, height: 70)
                             .offset(y: -17)
                         
                     }

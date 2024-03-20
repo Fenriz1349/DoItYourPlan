@@ -38,6 +38,7 @@
 		CF572FC22BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */; };
 		CF572FC52BA9DE1C00A5BF82 /* Confetti in Frameworks */ = {isa = PBXBuildFile; productRef = CF572FC42BA9DE1C00A5BF82 /* Confetti */; };
 		CF572FC92BAA253100A5BF82 /* CongratulationsTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF572FC82BAA253100A5BF82 /* CongratulationsTaskScreen.swift */; };
+		CF76C74E2BAAFED800B78B81 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF76C74D2BAAFED800B78B81 /* CircleButton.swift */; };
 		CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */; };
 		CFA4E48D2BA44DD300376435 /* HatGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48C2BA44DD300376435 /* HatGridShop.swift */; };
 		CFA4E48F2BA44DEE00376435 /* HairGridShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */; };
@@ -81,6 +82,7 @@
 		CF572FBF2BA9D43100A5BF82 /* ProjectButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtons.swift; sourceTree = "<group>"; };
 		CF572FC12BA9DB8500A5BF82 /* CongratulationsProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsProjectScreen.swift; sourceTree = "<group>"; };
 		CF572FC82BAA253100A5BF82 /* CongratulationsTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsTaskScreen.swift; sourceTree = "<group>"; };
+		CF76C74D2BAAFED800B78B81 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		CFA4E48A2BA44DAA00376435 /* ColorFaceGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFaceGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48C2BA44DD300376435 /* HatGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGridShop.swift; sourceTree = "<group>"; };
 		CFA4E48E2BA44DEE00376435 /* HairGridShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairGridShop.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				CFA4E4942BA44E5000376435 /* BackgroundGridShop.swift */,
 				CFA4E4962BA452F800376435 /* FaceGridShop.swift */,
 				CF572FBF2BA9D43100A5BF82 /* ProjectButtons.swift */,
+				CF76C74D2BAAFED800B78B81 /* CircleButton.swift */,
 			);
 			path = Extracted;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
 				639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */,
 				639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */,
+				CF76C74E2BAAFED800B78B81 /* CircleButton.swift in Sources */,
 				639247CA2B9F0A4E00A67779 /* SelectedProjectScreen.swift in Sources */,
 				639247C62B9F0A3500A67779 /* ShopScreen.swift in Sources */,
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,

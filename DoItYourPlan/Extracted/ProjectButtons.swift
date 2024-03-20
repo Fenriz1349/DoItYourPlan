@@ -35,9 +35,7 @@ struct ProjectButtons: View {
     let projectTitle: String
     
     var body: some View {
-        Button(action: {
-            // Action for the button
-        }) {
+       
             HStack {
                 Image(systemName: iconName)
                     .font(.system(size: 24))
@@ -49,12 +47,12 @@ struct ProjectButtons: View {
                     Text(projectTitle)
                         .font(.system(size: 16))
                 }
-            }
+            }.foregroundColor(.black).buttonStyle(PressableButtonStyle())
            
         }
-        .buttonStyle(PressableButtonStyle())
+       
     }
-}
+
 
 
         #Preview{
