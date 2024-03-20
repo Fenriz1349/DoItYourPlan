@@ -28,6 +28,7 @@ struct NewProjectScreen: View {
                 
                     Section(header: Text("Nom du projet")) {
                         TextField("Nom du projet", text: $projectName)
+                    
                             
                     }
                     Section(header: Text("Choisis la catégorie de ton projet DIY")) {
@@ -54,14 +55,12 @@ struct NewProjectScreen: View {
                         .cornerRadius(10)
                 }
                 .navigationBarTitle("Nouveau projet", displayMode: .inline)
-                .navigationBarItems(leading:
-                                        NavigationLink(destination: ProjectsScreen()) {
-                    Text("retour")
-                })
+                
+                }
             }
         }
     }
-}
+
     #Preview {
         NewProjectScreen()
     }

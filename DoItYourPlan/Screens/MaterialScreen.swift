@@ -56,7 +56,7 @@ struct MaterialScreen: View {
                                         deleteMaterial(withID: material.id)
                                     }) {
                                         Text("Supprimer")
-                                        Image(systemName: "trash")
+//                                        Image(systemName: "trash")
                                     }
                                 }
                                 .onTapGesture {
