@@ -79,7 +79,7 @@ struct MaterialScreen: View {
                     
 //                    Section {
                         HStack {
-                            TextField("Nouveau matériau", text: $newMaterial)
+                            TextField("Nouveau matériel", text: $newMaterial)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                             Button(action: addMaterial) {
                                 Text("Ajouter")

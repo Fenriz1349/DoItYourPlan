@@ -27,56 +27,16 @@ struct TasksView: View {
     @State private var newStepName: String = ""
 
     @State private var myTasks: [Task] = myProject.steps[0].tasks
-        
+
+// TaskName edit
+//    @State private var editTaskName: String = ""
+//    
+//    @State private var isEditing = false
+
     
     var body: some View {
 
         ZStack {
-            
-//            VStack {
-//                HStack {
-//                    if step.stepName == "Nouvelle étape" {
-//                        TextField("Nouvelle étape", text: $newStepName)
-//                            .frame(width: 150)
-//                            .onSubmit {
-//                                if !newStepName.isEmpty {
-////                                    if let stepUUID = UUID(uuidString: pebble) {
-////                                        myProject.addTask(toStep: stepUUID, taskName: newTaskName, isDone: false)
-////                                    }
-//                                }
-//                            }
-//                    }
-//                    else {
-//                        Text(step.stepName)
-////                            .onAppear {
-////                                if let stepUUID = UUID(uuidString: pebble),
-////                                   let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
-////                                    step = matchingStep
-////                                    myTasks = matchingStep.tasks
-////                                    pebbles = step.tasks.map { $0.id.uuidString } + [addButtonTask]
-////                                }
-////                            }
-//                    }
-//                    
-////                    ZStack {
-////                        Circle()
-////                            .fill(step.stepColor)
-////                        Text("Étape \(step.orderNumber)")
-////                            .foregroundColor(.white)
-////                        if step.isCurrent {
-////                            Image(systemName: "checkmark")
-////                                .resizable()
-////                                .frame(width: 50, height: 50)
-////                                .foregroundColor(Color.green)
-////                                .bold()
-////                        }
-////                    }
-//                }
-//                .frame(height: 100)
-//                Spacer()
-//            }
-//            .padding(.top, 20)
-            
             ScrollView(.vertical) {
                 LazyVGrid(columns: [GridItem()], content: {
                     ForEach(pebbles, id: \.self) { pebble in
@@ -91,22 +51,11 @@ struct TasksView: View {
                                     TextField("Ajouter une tâche", text: $newTaskName)
                                         .onSubmit {
                                             if !newTaskName.isEmpty {
-                                                
-//                                                myTasks.append(Task(taskName: "Choisir le tissu pour la trousse", orderNumber: myTasks.count + 1, isDone: true))
-//                                                if let lastTask = myTasks.last.id.uuidString {
-//                                                    pebbles.append(lastTask.id.uuidString)
-//                                                }
-                                                
-                                                
-                                                if let taskIndex = myTasks.firstIndex(where: { $0.id == UUID(uuidString: pebble) }) {
-                                                    let task = myTasks[taskIndex]
-                                                    task.isDone.toggle()
-                                                    step.tasks[taskIndex] = task
-                                                    myTasks[taskIndex] = task
-                                                }
-                            
-                                                if let stepUUID = UUID(uuidString: pebble) {
-                                                    myProject.addTask(toStep: stepUUID, taskName: newTaskName, isDone: false)
+                                                myTasks.append(Task(taskName: newTaskName, orderNumber: myTasks.count + 1, isDone: false))
+                                                if let lastTask = myTasks.last {
+                                                    pebbles.insert(lastTask.id.uuidString, at: pebbles.count - 1)
+                                                    step.tasks.append(lastTask)
+                                                    newTaskName = ""
                                                 }
                                             }
                                         }
@@ -140,6 +89,11 @@ struct TasksView: View {
                                             }
                                         })
                                         if let task = myTasks.first(where: { $0.id == UUID(uuidString: pebble) }) {
+// TaskNameEdit
+//                                            TextField(task.taskName, text: $editTaskName, onEditingChanged: { editing in
+//                                                self.isEditing = editing
+//                                            })
+                                            
                                             Text(task.taskName)
                                         }
                                         Spacer()
@@ -172,9 +126,9 @@ struct TasksView: View {
                                             }
                                         }
                                     }
-                                    .onTapGesture {
-                                        // Action lorsqu'une tâche est tapée
-                                    }
+ // Action lorsqu'une tâche est tapée
+//                                    .onTapGesture {
+//                                    }
                                     .gesture(
                                         DragGesture()
                                             .onChanged { gesture in
@@ -218,6 +172,7 @@ struct TasksView: View {
         }
     }
 }
+
 
 #Preview {
     TasksView(pebble: myProject.steps[5].id.uuidString)

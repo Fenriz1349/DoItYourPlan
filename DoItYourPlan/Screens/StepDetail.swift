@@ -16,8 +16,12 @@ struct StepDetail: View {
 
     
     var body: some View {
-                
+        
         HStack {
+                        if step.stepName == "Nouvelle étape" {
+                            
+                        } else {
+            
             Text(step.stepName)
                 .onAppear {
                     if let stepUUID = UUID(uuidString: pebble),
@@ -25,7 +29,7 @@ struct StepDetail: View {
                         step = matchingStep
                     }
                 }
-         
+            
             ZStack {
                 Circle()
                     .fill(step.stepColor)
@@ -40,6 +44,7 @@ struct StepDetail: View {
                 }
             }
         }
+    }
         .frame(height: 100)
         .padding(.bottom, 20)
         Spacer()
@@ -51,7 +56,7 @@ struct StepDetail: View {
         .pickerStyle(.segmented)
         if segmentedSelection == 0 {
             TasksView(pebble: pebble)
-        }else {
+        } else {
             MaterialScreen(stepColor: step.stepColor)
         }
     }

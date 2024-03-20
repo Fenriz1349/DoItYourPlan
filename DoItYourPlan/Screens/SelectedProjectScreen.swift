@@ -16,6 +16,8 @@ struct SelectedProjectScreen: View {
     @State private var zoom: Bool = false
     @State private var isFirstUnfinishedStepFound: Bool = false
     
+    @State private var mySteps: [Step] = myProject.steps
+    
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
