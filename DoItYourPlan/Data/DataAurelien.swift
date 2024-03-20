@@ -114,7 +114,7 @@ var myProject = Project(projectName: "Projet Couture", steps: [
         Task(taskName: "Laver et repasser le tissu", orderNumber: 2, isDone: true),
         Task(taskName: "Préparer les fournitures nécessaires", orderNumber: 3, isDone: true)
     ]),
-    Step(stepName: "Découpe des pièces", orderNumber: 2, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+    Step(stepName: "Découpe des pièces", orderNumber: 2, isDone: false, isCurrent: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
         Task(taskName: "Prendre les mesures nécessaires pour découper les pièces de tissu", orderNumber: 1, isDone: true),
         Task(taskName: "Découper le tissu selon les dimensions requises pour la trousse", orderNumber: 2, isDone: true),
         Task(taskName: "Découper la fermeture éclair à la bonne taille si nécessaire", orderNumber: 3, isDone: true)
@@ -125,7 +125,7 @@ var myProject = Project(projectName: "Projet Couture", steps: [
 //        Task(taskName: "Coudre les côtés et le fond de la trousse", orderNumber: 2, isDone: true),
 //        Task(taskName: "Faire des entailles aux coins pour faciliter le retournement", orderNumber: 3, isDone: true)
 //    ]),
-//    Step(stepName: "Fixation de la fermeture éclair", orderNumber: 4, isDone: false, isCurrent: true, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
+//    Step(stepName: "Fixation de la fermeture éclair", orderNumber: 4, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition(), tasks: [
 //        Task(taskName: "Positionner la fermeture éclair sur le bord de l'ouverture de la trousse", orderNumber: 1, isDone: true),
 //        Task(taskName: "Épingler la fermeture éclair en place", orderNumber: 2, isDone: false),
 //        Task(taskName: "Coudre la fermeture éclair sur les bords de la trousse", orderNumber: 3, isDone: false)

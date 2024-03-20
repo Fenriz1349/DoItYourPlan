@@ -73,7 +73,7 @@ struct SelectedProjectScreen: View {
                                                 Text("Etape \(step.orderNumber)")
                                                     .foregroundColor(.white)
                                                 if step.isCurrent {
-                                                    Image(systemName: "checkmark")
+                                                    Image(systemName: "avatar")
                                                         .resizable()
                                                         .frame(width: 50, height: 50)
                                                         .foregroundColor(Color.green)
