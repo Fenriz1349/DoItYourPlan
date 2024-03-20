@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		504DDF2A2BAB386800C36BE0 /* SelectedProjectScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DDF292BAB386800C36BE0 /* SelectedProjectScreen2.swift */; };
+		504DDF2C2BAB39AD00C36BE0 /* StepDetail2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DDF2B2BAB39AD00C36BE0 /* StepDetail2.swift */; };
+		504DDF2E2BAB39D800C36BE0 /* TasksView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DDF2D2BAB39D800C36BE0 /* TasksView2.swift */; };
 		50EC05BD2BA2F6B500C91DF9 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */; };
 		631C80B22BA3106D003D7CF0 /* ProjectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B12BA3106D003D7CF0 /* ProjectButton.swift */; };
 		631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */; };
@@ -63,6 +66,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		504DDF292BAB386800C36BE0 /* SelectedProjectScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProjectScreen2.swift; sourceTree = "<group>"; };
+		504DDF2B2BAB39AD00C36BE0 /* StepDetail2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetail2.swift; sourceTree = "<group>"; };
+		504DDF2D2BAB39D800C36BE0 /* TasksView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView2.swift; sourceTree = "<group>"; };
 		50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		631C80B12BA3106D003D7CF0 /* ProjectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButton.swift; sourceTree = "<group>"; };
 		631C80B32BA31092003D7CF0 /* ProjectSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSuccess.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 				639247C52B9F0A3500A67779 /* ShopScreen.swift */,
 				639247C72B9F0A4000A67779 /* SettingsScreen.swift */,
 				639247C92B9F0A4E00A67779 /* SelectedProjectScreen.swift */,
+				504DDF292BAB386800C36BE0 /* SelectedProjectScreen2.swift */,
 				639247CB2B9F0A5800A67779 /* ProjectsScreen.swift */,
 				639247CD2B9F0A6500A67779 /* NewProjectScreen.swift */,
 				639247CF2B9F0A9300A67779 /* FinishedProjectScreen.swift */,
@@ -206,8 +213,10 @@
 				639247D32B9F0ABC00A67779 /* PlanningScreen.swift */,
 				639247D52B9F0AD600A67779 /* MaterialScreen.swift */,
 				50EC05BC2BA2F6B500C91DF9 /* TasksView.swift */,
+				504DDF2D2BAB39D800C36BE0 /* TasksView2.swift */,
 				63D20C1D2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift */,
 				63FB17992BAA1AF400763972 /* StepDetail.swift */,
+				504DDF2B2BAB39AD00C36BE0 /* StepDetail2.swift */,
 				63FB179B2BAAD36500763972 /* CongratulationsProjectScreen.swift */,
 				63FB179D2BAAD39200763972 /* CongratulationsTaskScreen.swift */,
 			);
@@ -361,6 +370,7 @@
 				639247AE2B9F091C00A67779 /* ReadMe.swift in Sources */,
 				639247A22B9F090500A67779 /* ContentView.swift in Sources */,
 				639247B72B9F097900A67779 /* DataAmina.swift in Sources */,
+				504DDF2E2BAB39D800C36BE0 /* TasksView2.swift in Sources */,
 				CFA4E4972BA452F800376435 /* FaceGridShop.swift in Sources */,
 				631C80B42BA31092003D7CF0 /* ProjectSuccess.swift in Sources */,
 				CFA4E48B2BA44DAA00376435 /* ColorFaceGridShop.swift in Sources */,
@@ -376,11 +386,13 @@
 				639247BB2B9F098900A67779 /* DataAurelien.swift in Sources */,
 				639247A02B9F090500A67779 /* DoItYourPlanApp.swift in Sources */,
 				639247D22B9F0AB100A67779 /* LibraryScreen.swift in Sources */,
+				504DDF2A2BAB386800C36BE0 /* SelectedProjectScreen2.swift in Sources */,
 				639247CA2B9F0A4E00A67779 /* SelectedProjectScreen.swift in Sources */,
 				63D20C1E2BAA0F5700CA8D2B /* detailsFinishedProjectsScreen.swift in Sources */,
 				639247C62B9F0A3500A67779 /* ShopScreen.swift in Sources */,
 				639247B92B9F098000A67779 /* DataCaroline.swift in Sources */,
 				63BF44642BA84A4100270E32 /* DayDetailsModal.swift in Sources */,
+				504DDF2C2BAB39AD00C36BE0 /* StepDetail2.swift in Sources */,
 				CFA4E4952BA44E5000376435 /* BackgroundGridShop.swift in Sources */,
 				639247B32B9F096700A67779 /* Models.swift in Sources */,
 				63D20C1C2BA9C4EE00CA8D2B /* YoutubeView.swift in Sources */,

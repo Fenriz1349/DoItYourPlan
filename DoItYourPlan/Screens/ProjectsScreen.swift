@@ -48,20 +48,23 @@ struct ProjectsScreen: View {
                         .foregroundStyle(.black)
                     }
                 }
-                ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .fill(.blueCustom)
-                        .frame(width: 380, height: 100)
-                        .padding(.bottom, 15)
-                    HStack{
-                        VStack{
-                            Text("Projet 2")
-                                .multilineTextAlignment(.leading)
-                            Text("Crochet")
-                        }.padding(.leading, 40)
-                        Spacer()
-                        ExtPiePercentCompleted(percent: 70)
-                            .padding(.trailing, 40)
+                NavigationLink(destination:SelectedProjectScreen2()){
+                    ZStack{
+                        RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .fill(.blueCustom)
+                            .frame(width: 380, height: 100)
+                            .padding(.bottom, 15)
+                        HStack{
+                            VStack{
+                                Text("Projet 2")
+                                    .multilineTextAlignment(.leading)
+                                Text("Lampe")
+                            }.padding(.leading, 40)
+                            Spacer()
+                            ExtPiePercentCompleted(percent: 90)
+                                .padding(.trailing, 40)
+                        }
+                        .foregroundStyle(.black)
                     }
                 }
                 ZStack{
