@@ -106,6 +106,8 @@ struct ProjectsScreen: View {
                     .padding(.top, 10)
                     .foregroundStyle(.black)
             }
+            .buttonStyle(PressableButtonStylesIcone(width: 45, color: .blue))
+            .padding(.bottom,20)
         }
     }
 }
