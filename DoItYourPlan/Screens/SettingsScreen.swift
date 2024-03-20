@@ -59,7 +59,7 @@ struct SettingsScreen: View {
                                Text("E-mails de notification")
                            }
                        }
-                       
+                    
                        Section(header: Text("À PROPOS")) {
                            NavigationLink(destination: Text("Information")) {
                                HStack {
