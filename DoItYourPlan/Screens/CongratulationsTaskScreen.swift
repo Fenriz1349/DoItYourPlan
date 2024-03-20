@@ -48,10 +48,10 @@ struct CongratulationsTaskScreen: View {
                 
                     .rotationEffect(.degrees(rotationAngle))
                     .onAppear() {
-                        withAnimation(Animation.easeInOut(duration: 5)) {
+                        withAnimation(Animation.easeInOut(duration: 1.5)) {
                             isZooming.toggle()
                         }
-                        withAnimation(Animation.linear(duration: 5)) {
+                        withAnimation(Animation.linear(duration: 1.5)) {
                             rotationAngle = 360
                         }
                     }

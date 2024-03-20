@@ -126,11 +126,11 @@ struct ProfilScreen: View {
                         
                         HStack {
                             NavigationLink(destination: ProjectsScreen()) {
-                                ProjectButton(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projets en cours")
+                                ProjectButtons(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projets en cours")
                             }
                             
                             NavigationLink(destination: FinishedProjectScreen()) {
-                                ProjectButton(iconName: "checkmark.rectangle.stack", projectNumber: 4, projectTitle: "Projets terminés")
+                                ProjectButtons(iconName: "checkmark.rectangle.stack", projectNumber: 4, projectTitle: "Projets terminés")
                             }
                         }.buttonStyle(PlainButtonStyle())
                         
