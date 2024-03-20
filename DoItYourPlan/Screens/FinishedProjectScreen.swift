@@ -36,17 +36,20 @@ struct FinishedProjectScreen: View {
                                 HStack{
                                     Image("cosplayGirl3")
                                         .resizable()
-                                        .cornerRadius(15)
-                                        .frame(width: 130, height: 100)
+                                        .cornerRadius(10)
+                                        .frame(width: 120, height: 100)
                                         .padding(.vertical, 20)
-                                        .padding(.leading, -35.0)
+                                      
                                     
                                     
-                                    VStack{
+                                    VStack(alignment: .leading){
                                         Text("Costume Cosplay BatGirl")
                                         Text("Début : 12/01/2024")
                                         Text("Fin : 24/02/2024")
-                                    }.foregroundStyle(.black)
+                                    }
+                                    .padding(.leading, 24.0)
+                                    .foregroundStyle(.black)
+                                        .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
                                 } .padding(.top, -20.0)
                                 
                             }
@@ -76,7 +79,7 @@ struct FinishedProjectScreen: View {
                                     .padding(.vertical, 20)
                                     .padding(.leading, -35.0)
                                 
-                                VStack{
+                                VStack(alignment: .leading){
                                     Text("Peinture mur Salon")
                                     Text("Début : 01/12/2023")
                                     Text("Fin : 17/12/2023")
@@ -104,14 +107,16 @@ struct FinishedProjectScreen: View {
                                 Image("cadeauCharlie")
                                     .resizable()
                                     .scaledToFit()
+                                    .cornerRadius(10)
                                     .frame(width: 150, height: 100, alignment: .topLeading)
                                     .padding(.vertical, 20)
                                     .padding(.leading, -52.0)
                                 
-                                VStack{
+                                VStack (alignment: .leading){
                                     Text("Cadeau Charlie")
                                     Text("Début : 01/12/2023")
                                     Text("Fin : 15/02/2024")
+                                    
                                 }
                             } .padding(.top, -20.0)
                             
@@ -137,14 +142,15 @@ struct FinishedProjectScreen: View {
                                 Image("jardiniereColor")
                                     .resizable()
                                     .cornerRadius(10)
-                                    .frame(width: 150, height: 100, alignment: .topLeading)     .padding(.vertical, 20)
+                                    .frame(width: 130, height: 100)     .padding(.vertical, 20)
                                     .padding(.leading, -35.0)
                                 
-                                VStack{
+                                VStack (alignment: .leading){
                                     Text("Jardinières colorés")
                                     Text("Début : 20/08/2023")
                                     Text("Fin : 30/08/2023")
-                                }
+                                    
+                                } .padding(.leading, 30)
                             } .padding(.top, -20.0)
                         }
                     }
@@ -172,15 +178,19 @@ struct FinishedProjectScreen: View {
                             HStack{
                                 Image("coussinRecycle")
                                     .resizable()
-                                    .frame(width: 150, height: 100, alignment: .topLeading)
+                                    .cornerRadius(10)
+                                    .frame(width: 130, height: 100, alignment: .topLeading)
                                     .padding(.vertical, 20)
-                                    .padding(.leading, -35.0)
+                                    .padding(.leading, -45.0)
                                 
-                                VStack{
+                                VStack (alignment: .leading){
                                     Text("Coussins recyclés")
                                     Text("Début : 12/01/2024")
                                     Text("Fin : 24/02/2024")
-                                }.foregroundStyle(.black)
+                                }
+                                .padding(.leading, 18.0)
+                                .foregroundStyle(.black)
+                                    .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
                             } .padding(.top, -20.0)
                         }/* rectangle 5 ⬆ */
                     }
@@ -204,11 +214,12 @@ struct FinishedProjectScreen: View {
                             HStack{
                                 Image("rangementJardin")
                                     .resizable()
-                                    .frame(width: 150, height: 100, alignment: .topLeading)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 140, height: 100, alignment: .topLeading)
                                     .padding(.vertical, 20)
                                 
                                 
-                                VStack{
+                                VStack (alignment: .leading){
                                     Text("Rangement tuyau et bac à fleurs")
                                     Text("Début : 01/08/2023")
                                     Text("Fin : 07/09/2023")
