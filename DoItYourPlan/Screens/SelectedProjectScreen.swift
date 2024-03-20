@@ -70,14 +70,15 @@ struct SelectedProjectScreen: View {
                                                 }
                                             }
                                             if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
-                                                Text("Etape \(step.orderNumber)")
-                                                    .foregroundColor(.white)
                                                 if step.isCurrent {
-                                                    Image(systemName: "avatar")
+                                                    Image("avatar")
                                                         .resizable()
-                                                        .frame(width: 50, height: 50)
+                                                        .frame(width: 80, height: 80)
                                                         .foregroundColor(Color.green)
                                                         .bold()
+                                                } else {
+                                                    Text("Etape \(step.orderNumber)")
+                                                        .foregroundColor(.white)
                                                 }
                                             }
                                         }
