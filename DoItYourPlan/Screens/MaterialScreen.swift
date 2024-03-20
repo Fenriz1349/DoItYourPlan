@@ -28,17 +28,20 @@ struct MaterialScreen: View {
         MaterialItem(name: "Pinces pour couture", price: 9.49)
     ]
     
-    @State var newMaterial = ""
+    @State var newMaterialName = ""
+    @State var newMaterialPrice = ""
     @State var selectedMaterials = Set<UUID>()
     
     var totalMaterialPrice: Double {
-        // Calculer le total des prix des matériaux
+        // Calculer le total des prix de tous les matériaux
         return materials.reduce(0) { $0 + $1.price }
     }
     
     var totalRemainingPrice: Double {
-        let remainingMaterials = materials.filter { !selectedMaterials.contains($0.id)}
-        return remainingMaterials.reduce(0) { $0 + $1.price}
+        // Filtrer les matériaux non sélectionnés
+        let remainingMaterials = materials.filter { !selectedMaterials.contains($0.id) }
+        // Calculer le total des prix des matériaux non sélectionnés
+        return remainingMaterials.reduce(0) { $0 + $1.price }
     }
     
     var body: some View {
@@ -48,6 +51,14 @@ struct MaterialScreen: View {
                     Section(header: Text("Ajoutes tout ce dont tu auras besoin pour ce projet")) {
                         ForEach(materials) { material in
                             MaterialRow(material: material, isSelected: selectedMaterials.contains(material.id))
+                                .contextMenu {
+                                    Button(action: {
+                                        deleteMaterial(withID: material.id)
+                                    }) {
+                                        Text("Supprimer")
+                                        Image(systemName: "trash")
+                                    }
+                                }
                                 .onTapGesture {
                                     if selectedMaterials.contains(material.id) {
                                         selectedMaterials.remove(material.id)
@@ -57,7 +68,22 @@ struct MaterialScreen: View {
                                 }
                         }
                     }
-                    //   pour calculer le total de mon tableau
+                    Section {
+                        HStack {
+                            TextField("Nouveau matériau", text: $newMaterialName)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("Prix", text: $newMaterialPrice)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.decimalPad) // Pour afficher un clavier numérique
+                            Button(action: addMaterial) {
+                                Text("Ajouter")
+                                    .padding()
+                                    .foregroundColor(.black)
+                                    .background(Color.purpleCustom)
+                                    .cornerRadius(10)
+                            }
+                        }
+                    }
                     HStack{
                         Section(header: Text("Cout total")) {
                             Text("\(String(format: "%.2f", totalMaterialPrice))€")
@@ -70,20 +96,6 @@ struct MaterialScreen: View {
                         }
                         
                     }
-                    
-                    Section {
-                        HStack {
-                            TextField("Nouveau matériau", text: $newMaterial)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            Button(action: addMaterial) {
-                                Text("Ajouter")
-                                    .padding()
-                                    .foregroundColor(.black)
-                                    .background(Color.purpleCustom)
-                                    .cornerRadius(10)
-                            }
-                        }
-                    }
                 }
                 .navigationBarTitle("Matériel", displayMode: .inline)
             }
@@ -91,10 +103,17 @@ struct MaterialScreen: View {
     }
     
     func addMaterial() {
-        guard !newMaterial.isEmpty else { return }
-        // Ajoutez le nouveau matériau avec un prix par défaut
-        materials.append(MaterialItem(name: newMaterial, price: 0.0))
-        newMaterial = ""
+        guard !newMaterialName.isEmpty else { return }
+        // Convertir le prix saisi en Double
+        guard let price = Double(newMaterialPrice) else { return }
+        // Ajoutez le nouveau matériau avec le nom et le prix saisis
+        materials.append(MaterialItem(name: newMaterialName, price: price))
+        newMaterialName = ""
+        newMaterialPrice = ""
+    }
+    
+    func deleteMaterial(withID id: UUID) {
+        materials.removeAll { $0.id == id }
     }
 }
 
