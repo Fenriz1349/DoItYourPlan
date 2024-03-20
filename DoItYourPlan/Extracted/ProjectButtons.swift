@@ -1,11 +1,3 @@
-//
-//  ProjectButtons.swift
-//  DoItYourPlan
-//
-//  Created by apprenant49 on 19/03/2024.
-//
-
-
 import SwiftUI
 
 struct PressableButtonStyle: ButtonStyle {
@@ -15,11 +7,11 @@ struct PressableButtonStyle: ButtonStyle {
                 .foregroundColor(Color("purple2Custom"))
                 .blur(radius: configuration.isPressed ? 0 : 1)
                 .offset(x: 0, y: configuration.isPressed ? 5 : 10)
-            
+
             RoundedRectangle(cornerRadius: 20)
                 .fill(configuration.isPressed ? Color.gray : Color("purpleCustom"))
                 .offset(x: 0, y: configuration.isPressed ? 5 : 0)
-            
+
             configuration.label
                 .foregroundColor(.white)
         }
@@ -33,13 +25,13 @@ struct ProjectButtons: View {
     let iconName: String
     let projectNumber: Int
     let projectTitle: String
-    
+
     var body: some View {
-       
+
             HStack {
                 Image(systemName: iconName)
                     .font(.system(size: 24))
-                
+
                 VStack(alignment: .leading) {
                     Text("\(projectNumber)")
                         .font(.system(size: 16))
@@ -48,14 +40,9 @@ struct ProjectButtons: View {
                         .font(.system(size: 16))
                 }
             }.foregroundColor(.black).buttonStyle(PressableButtonStyle())
-           
         }
-       
+
     }
-
-
-
         #Preview{
             ProjectButtons(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projet en cours")
             }
-        

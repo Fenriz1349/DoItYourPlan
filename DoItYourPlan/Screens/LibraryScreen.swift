@@ -17,7 +17,7 @@ struct LibraryScreen: View {
                 .padding(.bottom,5)
             Picker("", selection: $segmentedSelection) {
                 Text("Inspirations").tag(0)
-                Text("Tutos").tag(1)
+                Text("Vidéos").tag(1)
                 Text("Liens").tag(2)
             }
             .pickerStyle(.segmented)

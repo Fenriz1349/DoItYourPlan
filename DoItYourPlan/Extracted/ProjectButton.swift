@@ -54,9 +54,6 @@ struct ProjectButton: View {
        
     }
 
-
-
-        #Preview{
-            ProjectButton(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projet en cours")
-            }
-        
+#Preview{
+    ProjectButton(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projet en cours")
+}

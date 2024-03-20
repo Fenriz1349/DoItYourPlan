@@ -43,7 +43,7 @@ struct FinishedProjectScreen: View {
                                     
                                     
                                     VStack(alignment: .leading){
-                                        Text("Costume Cosplay BatGirl")
+                                        Text("Costume Cosplay BatWoman")
                                         Text("Début : 12/01/2024")
                                         Text("Fin : 24/02/2024")
                                     }
