@@ -121,9 +121,9 @@ struct PlanningProjectProgress :Identifiable{
 }
 //liste de 3 projets pour afficher les projets en cours
 var projectsProgressList : [PlanningProjectProgress] = [
-    PlanningProjectProgress(name: "Projet 1", category :.couture,dateEnd: createDate(22, 3, 2024), dateStepsEnd: nil, progressPercent: 25),
-    PlanningProjectProgress(name: "Projet 2", category :.tricot,dateEnd: createDate(18, 6, 2024), dateStepsEnd: nil, progressPercent: 66),
-    PlanningProjectProgress(name: "Projet 3", category :.peinture,dateEnd: nil, dateStepsEnd: nil, progressPercent: 75)
+    PlanningProjectProgress(name: "Robe vintage à motifs floraux", category :.couture,dateEnd: createDate(22, 3, 2024), dateStepsEnd: nil, progressPercent: 90),
+    PlanningProjectProgress(name: "Plaid bohème multicolore", category :.crochet,dateEnd: createDate(18, 6, 2024), dateStepsEnd: nil, progressPercent: 70),
+    PlanningProjectProgress(name: "Paysage marin au coucher du soleil", category :.peinture,dateEnd: nil, dateStepsEnd: nil, progressPercent: 25)
 ]
 
 //class pour gérer un element sur l'inspirationBoard
@@ -165,8 +165,8 @@ class PostIt : Inspiration {
 
 class PostItList: ObservableObject {
     @Published var postIts: [PostIt] = [
-        PostIt(name: "Post It 1", x: 350, y: 100, rotation: -5, color: .yellowC, contents: ["test", "test2"]),
-        PostIt(name: "Post It 2", x: 350, y: 300, rotation: 10, color: .blueC, contents: ["test", "test2"])
+        PostIt(name: "Thème", x: 350, y: 100, rotation: -5, color: .yellowC, contents: ["printemps", "marguerite","soleil"]),
+        PostIt(name: "Matériaux", x: 350, y: 300, rotation: 10, color: .blueC, contents: ["tissu vintage", "coton","forme cloche"])
     ]
     
     func addPostIt(_ postIt: PostIt) {

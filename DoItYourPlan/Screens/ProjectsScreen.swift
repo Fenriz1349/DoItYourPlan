@@ -9,108 +9,70 @@ import SwiftUI
 
 struct ProjectsScreen: View {
     @State var showNewProjet : Bool = false
+    
     var body: some View {
-        NavigationStack{
-            
-            Text("Mes projets")
-                .padding(.horizontal, 152)
-                .padding(.vertical, 10)
-                .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+        NavigationStack {
             
             Text("Bonjour ! Craft Génius")
                 .font(.title)
                 .fontWeight(.bold)
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .padding(.all)
+                .frame(width: 340)
             
-            Text ("Termines un projet en cours pour passer au niveau supérieur et progresser !")
+            
+            Text("Termine un projet en cours pour passer au niveau supérieur et progresser !")
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 25)
-            ScrollView{
-                NavigationLink(destination:SelectedProjectScreen()){
-                    ZStack{
-                        RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .fill(.purpleCustom)
-                            .frame(width: 380, height: 100)
-                            .padding(.bottom, 15)
-                        
-                        HStack{
-                            
-                            VStack{
-                                Text("Projet 1")
-                                    .multilineTextAlignment(.leading)
-                                Text("Couture")
-                            } .padding(.leading, 40)
-                            Spacer()
-                            ExtPiePercentCompleted(percent: 70)
-                                .padding(.trailing, 40)
-                        }
-                        .foregroundStyle(.black)
-                    }
+                .frame(width: 340)
+                .foregroundColor(.gray)
+            ScrollView {
+                
+                NavigationLink(destination: SelectedProjectScreen()) {
+                    projectRectangle(title: "Robe vintage à motifs floraux", subtitle: "Couture", color: .purpleCustom, percent: 90)
                 }
-                ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .fill(.blueCustom)
-                        .frame(width: 380, height: 100)
-                        .padding(.bottom, 15)
-                    HStack{
-                        VStack{
-                            Text("Projet 2")
-                                .multilineTextAlignment(.leading)
-                            Text("Crochet")
-                        }.padding(.leading, 40)
-                        Spacer()
-                        ExtPiePercentCompleted(percent: 70)
-                            .padding(.trailing, 40)
-                    }
-                }
-                ZStack{
-                    RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .fill(.pinkCustom)
-                        .frame(width: 380, height: 100)
-                    HStack{
-                        
-                        VStack{
-                            Text("Projet 3")
-                                .multilineTextAlignment(.leading)
-                            Text("Peinture")
-                        }.padding(.leading, 40)
-                        Spacer()
-                        ExtPiePercentCompleted(percent: 70)
-                            .padding(.trailing, 40)
-                    }
-                    
-                }
+                projectRectangle(title: "Plaid bohème multicolore", subtitle: "Crochet", color: .pinkCustom, percent: 70)
+                projectRectangle(title: "Paysage marin au coucher du soleil", subtitle: "Peinture", color: .blueCustom, percent: 25)
+                
                 if showNewProjet {
-                    ZStack{
-                        RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .fill(.pinkCustom)
-                            .frame(width: 380, height: 100)
-                        HStack{
-                            
-                            VStack{
-                                Text("Projet 4")
-                                    .multilineTextAlignment(.leading)
-                                Text("Peinture")
-                            }.padding(.leading, 40)
-                            Spacer()
-                            ExtPiePercentCompleted(percent: 0)
-                                .padding(.trailing, 40)
-                        }
-                    }
+                    projectRectangle(title: "Jardin aromatique en carrés", subtitle: "Jardinage", color: .greenCustom, percent: 0)
+                }
+                NavigationLink(destination: NewProjectScreen(showNewProjet: $showNewProjet)) {
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 50))
+                        .padding(.top, 10)
+                        .foregroundStyle(.black)
                 }
             }
-            NavigationLink(destination:NewProjectScreen(showNewProjet: $showNewProjet)){
-                Image(systemName: "plus.circle")
-                    .font(.system(size: 24))
-                    .padding(.top, 10)
-                    .foregroundStyle(.black)
-            }
-            .buttonStyle(PressableButtonStylesIcone(width: 45, color: .blue))
-            .padding(.bottom,20)
+            .navigationTitle("Mes projets")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
+
 #Preview {
     ProjectsScreen()
 }
+
+func projectRectangle(title: String, subtitle: String, color: Color, percent: Int) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25.0)
+                .fill(color)
+                .frame(width: 340, height: 100)
+                .padding(.bottom, 15)
+HStack {
+                VStack(alignment: .leading) {
+                    Text(title)
+                    Text(subtitle)
+                }
+                .padding(.leading, 40)
+
+                Spacer()
+
+                ExtPiePercentCompleted(percent: percent)
+                    .padding(.trailing, 40)
+            }
+            .foregroundStyle(.black)
+        }
+    }
+

@@ -15,15 +15,16 @@ struct InspirationView: View {
     @State var imageIndex: Int = 0
     @State private var selectedPostItIndex: Int? = nil
     @State private var selectedImageIndex: Int? = nil
-//    @StateObject var listePostIt  = PostItList()
     @State var listePostIt: [PostIt] = [
-        PostIt(name: "Post It 1", x: 350, y: 100, rotation: -5, color: .yellowC, contents: ["test", "test2"]),
-        PostIt(name: "Post It 2", x: 350, y: 300, rotation: 10, color: .blueC, contents: ["test", "test2"])
+        PostIt(name: "Thème", x: 350, y: 100, rotation: -5, color: .yellowC, contents: ["printemps", "marguerite","soleil"]),
+        PostIt(name: "Matériaux", x: 350, y: 300, rotation: 10, color: .blueC, contents: ["tissu vintage", "coton","forme cloche"]),
+        PostIt(name: "Endroits", x: 380, y: 450, rotation: -7, isShowed: true,color: .pinkC, contents: ["marché aux puces","Vieux Port"])
     ]
     @State var imagesInspiration: [ImageInspiration] = [
         ImageInspiration(name: "sample1", x: 550, y: 150, link: "Sample1"),
         ImageInspiration(name: "sample2", x: 560, y: 200, link: "Sample2"),
-        ImageInspiration(name: "sample2", x: 570, y: 250, link: "Sample3")
+        ImageInspiration(name: "sample2", x: 570, y: 250, link: "Sample3"),
+        ImageInspiration(name: "robeInspiFlower",x: 550,y: 450, link: "robeInspiFlower")
     ]
     
     @State var postItDragOffset: CGSize = .zero
