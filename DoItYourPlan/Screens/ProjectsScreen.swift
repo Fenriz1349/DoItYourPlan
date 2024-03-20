@@ -13,14 +13,6 @@ struct ProjectsScreen: View {
             
             NavigationStack{
                 
-                // ZStack{
-                // Rectangle()
-                //.foregroundColor(.white)
-                //  .border(.gray)
-                // .frame(width: 500, height: 50)
-                // Text("Mes projets")
-                // }
-                
                 Text("Bonjour ! Craft Génius")
                     .font(.title)
                     .fontWeight(.bold)
