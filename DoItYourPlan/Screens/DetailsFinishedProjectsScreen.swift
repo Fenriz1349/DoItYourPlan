@@ -15,10 +15,10 @@ struct detailsFinishedProjectsScreen: View {
                     Spacer()
                         .frame(height: 30)
                     Text ("🎊 Bravo Craft Genius ! 🎊 ")
+                        .fontWeight(.bold)
                     Text ("Projet réalisé en 6 semaines, comme prévu ! ")
                     Spacer()
-                        .frame(height: 50)
-                    
+                        .frame(height: 20)
                     Image("cosplayGirl1")
                         .resizable()
                         .frame(width: 300, height: 300)
@@ -29,9 +29,9 @@ struct detailsFinishedProjectsScreen: View {
                         .cornerRadius(20)
                     
                     Spacer()
-                        .frame(height: 30)
+                        .frame(height: 20)
                     
-                    Text("Partage ta création sur tes réseaux sociaux 📱")
+                    Text("Partage ton DIY sur tes réseaux sociaux:")
                     
                     HStack{
                         Image("logoFacebook")

@@ -75,7 +75,6 @@ struct ProjectsScreen: View {
                             ExtPiePercentCompleted(percent: 70)
                                 .padding(.trailing, 40)
                         }
-                        
                     }
                 }.navigationBarTitle("Mes projets", displayMode: .inline)
                 NavigationLink(destination:NewProjectScreen()){
