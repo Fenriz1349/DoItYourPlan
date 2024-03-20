@@ -6,17 +6,17 @@
 
 import SwiftUI
 
-let addButtonStep = UUID().uuidString
+let addButtonStep2 = UUID().uuidString
 
-struct SelectedProjectScreen: View {
-    @State private var pebbles: [String] = myProject.steps.map { step in
+struct SelectedProjectScreen2: View {
+    @State private var pebbles: [String] = myProject2.steps.map { step in
         return step.id.uuidString
-    } + [addButtonStep]
+    } + [addButtonStep2]
     @State private var draggingItem: String?
     @State private var zoom: Bool = false
     @State private var isFirstUnfinishedStepFound: Bool = false
     
-    @State private var mySteps: [Step] = myProject.steps
+    @State private var mySteps: [Step] = myProject2.steps
     
     var body: some View {
         NavigationStack {
@@ -27,21 +27,21 @@ struct SelectedProjectScreen: View {
                         GeometryReader {
                             let size = $0.size
                             // Pebble new step
-                            if pebble == addButtonStep {
+                            if pebble == addButtonStep2 {
                                 Button(action: {
-                                    myProject.addStep(stepName: "Nouvelle étape", orderNumber: myProject.steps.count + 1, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition())
-                                    pebbles = myProject.steps.map { step in
+                                    myProject2.addStep(stepName: "Nouvelle étape", orderNumber: myProject2.steps.count + 1, isDone: false, isCurrent: false, stepColor: randomColor(), stepPosition: randomStepPosition())
+                                    pebbles = myProject2.steps.map { step in
                                         return step.id.uuidString
-                                    } + [addButtonStep]
+                                    } + [addButtonStep2]
                                 }) {
                                     HStack(alignment: .center) {
-                                        if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                        if let step = myProject2.steps.first(where: { $0.id.uuidString == pebble }) {
                                             Text(step.stepName)
                                                 .foregroundColor(.black)
                                         }
                                         ZStack {
                                             Circle()
-                                            if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                            if let step = myProject2.steps.first(where: { $0.id.uuidString == pebble }) {
                                                 Circle()
                                                     .fill(step.stepColor.gradient)
                                             }
@@ -53,14 +53,14 @@ struct SelectedProjectScreen: View {
                                 }
                             } else {
                                 // Pebble each step
-                                NavigationLink(destination: StepDetail(pebble: pebble)) {
+                                NavigationLink(destination: StepDetail2(pebble: pebble)) {
                                     HStack(alignment: .center) {
-                                        if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                        if let step = myProject2.steps.first(where: { $0.id.uuidString == pebble }) {
                                             Text(step.stepName)
                                                 .foregroundColor(.black)
                                         }
                                         ZStack {
-                                            if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                            if let step = myProject2.steps.first(where: { $0.id.uuidString == pebble }) {
                                                 if step.isDone {
                                                     Circle()
                                                         .fill(.gray.opacity(0.5).gradient)
@@ -69,7 +69,7 @@ struct SelectedProjectScreen: View {
                                                         .fill(step.stepColor.gradient)
                                                 }
                                             }
-                                            if let step = myProject.steps.first(where: { $0.id.uuidString == pebble }) {
+                                            if let step = myProject2.steps.first(where: { $0.id.uuidString == pebble }) {
                                                 if step.isCurrent {
                                                     Image("avatar")
                                                         .resizable()
@@ -103,10 +103,10 @@ struct SelectedProjectScreen: View {
                                             withAnimation(.bouncy) {
                                                 let sourceItem = pebbles.remove(at: sourceIndex)
                                                 pebbles.insert(sourceItem, at: destinationIndex)
-                                                myProject.steps = pebbles.compactMap { pebbleID in
-                                                    myProject.steps.first { $0.id.uuidString == pebbleID }
+                                                myProject2.steps = pebbles.compactMap { pebbleID in
+                                                    myProject2.steps.first { $0.id.uuidString == pebbleID }
                                                 }
-                                                myProject.updateOrder()
+                                                myProject2.updateOrder()
                                             }
                                         }
                                     }
@@ -121,7 +121,7 @@ struct SelectedProjectScreen: View {
                     }
                 })
             }
-            .navigationTitle(myProject.projectName)
+            .navigationTitle(myProject2.projectName)
             .toolbar(content: {
 // Zoom working but not implemented
 //                ToolbarItem(placement: .topBarTrailing) {

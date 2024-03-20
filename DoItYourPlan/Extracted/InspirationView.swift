@@ -36,7 +36,7 @@ struct InspirationView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.black, lineWidth: 1)
                     .frame(width: 350, height: 50)
-                Text("Inspiration Projet 1")
+                Text("Inspiration Robe Florale")
             }
             ScrollView {
                 ZStack {

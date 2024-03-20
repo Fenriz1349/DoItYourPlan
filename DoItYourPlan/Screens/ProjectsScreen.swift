@@ -31,7 +31,9 @@ struct ProjectsScreen: View {
                 NavigationLink(destination: SelectedProjectScreen()) {
                     projectRectangle(title: "Robe vintage à motifs floraux", subtitle: "Couture", color: .purpleCustom, percent: 90)
                 }
-                projectRectangle(title: "Plaid bohème multicolore", subtitle: "Crochet", color: .pinkCustom, percent: 70)
+                NavigationLink(destination:SelectedProjectScreen2()){
+                    projectRectangle(title: "Plaid bohème multicolore", subtitle: "Crochet", color: .pinkCustom, percent: 70)
+                }
                 projectRectangle(title: "Paysage marin au coucher du soleil", subtitle: "Peinture", color: .blueCustom, percent: 25)
                 
                 if showNewProjet {

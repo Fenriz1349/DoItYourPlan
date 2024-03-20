@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct StepDetail: View {
+struct StepDetail2: View {
     
     let pebble: String
     
     @State private var segmentedSelection = 0
     
-    @State private var step: Step = myProject.steps[0]
+    @State private var step: Step = myProject2.steps[0]
     
     @State private var newStepName: String = ""
     
@@ -35,7 +35,7 @@ struct StepDetail: View {
                     .onAppear {
                         // step init with UUID in pebble
                         if let stepUUID = UUID(uuidString: pebble),
-                           let matchingStep = myProject.steps.first(where: { $0.id == stepUUID }) {
+                           let matchingStep = myProject2.steps.first(where: { $0.id == stepUUID }) {
                             step = matchingStep
                         }
                     }
@@ -60,7 +60,7 @@ struct StepDetail: View {
         }
         .pickerStyle(.segmented)
         if segmentedSelection == 0 {
-            TasksView(pebble: pebble)
+            TasksView2(pebble: pebble)
         } else {
             MaterialScreen(stepColor: step.stepColor)
         }
@@ -68,5 +68,5 @@ struct StepDetail: View {
 }
 
 #Preview {
-    StepDetail(pebble: myProject.steps[5].id.uuidString)
+    StepDetail(pebble: myProject2.steps[5].id.uuidString)
 }
