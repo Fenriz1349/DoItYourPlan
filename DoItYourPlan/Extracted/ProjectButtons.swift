@@ -48,13 +48,9 @@ struct ProjectButtons: View {
                         .font(.system(size: 16))
                 }
             }.foregroundColor(.black).buttonStyle(PressableButtonStyle())
-           
         }
        
     }
-
-
-
         #Preview{
             ProjectButtons(iconName: "arrow.counterclockwise", projectNumber: 3, projectTitle: "Projet en cours")
             }

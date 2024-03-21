@@ -8,63 +8,74 @@
 import SwiftUI
 
 struct ProjectsScreen: View {
+    @State var showNewProjet : Bool = false
+    
     var body: some View {
-        VStack{
-            Text("Mes projets")
-                .padding(.horizontal, 152)
-                .padding(.vertical, 10)
-                .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+        NavigationStack {
             
             Text("Bonjour ! Craft Génius")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding(.all)
+                                .frame(width: 340)
+                               
+                            
+                            Text("Termine un projet en cours pour passer au niveau supérieur et progresser !")
+                                .fontWeight(.light)
+                                .multilineTextAlignment(.center)
+                                .padding(.bottom, 25)
+                                .frame(width: 340)
+                                .foregroundColor(.gray)
+            ScrollView {
+                
+                NavigationLink(destination: SelectedProjectScreen()) {
+                    projectRectangle(title: "Robe vintage à motifs floraux", subtitle: "Couture", color: .purpleCustom, percent: 100)
+                }
+                projectRectangle(title: "Plaid bohème multicolore", subtitle: "Crochet", color: .pinkCustom, percent: 70)
+                projectRectangle(title: "Paysage marin au coucher du soleil", subtitle: "Peinture", color: .blueCustom, percent: 25)
+                
+                if showNewProjet {
+                    projectRectangle(title: "Jardin aromatique en carrés", subtitle: "Jardinage", color: .greenCustom, percent: 0)
+                }
+                
+                NavigationLink(destination: NewProjectScreen(showNewProjet: $showNewProjet)) {
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 50))
+                        .padding(.top, 10)
+                        .foregroundStyle(.black)
+                }
+            }
+            .navigationTitle("Mes projets")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+    
+ 
+    func projectRectangle(title: String, subtitle: String, color: Color, percent: Int) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25.0)
+                .fill(color)
+                .frame(width: 340, height: 100)
+                .padding(.bottom, 15)
             
-            Text ("Termines un projet en cours pour passer au niveau supérieur et progresser !")
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
-            ZStack{
-                RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .fill(.purpleCustom)
-                    .frame(width: 380, height: 100)
-                HStack{
-                Text("70%")
-                    VStack{
-                        Text("Projet 1")
-                            .multilineTextAlignment(.leading)
-                        Text("Couture")
-                    }
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(title)
+                    Text(subtitle)
                 }
+                .padding(.leading, 40)
+                
+                Spacer()
+                
+                ExtPiePercentCompleted(percent: percent)
+                    .padding(.trailing, 40)
             }
-            ZStack{
-                RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .fill(.blueCustom)
-                    .frame(width: 380, height: 100)
-                HStack{
-                Text("70%")
-                    VStack{
-                        Text("Projet 2")
-                            .multilineTextAlignment(.leading)
-                        Text("Crochet")
-                    }
-                }
-            }
-            ZStack{
-                RoundedRectangle (cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                    .fill(.pinkCustom)
-                    .frame(width: 380, height: 100)
-                HStack{
-                Text("70%")
-                    VStack{
-                        Text("Projet 2")
-                            .multilineTextAlignment(.leading)
-                        Text("Peinture")
-                    }
-                }
-            }
+            .foregroundStyle(.black)
         }
     }
 }
+
+
 
 #Preview {
     ProjectsScreen()
